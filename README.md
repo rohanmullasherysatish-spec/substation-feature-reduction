@@ -835,7 +835,7 @@ establish an operationally reliable detector. Source-level errors are saved unde
 The full baselines, SHAP/MI selection, reduced fitting and test scoring all use
 the same saved packet population, group IDs and allocation.
 
-## Inspect development SV payload coverage
+## Inspect development payloads and normal-source errors
 
 ```bash
 .venv/bin/python -m src.iec61850.sv_payload
@@ -843,18 +843,41 @@ the same saved packet population, group IDs and allocation.
 
 This development-only diagnostic reuses a strict bounded hexadecimal parser.
 It reads cached source strings filtered to the saved development assignments,
-and aggregates existing held-fold predictions. It does not refit classifiers,
+and aggregates existing held-fold predictions by source and validation fold.
+It also describes normal-source counts under the class-balanced fitting weights.
+It does not refit classifiers,
 generate predictions, inspect test payloads or change the active representation.
 The source files must retain their scanned size/mtime, and cached identities,
 labels, ASDU metadata and validation memberships are checked.
 
-Three small files are saved under `results/iec61850/representation/`:
+Five small files are saved under `results/iec61850/representation/`:
 
 - `sv_payloads.csv`: payload availability, lossless byte shapes, malformed-input
   counts and ASDU consistency for each development source.
 - `source_errors.csv`: existing held-fold errors by classifier and source,
   including normal-source false-alarm rates. Sources are analysis metadata only.
+- `normal_source_predictions.csv`: the five full-input learned classifiers'
+  predicted-class counts, false alarms and group support for each normal source,
+  in each validation fold and across the pooled held-fold predictions.
+- `normal_source_training.csv`: source counts and shares of fitting weight for
+  each fold's training population and the complete development population.
 - `representation.json`: parser bounds, actual review counts and scope checks.
+
+These source diagnostics are retrospective exploratory analyses introduced after
+primary test inspection. The folds have overlapping fitting populations, so
+fold ranges describe the recorded variation rather than independent replication.
+The weighting summaries document the implemented rule; they do not establish
+that weighting caused a particular error pattern. The pooled prediction rows
+combine three held-fold models and do not represent one model fitted on all
+development records.
+
+The normal-fault source contributes 21,248 development packets. Its full-input
+pooled false-alarm rates range from 93.54% to 99.61%, and individual fold rates
+range from 93.03% to 99.82%. Fuzzy and Replay account for more than 99.9% of its
+false alarms for every learned classifier. Normal-fault records comprise 35.42%
+of Normal development rows and 7.08% of total class-balanced fitting weight in
+the final development fit. These counts establish substantial source coverage;
+they do not establish the cause of the errors or the suitability of the weights.
 
 Existing outputs require a deliberate `--overwrite`. The parser validates byte
 structure; it does not decode physical measurements.

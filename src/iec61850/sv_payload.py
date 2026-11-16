@@ -109,8 +109,38 @@ def inspect_sources(root, assignments):
     return pd.DataFrame(rows), limits
 
 
-def source_errors(root, assignments):
-    """Aggregate saved held-fold errors by source, retaining every declared row."""
+def normal_training_support(assignments):
+    """Describe source support under the actual class-balanced training rule.
+
+    Class weighting gives Normal one fifth of the total fitting weight. Sources
+    within Normal share that weight according to their row counts; they are not
+    separately reweighted. Development describes the final fitting population,
+    while each fold describes the population used to fit its validation model.
+    """
+    sources = sorted(assignments.loc[assignments.class_label.eq("normal"), "source_file"].unique())
+    populations = {"development": assignments}
+    for fold in range(cfg.VALIDATION_FOLDS):
+        populations[f"fold_{fold}"] = assignments.loc[assignments.validation_fold.ne(fold)]
+    rows = []
+    for scope, training in populations.items():
+        require(set(training.class_label) == set(cfg.CLASSES), "A fitting class is absent.")
+        normal = training.loc[training.class_label.eq("normal")]
+        weight = len(training)/(len(cfg.CLASSES)*len(normal))
+        for source in sources:
+            part = normal.loc[normal.source_file.eq(source)]
+            require(len(part) > 0, "A normal source is absent from a fitting population.")
+            rows.append({"scope": scope, "source_file": source,
+                "fitting_records": len(training), "normal_records": len(normal),
+                "source_records": len(part), "source_groups": part.group_id.nunique(),
+                "normal_observation_weight": weight,
+                "source_share_of_normal_records": len(part)/len(normal),
+                "source_total_fitting_weight": len(part)*weight,
+                "source_share_of_total_fitting_weight": len(part)*weight/len(training)})
+    return pd.DataFrame(rows)
+
+
+def source_diagnostics(root, assignments):
+    """Aggregate actual held-fold predictions, retaining every declared row."""
     record = json.loads((root/"results/iec61850/validation/prediction_recovery.json").read_text())
     require(record["status"] == "complete" and not record["fitting_performed"]
             and not record["test_scoring"], "Complete validation recovery is required.")
@@ -118,7 +148,7 @@ def source_errors(root, assignments):
     positions = pd.Index(assignments.record_id)
     require(positions.is_unique, "Repeated development identity.")
     visited = {name: np.zeros(len(assignments), dtype=bool) for name in names}
-    totals, errors = Counter(), Counter()
+    totals, errors, destinations = Counter(), Counter(), Counter()
     columns = ["model", "condition", "scope", "record_id", "source_file", "group_id", "true_class", "predicted_class"]
     saved = pq.ParquetFile(root/"data/iec61850/full_validation_predictions.parquet")
     for batch in saved.iter_batches(batch_size=65536, columns=columns):
@@ -138,22 +168,49 @@ def source_errors(root, assignments):
             require(len(np.unique(idx)) == len(idx) and not visited[name][idx].any(),
                     "Repeated held-fold prediction.")
             visited[name][idx] = True
-            for source, label, prediction in subset[["source_file", "true_class", "predicted_class"]].itertuples(index=False, name=None):
+            for scope, source, label, prediction in subset[["scope", "source_file", "true_class", "predicted_class"]].itertuples(index=False, name=None):
                 key = (name, source, label)
                 totals[key] += 1
                 errors[key] += int(label != prediction)
+                destinations[name, scope, source, label, prediction] += 1
     require(all(value.all() for value in visited.values()), "Incomplete held-fold prediction coverage.")
-    return pd.DataFrame([{"model": name, "condition": "full", "scope": "pooled_validation",
+    metrics = pd.DataFrame([{"model": name, "condition": "full", "scope": "pooled_validation",
         "source_file": source, "class_label": label, "records": n,
         "errors": errors[name,source,label], "error_rate": errors[name,source,label]/n,
         "normal_false_alarm_rate": errors[name,source,label]/n if label == "normal" else None}
         for (name,source,label),n in sorted(totals.items())])
 
+    # Summarise normal sources separately so pooled normal performance does not
+    # conceal a disturbance-specific failure. Counts describe supplied labels,
+    # not an independently verified physical explanation of any false alarm.
+    normal = assignments.loc[assignments.class_label.eq("normal")]
+    scopes = [f"fold_{fold}" for fold in range(cfg.VALIDATION_FOLDS)]
+    rows = []
+    for source, population in normal.groupby("source_file", sort=True):
+        for scope in [*scopes, "pooled_validation"]:
+            part = (population if scope == "pooled_validation" else
+                    population.loc[population.validation_fold.eq(int(scope.split("_")[1]))])
+            require(len(part) > 0, "A normal source lacks validation support.")
+            included = scopes if scope == "pooled_validation" else [scope]
+            for name in cfg.CLASSIFIER_PANEL:
+                counts = {label: sum(destinations[name, fold, source, "normal", label]
+                                     for fold in included) for label in cfg.CLASSES}
+                require(sum(counts.values()) == len(part), "Normal-source prediction counts differ.")
+                false_alarms = len(part)-counts["normal"]
+                rows.append({"model": name, "condition": "full", "scope": scope,
+                    "source_file": source, "class_label": "normal", "records": len(part),
+                    "evaluation_groups": part.group_id.nunique(),
+                    "correct": counts["normal"], "false_alarms": false_alarms,
+                    "normal_false_alarm_rate": false_alarms/len(part),
+                    **{f"predicted_{label}": count for label, count in counts.items()}})
+    return metrics, pd.DataFrame(rows), normal_training_support(assignments)
+
 
 def inspect(root=cfg.PROJECT_ROOT, overwrite=False):
     root = Path(root).resolve()
     folder = root/"results/iec61850/representation"
-    files = ("sv_payloads.csv", "source_errors.csv", "representation.json")
+    files = ("sv_payloads.csv", "source_errors.csv", "representation.json",
+             "normal_source_predictions.csv", "normal_source_training.csv")
     for name in files:
         target = folder/name
         require(target.resolve() == target and (not target.exists() or target.is_file()),
@@ -162,7 +219,7 @@ def inspect(root=cfg.PROJECT_ROOT, overwrite=False):
             "Representation outputs exist; deliberate replacement requires --overwrite.")
     _, assignments, _ = read_development(root)
     payloads, limits = inspect_sources(root, assignments)
-    metrics = source_errors(root, assignments)
+    metrics, normal_predictions, training_support = source_diagnostics(root, assignments)
     summary = {"status": "complete", "population": "development only",
         "development_records": len(assignments), "parser_limits": limits,
         "payload_records": int(payloads.payload_present.sum()),
@@ -170,6 +227,14 @@ def inspect(root=cfg.PROJECT_ROOT, overwrite=False):
         "malformed_payload_records": int(payloads.malformed_payloads.sum()),
         "asdu_metadata_mismatches": int(payloads.asdu_metadata_mismatches.sum()),
         "source_metric_rows": len(metrics), "lossless_byte_roundtrip_checked": True,
+        "normal_source_prediction_rows": len(normal_predictions),
+        "normal_source_training_rows": len(training_support),
+        "prediction_scopes": "three held-fold populations and their pooled counts",
+        "training_scopes": "each fold's fitting population and final development population",
+        "training_weight_rule": "N/(K*n_class), as used by the five learned classifiers",
+        "analysis_status": "retrospective exploratory diagnostics after primary test inspection",
+        "fold_interpretation": "overlapping fitting populations; not independent replications",
+        "causal_mechanism_established": False,
         "test_records_inspected": 0, "classifiers_fitted": 0, "new_predictions": 0,
         "diagnostic_changes_representation": False,
         "payload_is_model_input": any(r["field"] == "sv.seqData" and r["role"] == "eligible"
@@ -181,13 +246,20 @@ def inspect(root=cfg.PROJECT_ROOT, overwrite=False):
         payloads.to_csv(stage/files[0], index=False)
         metrics.to_csv(stage/files[1], index=False)
         (stage/files[2]).write_text(json.dumps(summary, indent=2, allow_nan=False)+"\n")
+        normal_predictions.to_csv(stage/files[3], index=False)
+        training_support.to_csv(stage/files[4], index=False)
         folder.mkdir(parents=True, exist_ok=True)
         for name in files:
             (stage/name).replace(folder/name)
     print(payloads[["source_file", "development_records", "payload_present", "asdu_byte_shapes", "malformed_payloads"]].to_string(index=False))
     print("\nNormal-source held-fold false-alarm rates:")
     print(metrics.loc[metrics.class_label.eq("normal"), ["model", "source_file", "records", "errors", "normal_false_alarm_rate"]].to_string(index=False))
-    print(f"Saved three numerical review files in {folder.relative_to(root)}; no fitting, test inspection or representation change.")
+    fault = normal_predictions.loc[normal_predictions.source_file.str.endswith("normalfault.csv")
+                                   & normal_predictions.scope.eq("pooled_validation")]
+    print("\nNormal-fault held-fold prediction destinations:")
+    print(fault[["model", "records", "false_alarms", "normal_false_alarm_rate",
+                 "predicted_fuzzy", "predicted_replay", "correct"]].to_string(index=False))
+    print(f"Saved five numerical diagnostic files in {folder.relative_to(root)}; no fitting, test scoring or representation change.")
 
 
 def main():
