@@ -1,0 +1,10 @@
+path,scenario,class_label,raw_label,expected_records
+attack-data/capture61850-floodattack_withfault.csv,flood_with_fault,flood,floodattack,4939146
+attack-data/capture61850-floodattack_withoutfault.csv,flood_without_fault,flood,floodattack,5720704
+attack-data/capture61850-fuzzyattack_withfault.csv,fuzzy_with_fault,fuzzy,fuzzyattack,345839
+attack-data/capture61850-fuzzyattack_withoutfault.csv,fuzzy_without_fault,fuzzy,fuzzyattack,716307
+attack-data/capture61850-ptpattack.csv,ptp_attack,ptp_attack,ptpattack,159
+attack-data/capture61850-replay.csv,replay,replay,replay,327373
+attack-free-data/capture61850-attackfree.csv,normal,normal,attackfree,9478223
+attack-free-data/capture61850-attackfree_PTP.csv,normal_ptp,normal,attackfree,162073
+attack-free-data/capture61850-attackfree_normalfault.csv,normal_fault,normal,attackfree,385772

@@ -1,0 +1,941 @@
+{
+  "status": "complete",
+  "protocol": "iec61850",
+  "recipe": {
+    "selection_recipe": {
+      "selector": "mi_matched",
+      "reference_selection_recipe": {
+        "selectors": [
+          "shap",
+          "mi"
+        ],
+        "retention_fractions": [
+          0.25,
+          0.5
+        ],
+        "denominator": "active original fields in this training scope; round counts upward",
+        "shap_foreground_cap_per_true_class": 128,
+        "shap_background_cap_per_true_class": 16,
+        "shap_sample_seed": 45,
+        "shap_sampling": "without replacement within each true class; all available when below cap",
+        "shap_perturbation": "interventional with independent encoded components and explicit background",
+        "shap_output": {
+          "logistic_regression": "linear_decision_score",
+          "decision_tree": "class_probability",
+          "random_forest": "class_probability",
+          "xgboost": "class_margin",
+          "lightgbm": "class_margin"
+        },
+        "shap_field_aggregation": "signed component sum, then absolute value; mean across output classes, then within true class, then equal true-class mean",
+        "shap_group_interpretation": "aggregated component attributions, not jointly masked coalition-group SHAP",
+        "shap_common_rank": "equal model mean of average-tie ranks; exact doubled integer sums; alphabetical final ties",
+        "additivity_atol": 1e-05,
+        "additivity_rtol": 1e-05,
+        "tree_precision_correction": "https://github.com/shap/shap/pull/5122; preserve float64 thresholds in SHAP 0.53.0",
+        "mi_sample_cap_per_true_class": 2000,
+        "mi_sample_seed": 46,
+        "mi_estimator_seed": 47,
+        "mi_neighbours": 3,
+        "mi_field_representation": "fitted logical components; nominal categories coded jointly after training-only pooling; numeric values use saved medians; count/byte/missingness components discrete",
+        "mi_distribution": "capped stratified training sample; residual class imbalance retained; no duplicated rare rows",
+        "mi_ties": "average-tie ranks; alphabetical final ties",
+        "reduced_parameter_policy": "reuse_selected_full_parameters",
+        "performance_interpretation": "paired observed differences; no formal equivalence claim or unapproved loss margin",
+        "additional_conditions": "no PI selector, classifier-specific reduced SHAP fits, or frequency-versus-balanced SHAP experiment",
+        "test_scoring": false,
+        "classes": [
+          "flood",
+          "fuzzy",
+          "normal",
+          "ptp_attack",
+          "replay"
+        ],
+        "mi_field_aggregation": "maximum component MI within each active original field; not joint multivariate MI",
+        "mi_width_limitation": "maximum avoids sum/mean width scaling but wider fields have more opportunities for a high component score",
+        "mi_sampling_interpretation": "same capped training populations as declared; not the class-balanced SHAP estimand",
+        "expanded_field_policy": "retain every fitted encoded column of a selected original field; SV payload remains one field"
+      },
+      "sampling": "exact saved SHAP foreground identities in each training scope; no resampling or duplicated rows",
+      "sample_role": "mi_matched",
+      "estimator_seed": 47,
+      "neighbours": 3,
+      "retention_fractions": [
+        0.25,
+        0.5
+      ],
+      "field_policy": "reuse the protocol MI estimator, discrete flags, training replacements and field aggregation",
+      "interpretation": "sampling sensitivity of configured selectors; matching rows does not match class aggregation or attribution targets",
+      "test_records_used": 0
+    },
+    "parameter_policy": "reuse_selected_full_parameters",
+    "seed": 44,
+    "prediction_repeats": 3,
+    "comparison": "same saved observations and allocation; reduced minus full; no equivalence pass/fail",
+    "test_scoring": false
+  },
+  "selected_fields": {
+    "development/mi_matched_25": [
+      "sv.smpCnt",
+      "frame.len",
+      "frame.protocols",
+      "history_frame_len_mean",
+      "history_frame_len_max",
+      "sv.seqData",
+      "history_frame_len_min",
+      "goose.sqNum",
+      "history_frame_len_std",
+      "history_interarrival_mean",
+      "frame.time_delta",
+      "goose.Data",
+      "history_interarrival_sum",
+      "sv.ASDU_element",
+      "sv.confRev",
+      "sv.length",
+      "sv.noASDU"
+    ],
+    "development/mi_matched_50": [
+      "sv.smpCnt",
+      "frame.len",
+      "frame.protocols",
+      "history_frame_len_mean",
+      "history_frame_len_max",
+      "sv.seqData",
+      "history_frame_len_min",
+      "goose.sqNum",
+      "history_frame_len_std",
+      "history_interarrival_mean",
+      "frame.time_delta",
+      "goose.Data",
+      "history_interarrival_sum",
+      "sv.ASDU_element",
+      "sv.confRev",
+      "sv.length",
+      "sv.noASDU",
+      "sv.reserve1",
+      "sv.reserve2",
+      "sv.savPdu_element",
+      "sv.seqASDU",
+      "sv.smpSynch",
+      "eth.type",
+      "goose.integer",
+      "goose.length",
+      "goose.allData",
+      "goose.confRev",
+      "goose.goosePdu_element",
+      "goose.ndsCom",
+      "goose.numDatSetEntries",
+      "goose.reserve1",
+      "goose.reserve2",
+      "goose.simulation",
+      "goose.stNum"
+    ],
+    "fold_0/mi_matched_25": [
+      "sv.smpCnt",
+      "frame.len",
+      "frame.protocols",
+      "history_frame_len_mean",
+      "history_frame_len_max",
+      "sv.seqData",
+      "history_frame_len_min",
+      "history_frame_len_std",
+      "history_interarrival_mean",
+      "goose.sqNum",
+      "frame.time_delta",
+      "goose.Data",
+      "sv.ASDU_element",
+      "sv.confRev",
+      "sv.length",
+      "sv.noASDU",
+      "sv.reserve1"
+    ],
+    "fold_0/mi_matched_50": [
+      "sv.smpCnt",
+      "frame.len",
+      "frame.protocols",
+      "history_frame_len_mean",
+      "history_frame_len_max",
+      "sv.seqData",
+      "history_frame_len_min",
+      "history_frame_len_std",
+      "history_interarrival_mean",
+      "goose.sqNum",
+      "frame.time_delta",
+      "goose.Data",
+      "sv.ASDU_element",
+      "sv.confRev",
+      "sv.length",
+      "sv.noASDU",
+      "sv.reserve1",
+      "sv.reserve2",
+      "sv.savPdu_element",
+      "sv.seqASDU",
+      "sv.smpSynch",
+      "history_interarrival_sum",
+      "goose.integer",
+      "eth.type",
+      "goose.allData",
+      "goose.confRev",
+      "goose.goosePdu_element",
+      "goose.length",
+      "goose.ndsCom",
+      "goose.numDatSetEntries",
+      "goose.reserve1",
+      "goose.reserve2",
+      "goose.simulation",
+      "goose.stNum"
+    ],
+    "fold_1/mi_matched_25": [
+      "sv.smpCnt",
+      "frame.len",
+      "frame.protocols",
+      "history_frame_len_max",
+      "history_frame_len_mean",
+      "sv.seqData",
+      "goose.sqNum",
+      "history_frame_len_min",
+      "history_frame_len_std",
+      "history_interarrival_mean",
+      "goose.Data",
+      "frame.time_delta",
+      "history_interarrival_sum",
+      "sv.ASDU_element",
+      "sv.confRev",
+      "sv.length",
+      "sv.noASDU"
+    ],
+    "fold_1/mi_matched_50": [
+      "sv.smpCnt",
+      "frame.len",
+      "frame.protocols",
+      "history_frame_len_max",
+      "history_frame_len_mean",
+      "sv.seqData",
+      "goose.sqNum",
+      "history_frame_len_min",
+      "history_frame_len_std",
+      "history_interarrival_mean",
+      "goose.Data",
+      "frame.time_delta",
+      "history_interarrival_sum",
+      "sv.ASDU_element",
+      "sv.confRev",
+      "sv.length",
+      "sv.noASDU",
+      "sv.reserve1",
+      "sv.reserve2",
+      "sv.savPdu_element",
+      "sv.seqASDU",
+      "sv.smpSynch",
+      "goose.integer",
+      "goose.length",
+      "eth.type",
+      "goose.allData",
+      "goose.confRev",
+      "goose.goosePdu_element",
+      "goose.ndsCom",
+      "goose.numDatSetEntries",
+      "goose.reserve1",
+      "goose.reserve2",
+      "goose.simulation",
+      "goose.stNum"
+    ],
+    "fold_2/mi_matched_25": [
+      "sv.smpCnt",
+      "frame.len",
+      "frame.protocols",
+      "history_frame_len_mean",
+      "sv.seqData",
+      "history_frame_len_max",
+      "goose.sqNum",
+      "history_frame_len_min",
+      "history_frame_len_std",
+      "goose.Data",
+      "history_interarrival_mean",
+      "frame.time_delta",
+      "history_interarrival_sum",
+      "sv.ASDU_element",
+      "sv.confRev",
+      "sv.length",
+      "sv.noASDU"
+    ],
+    "fold_2/mi_matched_50": [
+      "sv.smpCnt",
+      "frame.len",
+      "frame.protocols",
+      "history_frame_len_mean",
+      "sv.seqData",
+      "history_frame_len_max",
+      "goose.sqNum",
+      "history_frame_len_min",
+      "history_frame_len_std",
+      "goose.Data",
+      "history_interarrival_mean",
+      "frame.time_delta",
+      "history_interarrival_sum",
+      "sv.ASDU_element",
+      "sv.confRev",
+      "sv.length",
+      "sv.noASDU",
+      "sv.reserve1",
+      "sv.reserve2",
+      "sv.savPdu_element",
+      "sv.seqASDU",
+      "sv.smpSynch",
+      "goose.integer",
+      "goose.length",
+      "goose.allData",
+      "goose.confRev",
+      "goose.goosePdu_element",
+      "goose.ndsCom",
+      "goose.numDatSetEntries",
+      "goose.simulation",
+      "goose.stNum",
+      "goose.timeAllowedtoLive",
+      "goose.reserve1",
+      "goose.reserve2"
+    ]
+  },
+  "full_training_recipe": {
+    "classifier_panel": [
+      "logistic_regression",
+      "decision_tree",
+      "random_forest",
+      "xgboost",
+      "lightgbm"
+    ],
+    "reference_strategy": "most_frequent",
+    "fixed_parameters": {
+      "logistic_regression": {
+        "solver": "lbfgs",
+        "l1_ratio": 0.0,
+        "max_iter": 5000,
+        "tol": 0.0001
+      },
+      "decision_tree": {},
+      "random_forest": {
+        "n_estimators": 200,
+        "max_features": "sqrt",
+        "bootstrap": true
+      },
+      "xgboost": {
+        "n_estimators": 200,
+        "objective": "multi:softprob",
+        "tree_method": "hist",
+        "device": "cpu",
+        "eval_metric": "mlogloss",
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "verbosity": 1
+      },
+      "lightgbm": {
+        "n_estimators": 200,
+        "objective": "multiclass",
+        "learning_rate": 0.05,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "deterministic": true,
+        "force_col_wise": true,
+        "verbosity": -1
+      }
+    },
+    "candidate_grid": {
+      "logistic_regression": [
+        {
+          "C": 0.01
+        },
+        {
+          "C": 0.1
+        },
+        {
+          "C": 1.0
+        },
+        {
+          "C": 10.0
+        }
+      ],
+      "decision_tree": [
+        {
+          "max_depth": 8,
+          "min_samples_leaf": 10
+        },
+        {
+          "max_depth": 8,
+          "min_samples_leaf": 2
+        },
+        {
+          "max_depth": 16,
+          "min_samples_leaf": 10
+        },
+        {
+          "max_depth": 16,
+          "min_samples_leaf": 2
+        }
+      ],
+      "random_forest": [
+        {
+          "max_depth": 12,
+          "min_samples_leaf": 5
+        },
+        {
+          "max_depth": 12,
+          "min_samples_leaf": 1
+        },
+        {
+          "max_depth": 24,
+          "min_samples_leaf": 5
+        },
+        {
+          "max_depth": 24,
+          "min_samples_leaf": 1
+        }
+      ],
+      "xgboost": [
+        {
+          "max_depth": 3,
+          "learning_rate": 0.05
+        },
+        {
+          "max_depth": 3,
+          "learning_rate": 0.1
+        },
+        {
+          "max_depth": 6,
+          "learning_rate": 0.05
+        },
+        {
+          "max_depth": 6,
+          "learning_rate": 0.1
+        }
+      ],
+      "lightgbm": [
+        {
+          "num_leaves": 15,
+          "min_child_samples": 20
+        },
+        {
+          "num_leaves": 15,
+          "min_child_samples": 5
+        },
+        {
+          "num_leaves": 31,
+          "min_child_samples": 20
+        },
+        {
+          "num_leaves": 31,
+          "min_child_samples": 5
+        }
+      ]
+    },
+    "estimator_seed": 44,
+    "workers": 2,
+    "parallel_fits": 1,
+    "class_weighting": "balanced training-observation weights once per learned classifier; dummy unweighted",
+    "selection_metric": "mean of three validation macro F1 scores, fixed five-class label order",
+    "tie_tolerance": 1e-06,
+    "tie_break": "first candidate in declared order within tolerance of the maximum",
+    "lr_iteration_caps": [
+      5000,
+      10000,
+      20000
+    ],
+    "lr_retry_rule": "retry only warning fits; stop on unresolved convergence",
+    "validation_interpretation": "selection evidence, not an independent estimate of the entire tuning procedure",
+    "test_scoring": false,
+    "grouping_fields": [
+      "frame.time_delta",
+      "frame.len",
+      "eth.len",
+      "goose.length",
+      "goose.float_value",
+      "goose.goosePdu_element",
+      "goose.confRev",
+      "goose.timeAllowedtoLive",
+      "goose.stNum",
+      "goose.sqNum",
+      "goose.simulation",
+      "goose.ndsCom",
+      "goose.numDatSetEntries",
+      "goose.allData",
+      "goose.boolean",
+      "goose.integer",
+      "sv.length",
+      "sv.savPdu_element",
+      "sv.noASDU",
+      "sv.seqASDU",
+      "sv.ASDU_element",
+      "sv.smpCnt",
+      "sv.confRev",
+      "tcp.seq",
+      "tcp.ack",
+      "ptp.sequenceid",
+      "ptp.v2.messagelength",
+      "ptp.v2.correction.ns",
+      "ptp.v2.correction.subns",
+      "ptp.v2.sequenceid",
+      "ptp.v2.an.origincurrentutcoffset",
+      "ptp.v2.an.localstepsremoved",
+      "ptp.v2.an.grandmasterclockvariance",
+      "ptp.v2.an.priority1",
+      "ptp.v2.an.priority2",
+      "ptp.v2.an.lengthField",
+      "ptp.v2.an.oe.totalTimeInaccuracy",
+      "history_packet_count",
+      "history_frame_len_mean",
+      "history_frame_len_std",
+      "history_frame_len_min",
+      "history_frame_len_max",
+      "history_interarrival_mean",
+      "history_interarrival_std",
+      "history_interarrival_sum",
+      "history_interarrival_count",
+      "history_same_protocol_fraction"
+    ],
+    "grouping_dtype": "float32",
+    "outer_seed": 42,
+    "validation_seed": 43,
+    "classes": [
+      "flood",
+      "fuzzy",
+      "normal",
+      "ptp_attack",
+      "replay"
+    ],
+    "standardize_numeric_for": [
+      "logistic_regression"
+    ],
+    "prediction_timing": "estimator predict_proba on already encoded inputs; excludes preprocessing and packet/history extraction",
+    "transform_timing": "one shared transformation per model/scope; repeated table value must not be summed across candidates",
+    "predictor_fields": [
+      "frame.time_delta",
+      "frame.len",
+      "frame.protocols",
+      "eth.len",
+      "eth.type",
+      "goose.length",
+      "goose.reserve1",
+      "goose.reserve2",
+      "goose.float_value",
+      "goose.gseMngtPdu_element",
+      "goose.goosePdu_element",
+      "goose.stateID",
+      "goose.requestResp",
+      "goose.requests",
+      "goose.responses",
+      "goose.getGoReference_element",
+      "goose.getGOOSEElementNumber_element",
+      "goose.getGsReference_element",
+      "goose.getGSSEDataOffset_element",
+      "goose.gseMngtNotSupported_element",
+      "goose.getReferenceRequest.offset",
+      "goose.offset_item",
+      "goose.references",
+      "goose.confRev",
+      "goose.posNeg",
+      "goose.responsePositive_element",
+      "goose.result",
+      "goose.RequestResults",
+      "goose.responseNegative",
+      "goose.offset",
+      "goose.error",
+      "goose.timeAllowedtoLive",
+      "goose.stNum",
+      "goose.sqNum",
+      "goose.simulation",
+      "goose.ndsCom",
+      "goose.numDatSetEntries",
+      "goose.allData",
+      "goose.Data",
+      "goose.array",
+      "goose.structure",
+      "goose.boolean",
+      "goose.integer",
+      "goose.unsigned",
+      "goose.real",
+      "goose.visible_string",
+      "goose.bcd",
+      "goose.mMSString",
+      "goose.malformed.utctime",
+      "goose.zero_pdu",
+      "goose.invalid_sim",
+      "sv.length",
+      "sv.reserve1",
+      "sv.reserve2",
+      "sv.meas_value",
+      "sv.meas_quality",
+      "sv.savPdu_element",
+      "sv.noASDU",
+      "sv.seqASDU",
+      "sv.ASDU_element",
+      "sv.smpCnt",
+      "sv.confRev",
+      "sv.smpSynch",
+      "sv.smpRate",
+      "sv.seqData",
+      "sv.smpMod",
+      "sv.malformed.utctime",
+      "sv.zero_pdu",
+      "sv.malformed.gmidentity",
+      "tcp.seq",
+      "tcp.ack",
+      "ptp.sequenceid",
+      "ptp.controlfield",
+      "ptp.flags",
+      "ptp.v2.majorsdoid",
+      "ptp.v2.messagetype",
+      "ptp.v2.minorversionptp",
+      "ptp.v2.versionptp",
+      "ptp.v2.messagelength",
+      "ptp.v2.minorsdoid",
+      "ptp.v2.domainnumber",
+      "ptp.v2.flags",
+      "ptp.v2.messagetypespecific",
+      "ptp.v2.correction.ns",
+      "ptp.v2.correction.subns",
+      "ptp.v2.sequenceid",
+      "ptp.v2.controlfield",
+      "ptp.v2.logmessageperiod",
+      "ptp.v2.an.origincurrentutcoffset",
+      "ptp.v2.timesource",
+      "ptp.v2.an.localstepsremoved",
+      "ptp.v2.an.grandmasterclockclass",
+      "ptp.v2.an.grandmasterclockaccuracy",
+      "ptp.v2.an.grandmasterclockvariance",
+      "ptp.v2.an.priority1",
+      "ptp.v2.an.priority2",
+      "ptp.v2.an.tlvType",
+      "ptp.v2.an.lengthField",
+      "ptp.v2.an.oe.cern.wr.wrMessageID",
+      "ptp.v2.an.oe.cern.wr.wrFlags",
+      "ptp.v2.an.oe.grandmasterTimeInaccuracy",
+      "ptp.v2.an.oe.networkTimeInaccuracy",
+      "ptp.v2.an.oe.reserved",
+      "ptp.v2.an.oe.totalTimeInaccuracy",
+      "ptp.as.fu.tlvType",
+      "ptp.as.fu.lengthField",
+      "ptp.as.fu.organizationSubType",
+      "ptp.as.fu.cumulativeScaledRateOffset",
+      "ptp.as.fu.gmTimeBaseIndicator",
+      "ptp.as.fu.scaledLastGmFreqChange",
+      "history_packet_count",
+      "history_frame_len_mean",
+      "history_frame_len_std",
+      "history_frame_len_min",
+      "history_frame_len_max",
+      "history_interarrival_mean",
+      "history_interarrival_std",
+      "history_interarrival_sum",
+      "history_interarrival_count",
+      "history_same_protocol_fraction"
+    ],
+    "preprocessing_policy": {
+      "list_component_limit": 64,
+      "maximum_categories_per_field": 128,
+      "numeric_imputation": "training_median",
+      "screening": "training_only_all_missing_or_constant_components",
+      "missingness": "retain_training_varying_indicators; no_new_evaluation_columns",
+      "category_pooling": "training_frequency; lexical_ties; missing_and_infrequent_in_cap",
+      "unseen_categories": "existing_infrequent_bucket_otherwise_all_zero",
+      "standardize_numeric_for": [
+        "logistic_regression"
+      ],
+      "output_dtype": "float64",
+      "sv_payload_encoding": {
+        "maximum_asdus": 2,
+        "maximum_bytes_per_asdu": 32,
+        "representation": "ordered_unsigned_bytes_by_asdu_and_position",
+        "feature_unit": "sv.seqData",
+        "missingness": "payload_presence_and_asdu_lengths; no_repeated_byte_indicators",
+        "physical_measurement_decoder": false
+      }
+    }
+  },
+  "full_selected_parameters": {
+    "logistic_regression": {
+      "solver": "lbfgs",
+      "l1_ratio": 0.0,
+      "max_iter": 5000,
+      "tol": 0.0001,
+      "C": 10.0
+    },
+    "decision_tree": {
+      "max_depth": 16,
+      "min_samples_leaf": 10
+    },
+    "random_forest": {
+      "n_estimators": 200,
+      "max_features": "sqrt",
+      "bootstrap": true,
+      "max_depth": 24,
+      "min_samples_leaf": 1
+    },
+    "xgboost": {
+      "n_estimators": 200,
+      "objective": "multi:softprob",
+      "tree_method": "hist",
+      "device": "cpu",
+      "eval_metric": "mlogloss",
+      "subsample": 1.0,
+      "colsample_bytree": 1.0,
+      "verbosity": 1,
+      "max_depth": 6,
+      "learning_rate": 0.1
+    },
+    "lightgbm": {
+      "n_estimators": 200,
+      "objective": "multiclass",
+      "learning_rate": 0.05,
+      "subsample": 1.0,
+      "colsample_bytree": 1.0,
+      "deterministic": true,
+      "force_col_wise": true,
+      "verbosity": -1,
+      "num_leaves": 31,
+      "min_child_samples": 20
+    }
+  },
+  "pipelines": [
+    {
+      "model": "logistic_regression",
+      "condition": "mi_matched_25",
+      "scope": "fold_0",
+      "path": "models/iec61850/reduced/mi_matched_25/logistic_regression/fold_0.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_matched_25",
+      "scope": "fold_1",
+      "path": "models/iec61850/reduced/mi_matched_25/logistic_regression/fold_1.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_matched_25",
+      "scope": "fold_2",
+      "path": "models/iec61850/reduced/mi_matched_25/logistic_regression/fold_2.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_matched_25",
+      "scope": "development",
+      "path": "models/iec61850/reduced/mi_matched_25/logistic_regression/development.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_matched_50",
+      "scope": "fold_0",
+      "path": "models/iec61850/reduced/mi_matched_50/logistic_regression/fold_0.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_matched_50",
+      "scope": "fold_1",
+      "path": "models/iec61850/reduced/mi_matched_50/logistic_regression/fold_1.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_matched_50",
+      "scope": "fold_2",
+      "path": "models/iec61850/reduced/mi_matched_50/logistic_regression/fold_2.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_matched_50",
+      "scope": "development",
+      "path": "models/iec61850/reduced/mi_matched_50/logistic_regression/development.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_matched_25",
+      "scope": "fold_0",
+      "path": "models/iec61850/reduced/mi_matched_25/decision_tree/fold_0.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_matched_25",
+      "scope": "fold_1",
+      "path": "models/iec61850/reduced/mi_matched_25/decision_tree/fold_1.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_matched_25",
+      "scope": "fold_2",
+      "path": "models/iec61850/reduced/mi_matched_25/decision_tree/fold_2.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_matched_25",
+      "scope": "development",
+      "path": "models/iec61850/reduced/mi_matched_25/decision_tree/development.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_matched_50",
+      "scope": "fold_0",
+      "path": "models/iec61850/reduced/mi_matched_50/decision_tree/fold_0.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_matched_50",
+      "scope": "fold_1",
+      "path": "models/iec61850/reduced/mi_matched_50/decision_tree/fold_1.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_matched_50",
+      "scope": "fold_2",
+      "path": "models/iec61850/reduced/mi_matched_50/decision_tree/fold_2.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_matched_50",
+      "scope": "development",
+      "path": "models/iec61850/reduced/mi_matched_50/decision_tree/development.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_matched_25",
+      "scope": "fold_0",
+      "path": "models/iec61850/reduced/mi_matched_25/random_forest/fold_0.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_matched_25",
+      "scope": "fold_1",
+      "path": "models/iec61850/reduced/mi_matched_25/random_forest/fold_1.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_matched_25",
+      "scope": "fold_2",
+      "path": "models/iec61850/reduced/mi_matched_25/random_forest/fold_2.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_matched_25",
+      "scope": "development",
+      "path": "models/iec61850/reduced/mi_matched_25/random_forest/development.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_matched_50",
+      "scope": "fold_0",
+      "path": "models/iec61850/reduced/mi_matched_50/random_forest/fold_0.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_matched_50",
+      "scope": "fold_1",
+      "path": "models/iec61850/reduced/mi_matched_50/random_forest/fold_1.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_matched_50",
+      "scope": "fold_2",
+      "path": "models/iec61850/reduced/mi_matched_50/random_forest/fold_2.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_matched_50",
+      "scope": "development",
+      "path": "models/iec61850/reduced/mi_matched_50/random_forest/development.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_matched_25",
+      "scope": "fold_0",
+      "path": "models/iec61850/reduced/mi_matched_25/xgboost/fold_0.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_matched_25",
+      "scope": "fold_1",
+      "path": "models/iec61850/reduced/mi_matched_25/xgboost/fold_1.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_matched_25",
+      "scope": "fold_2",
+      "path": "models/iec61850/reduced/mi_matched_25/xgboost/fold_2.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_matched_25",
+      "scope": "development",
+      "path": "models/iec61850/reduced/mi_matched_25/xgboost/development.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_matched_50",
+      "scope": "fold_0",
+      "path": "models/iec61850/reduced/mi_matched_50/xgboost/fold_0.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_matched_50",
+      "scope": "fold_1",
+      "path": "models/iec61850/reduced/mi_matched_50/xgboost/fold_1.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_matched_50",
+      "scope": "fold_2",
+      "path": "models/iec61850/reduced/mi_matched_50/xgboost/fold_2.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_matched_50",
+      "scope": "development",
+      "path": "models/iec61850/reduced/mi_matched_50/xgboost/development.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_matched_25",
+      "scope": "fold_0",
+      "path": "models/iec61850/reduced/mi_matched_25/lightgbm/fold_0.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_matched_25",
+      "scope": "fold_1",
+      "path": "models/iec61850/reduced/mi_matched_25/lightgbm/fold_1.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_matched_25",
+      "scope": "fold_2",
+      "path": "models/iec61850/reduced/mi_matched_25/lightgbm/fold_2.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_matched_25",
+      "scope": "development",
+      "path": "models/iec61850/reduced/mi_matched_25/lightgbm/development.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_matched_50",
+      "scope": "fold_0",
+      "path": "models/iec61850/reduced/mi_matched_50/lightgbm/fold_0.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_matched_50",
+      "scope": "fold_1",
+      "path": "models/iec61850/reduced/mi_matched_50/lightgbm/fold_1.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_matched_50",
+      "scope": "fold_2",
+      "path": "models/iec61850/reduced/mi_matched_50/lightgbm/fold_2.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_matched_50",
+      "scope": "development",
+      "path": "models/iec61850/reduced/mi_matched_50/lightgbm/development.joblib"
+    }
+  ],
+  "logical_fits_completed": 40,
+  "test_scoring": false,
+  "fit_attempts": 40
+}

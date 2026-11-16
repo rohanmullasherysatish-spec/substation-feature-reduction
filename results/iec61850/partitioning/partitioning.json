@@ -1,0 +1,43 @@
+{
+  "status": "complete",
+  "recipe": {
+    "classes": [
+      "flood",
+      "fuzzy",
+      "normal",
+      "ptp_attack",
+      "replay"
+    ],
+    "outer_folds": 5,
+    "test_fold": 0,
+    "outer_seed": 42,
+    "validation_folds": 3,
+    "validation_seed": 43,
+    "maximum_test_fraction_deviation": 0.05,
+    "grouping_dtype": "float32",
+    "grouping": "prepared whole-block components connected by equal full numeric/history vectors"
+  },
+  "records": 200095,
+  "allocation": {
+    "development": {
+      "records": 160095,
+      "groups": 8085
+    },
+    "test": {
+      "records": 40000,
+      "groups": 1965
+    }
+  },
+  "test_fraction": 0.1999050451035758,
+  "outer_group_overlap": 0,
+  "validation_group_overlap": 0,
+  "all_classes_present_in_every_training_and_evaluation_population": true,
+  "models_fitted": 0,
+  "scope": "Within-collection source-block/measurement separation; not independent captures.",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "pyarrow": "23.0.1"
+  }
+}

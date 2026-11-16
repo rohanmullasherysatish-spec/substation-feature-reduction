@@ -1,0 +1,433 @@
+scope,selector,retention_fraction,active_original_fields,selected_field_count,selection_order,field
+fold_0,shap,0.25,72,18,1,FWD Init Win Bytes
+fold_0,shap,0.25,72,18,2,Packet Length Min
+fold_0,shap,0.25,72,18,3,Bwd Init Win Bytes
+fold_0,shap,0.25,72,18,4,Flow IAT Min
+fold_0,shap,0.25,72,18,5,Fwd Seg Size Min
+fold_0,shap,0.25,72,18,6,Fwd IAT Min
+fold_0,shap,0.25,72,18,7,FIN Flag Count
+fold_0,shap,0.25,72,18,8,Protocol
+fold_0,shap,0.25,72,18,9,Fwd Header Length
+fold_0,shap,0.25,72,18,10,Flow Duration
+fold_0,shap,0.25,72,18,11,Flow IAT Max
+fold_0,shap,0.25,72,18,12,Fwd PSH Flags
+fold_0,shap,0.25,72,18,13,Flow IAT Mean
+fold_0,shap,0.25,72,18,14,Packet Length Max
+fold_0,shap,0.25,72,18,15,Total Fwd Packet
+fold_0,shap,0.25,72,18,16,SYN Flag Count
+fold_0,shap,0.25,72,18,17,Fwd IAT Std
+fold_0,shap,0.25,72,18,18,Flow Packets/s
+fold_0,shap,0.5,72,36,1,FWD Init Win Bytes
+fold_0,shap,0.5,72,36,2,Packet Length Min
+fold_0,shap,0.5,72,36,3,Bwd Init Win Bytes
+fold_0,shap,0.5,72,36,4,Flow IAT Min
+fold_0,shap,0.5,72,36,5,Fwd Seg Size Min
+fold_0,shap,0.5,72,36,6,Fwd IAT Min
+fold_0,shap,0.5,72,36,7,FIN Flag Count
+fold_0,shap,0.5,72,36,8,Protocol
+fold_0,shap,0.5,72,36,9,Fwd Header Length
+fold_0,shap,0.5,72,36,10,Flow Duration
+fold_0,shap,0.5,72,36,11,Flow IAT Max
+fold_0,shap,0.5,72,36,12,Fwd PSH Flags
+fold_0,shap,0.5,72,36,13,Flow IAT Mean
+fold_0,shap,0.5,72,36,14,Packet Length Max
+fold_0,shap,0.5,72,36,15,Total Fwd Packet
+fold_0,shap,0.5,72,36,16,SYN Flag Count
+fold_0,shap,0.5,72,36,17,Fwd IAT Std
+fold_0,shap,0.5,72,36,18,Flow Packets/s
+fold_0,shap,0.5,72,36,19,Fwd IAT Max
+fold_0,shap,0.5,72,36,20,Subflow Bwd Bytes
+fold_0,shap,0.5,72,36,21,Fwd Packets/s
+fold_0,shap,0.5,72,36,22,Fwd IAT Mean
+fold_0,shap,0.5,72,36,23,ACK Flag Count
+fold_0,shap,0.5,72,36,24,Bwd Packets/s
+fold_0,shap,0.5,72,36,25,Bwd Packet Length Min
+fold_0,shap,0.5,72,36,26,Total Length of Fwd Packet
+fold_0,shap,0.5,72,36,27,Fwd Packet Length Std
+fold_0,shap,0.5,72,36,28,Bwd Packet Length Max
+fold_0,shap,0.5,72,36,29,Bwd Bulk Rate Avg
+fold_0,shap,0.5,72,36,30,Bwd IAT Total
+fold_0,shap,0.5,72,36,31,RST Flag Count
+fold_0,shap,0.5,72,36,32,Total Bwd packets
+fold_0,shap,0.5,72,36,33,Subflow Fwd Packets
+fold_0,shap,0.5,72,36,34,Fwd Packet Length Mean
+fold_0,shap,0.5,72,36,35,Idle Mean
+fold_0,shap,0.5,72,36,36,Fwd IAT Total
+fold_0,mi,0.25,72,18,1,Flow IAT Max
+fold_0,mi,0.25,72,18,2,Fwd Header Length
+fold_0,mi,0.25,72,18,3,Fwd Packets/s
+fold_0,mi,0.25,72,18,4,Fwd IAT Max
+fold_0,mi,0.25,72,18,5,Fwd IAT Mean
+fold_0,mi,0.25,72,18,6,Flow Packets/s
+fold_0,mi,0.25,72,18,7,Flow Duration
+fold_0,mi,0.25,72,18,8,Flow IAT Mean
+fold_0,mi,0.25,72,18,9,Fwd IAT Std
+fold_0,mi,0.25,72,18,10,Flow IAT Std
+fold_0,mi,0.25,72,18,11,Fwd IAT Total
+fold_0,mi,0.25,72,18,12,Fwd IAT Min
+fold_0,mi,0.25,72,18,13,Fwd Segment Size Avg
+fold_0,mi,0.25,72,18,14,Bwd Packets/s
+fold_0,mi,0.25,72,18,15,Fwd Packet Length Mean
+fold_0,mi,0.25,72,18,16,Packet Length Mean
+fold_0,mi,0.25,72,18,17,Fwd Packet Length Max
+fold_0,mi,0.25,72,18,18,Average Packet Size
+fold_0,mi,0.5,72,36,1,Flow IAT Max
+fold_0,mi,0.5,72,36,2,Fwd Header Length
+fold_0,mi,0.5,72,36,3,Fwd Packets/s
+fold_0,mi,0.5,72,36,4,Fwd IAT Max
+fold_0,mi,0.5,72,36,5,Fwd IAT Mean
+fold_0,mi,0.5,72,36,6,Flow Packets/s
+fold_0,mi,0.5,72,36,7,Flow Duration
+fold_0,mi,0.5,72,36,8,Flow IAT Mean
+fold_0,mi,0.5,72,36,9,Fwd IAT Std
+fold_0,mi,0.5,72,36,10,Flow IAT Std
+fold_0,mi,0.5,72,36,11,Fwd IAT Total
+fold_0,mi,0.5,72,36,12,Fwd IAT Min
+fold_0,mi,0.5,72,36,13,Fwd Segment Size Avg
+fold_0,mi,0.5,72,36,14,Bwd Packets/s
+fold_0,mi,0.5,72,36,15,Fwd Packet Length Mean
+fold_0,mi,0.5,72,36,16,Packet Length Mean
+fold_0,mi,0.5,72,36,17,Fwd Packet Length Max
+fold_0,mi,0.5,72,36,18,Average Packet Size
+fold_0,mi,0.5,72,36,19,Total Fwd Packet
+fold_0,mi,0.5,72,36,20,Flow Bytes/s
+fold_0,mi,0.5,72,36,21,Total Length of Fwd Packet
+fold_0,mi,0.5,72,36,22,Packet Length Max
+fold_0,mi,0.5,72,36,23,Bwd Header Length
+fold_0,mi,0.5,72,36,24,FWD Init Win Bytes
+fold_0,mi,0.5,72,36,25,Flow IAT Min
+fold_0,mi,0.5,72,36,26,ACK Flag Count
+fold_0,mi,0.5,72,36,27,Fwd Act Data Pkts
+fold_0,mi,0.5,72,36,28,Total Bwd packets
+fold_0,mi,0.5,72,36,29,Bwd Segment Size Avg
+fold_0,mi,0.5,72,36,30,Bwd Packet Length Mean
+fold_0,mi,0.5,72,36,31,SYN Flag Count
+fold_0,mi,0.5,72,36,32,Bwd Bulk Rate Avg
+fold_0,mi,0.5,72,36,33,Bwd IAT Std
+fold_0,mi,0.5,72,36,34,Total Length of Bwd Packet
+fold_0,mi,0.5,72,36,35,Bwd IAT Max
+fold_0,mi,0.5,72,36,36,Bwd IAT Mean
+fold_1,shap,0.25,72,18,1,FWD Init Win Bytes
+fold_1,shap,0.25,72,18,2,Packet Length Min
+fold_1,shap,0.25,72,18,3,FIN Flag Count
+fold_1,shap,0.25,72,18,4,Bwd Init Win Bytes
+fold_1,shap,0.25,72,18,5,Fwd Header Length
+fold_1,shap,0.25,72,18,6,Fwd Seg Size Min
+fold_1,shap,0.25,72,18,7,Fwd IAT Min
+fold_1,shap,0.25,72,18,8,Flow IAT Min
+fold_1,shap,0.25,72,18,9,Fwd PSH Flags
+fold_1,shap,0.25,72,18,10,Flow Duration
+fold_1,shap,0.25,72,18,11,Flow Packets/s
+fold_1,shap,0.25,72,18,12,Flow IAT Max
+fold_1,shap,0.25,72,18,13,Protocol
+fold_1,shap,0.25,72,18,14,Total Fwd Packet
+fold_1,shap,0.25,72,18,15,Packet Length Max
+fold_1,shap,0.25,72,18,16,Idle Mean
+fold_1,shap,0.25,72,18,17,Fwd IAT Max
+fold_1,shap,0.25,72,18,18,Flow IAT Mean
+fold_1,shap,0.5,72,36,1,FWD Init Win Bytes
+fold_1,shap,0.5,72,36,2,Packet Length Min
+fold_1,shap,0.5,72,36,3,FIN Flag Count
+fold_1,shap,0.5,72,36,4,Bwd Init Win Bytes
+fold_1,shap,0.5,72,36,5,Fwd Header Length
+fold_1,shap,0.5,72,36,6,Fwd Seg Size Min
+fold_1,shap,0.5,72,36,7,Fwd IAT Min
+fold_1,shap,0.5,72,36,8,Flow IAT Min
+fold_1,shap,0.5,72,36,9,Fwd PSH Flags
+fold_1,shap,0.5,72,36,10,Flow Duration
+fold_1,shap,0.5,72,36,11,Flow Packets/s
+fold_1,shap,0.5,72,36,12,Flow IAT Max
+fold_1,shap,0.5,72,36,13,Protocol
+fold_1,shap,0.5,72,36,14,Total Fwd Packet
+fold_1,shap,0.5,72,36,15,Packet Length Max
+fold_1,shap,0.5,72,36,16,Idle Mean
+fold_1,shap,0.5,72,36,17,Fwd IAT Max
+fold_1,shap,0.5,72,36,18,Flow IAT Mean
+fold_1,shap,0.5,72,36,19,SYN Flag Count
+fold_1,shap,0.5,72,36,20,Fwd Packets/s
+fold_1,shap,0.5,72,36,21,Subflow Bwd Bytes
+fold_1,shap,0.5,72,36,22,Bwd Packets/s
+fold_1,shap,0.5,72,36,23,PSH Flag Count
+fold_1,shap,0.5,72,36,24,Fwd IAT Mean
+fold_1,shap,0.5,72,36,25,Total Bwd packets
+fold_1,shap,0.5,72,36,26,Fwd Packet Length Std
+fold_1,shap,0.5,72,36,27,Bwd IAT Total
+fold_1,shap,0.5,72,36,28,Bwd Bulk Rate Avg
+fold_1,shap,0.5,72,36,29,Subflow Fwd Bytes
+fold_1,shap,0.5,72,36,30,Bwd Packet Length Max
+fold_1,shap,0.5,72,36,31,Bwd Packet Length Min
+fold_1,shap,0.5,72,36,32,RST Flag Count
+fold_1,shap,0.5,72,36,33,Idle Min
+fold_1,shap,0.5,72,36,34,Idle Max
+fold_1,shap,0.5,72,36,35,Fwd IAT Total
+fold_1,shap,0.5,72,36,36,Flow IAT Std
+fold_1,mi,0.25,72,18,1,Flow IAT Max
+fold_1,mi,0.25,72,18,2,Fwd Header Length
+fold_1,mi,0.25,72,18,3,Fwd Packets/s
+fold_1,mi,0.25,72,18,4,Fwd IAT Max
+fold_1,mi,0.25,72,18,5,Fwd IAT Mean
+fold_1,mi,0.25,72,18,6,Flow Packets/s
+fold_1,mi,0.25,72,18,7,Flow Duration
+fold_1,mi,0.25,72,18,8,Flow IAT Mean
+fold_1,mi,0.25,72,18,9,Flow IAT Std
+fold_1,mi,0.25,72,18,10,Fwd IAT Std
+fold_1,mi,0.25,72,18,11,Fwd IAT Total
+fold_1,mi,0.25,72,18,12,Fwd IAT Min
+fold_1,mi,0.25,72,18,13,Fwd Segment Size Avg
+fold_1,mi,0.25,72,18,14,Fwd Packet Length Mean
+fold_1,mi,0.25,72,18,15,Bwd Packets/s
+fold_1,mi,0.25,72,18,16,Fwd Packet Length Max
+fold_1,mi,0.25,72,18,17,Packet Length Mean
+fold_1,mi,0.25,72,18,18,Average Packet Size
+fold_1,mi,0.5,72,36,1,Flow IAT Max
+fold_1,mi,0.5,72,36,2,Fwd Header Length
+fold_1,mi,0.5,72,36,3,Fwd Packets/s
+fold_1,mi,0.5,72,36,4,Fwd IAT Max
+fold_1,mi,0.5,72,36,5,Fwd IAT Mean
+fold_1,mi,0.5,72,36,6,Flow Packets/s
+fold_1,mi,0.5,72,36,7,Flow Duration
+fold_1,mi,0.5,72,36,8,Flow IAT Mean
+fold_1,mi,0.5,72,36,9,Flow IAT Std
+fold_1,mi,0.5,72,36,10,Fwd IAT Std
+fold_1,mi,0.5,72,36,11,Fwd IAT Total
+fold_1,mi,0.5,72,36,12,Fwd IAT Min
+fold_1,mi,0.5,72,36,13,Fwd Segment Size Avg
+fold_1,mi,0.5,72,36,14,Fwd Packet Length Mean
+fold_1,mi,0.5,72,36,15,Bwd Packets/s
+fold_1,mi,0.5,72,36,16,Fwd Packet Length Max
+fold_1,mi,0.5,72,36,17,Packet Length Mean
+fold_1,mi,0.5,72,36,18,Average Packet Size
+fold_1,mi,0.5,72,36,19,Flow Bytes/s
+fold_1,mi,0.5,72,36,20,Total Fwd Packet
+fold_1,mi,0.5,72,36,21,Total Length of Fwd Packet
+fold_1,mi,0.5,72,36,22,Packet Length Max
+fold_1,mi,0.5,72,36,23,Bwd Header Length
+fold_1,mi,0.5,72,36,24,FWD Init Win Bytes
+fold_1,mi,0.5,72,36,25,Flow IAT Min
+fold_1,mi,0.5,72,36,26,ACK Flag Count
+fold_1,mi,0.5,72,36,27,Fwd Act Data Pkts
+fold_1,mi,0.5,72,36,28,Total Bwd packets
+fold_1,mi,0.5,72,36,29,Bwd Segment Size Avg
+fold_1,mi,0.5,72,36,30,Bwd Packet Length Mean
+fold_1,mi,0.5,72,36,31,SYN Flag Count
+fold_1,mi,0.5,72,36,32,Bwd Bulk Rate Avg
+fold_1,mi,0.5,72,36,33,Bwd IAT Std
+fold_1,mi,0.5,72,36,34,Total Length of Bwd Packet
+fold_1,mi,0.5,72,36,35,Bwd IAT Max
+fold_1,mi,0.5,72,36,36,Bwd IAT Mean
+fold_2,shap,0.25,72,18,1,FWD Init Win Bytes
+fold_2,shap,0.25,72,18,2,Packet Length Min
+fold_2,shap,0.25,72,18,3,Fwd IAT Min
+fold_2,shap,0.25,72,18,4,FIN Flag Count
+fold_2,shap,0.25,72,18,5,Flow IAT Min
+fold_2,shap,0.25,72,18,6,Protocol
+fold_2,shap,0.25,72,18,7,Fwd Seg Size Min
+fold_2,shap,0.25,72,18,8,Bwd Init Win Bytes
+fold_2,shap,0.25,72,18,9,Flow IAT Max
+fold_2,shap,0.25,72,18,10,Fwd Header Length
+fold_2,shap,0.25,72,18,11,Packet Length Max
+fold_2,shap,0.25,72,18,12,Fwd PSH Flags
+fold_2,shap,0.25,72,18,13,Flow Duration
+fold_2,shap,0.25,72,18,14,Flow Packets/s
+fold_2,shap,0.25,72,18,15,Fwd Packet Length Max
+fold_2,shap,0.25,72,18,16,Subflow Fwd Packets
+fold_2,shap,0.25,72,18,17,Fwd Packets/s
+fold_2,shap,0.25,72,18,18,SYN Flag Count
+fold_2,shap,0.5,72,36,1,FWD Init Win Bytes
+fold_2,shap,0.5,72,36,2,Packet Length Min
+fold_2,shap,0.5,72,36,3,Fwd IAT Min
+fold_2,shap,0.5,72,36,4,FIN Flag Count
+fold_2,shap,0.5,72,36,5,Flow IAT Min
+fold_2,shap,0.5,72,36,6,Protocol
+fold_2,shap,0.5,72,36,7,Fwd Seg Size Min
+fold_2,shap,0.5,72,36,8,Bwd Init Win Bytes
+fold_2,shap,0.5,72,36,9,Flow IAT Max
+fold_2,shap,0.5,72,36,10,Fwd Header Length
+fold_2,shap,0.5,72,36,11,Packet Length Max
+fold_2,shap,0.5,72,36,12,Fwd PSH Flags
+fold_2,shap,0.5,72,36,13,Flow Duration
+fold_2,shap,0.5,72,36,14,Flow Packets/s
+fold_2,shap,0.5,72,36,15,Fwd Packet Length Max
+fold_2,shap,0.5,72,36,16,Subflow Fwd Packets
+fold_2,shap,0.5,72,36,17,Fwd Packets/s
+fold_2,shap,0.5,72,36,18,SYN Flag Count
+fold_2,shap,0.5,72,36,19,Fwd IAT Max
+fold_2,shap,0.5,72,36,20,Subflow Bwd Bytes
+fold_2,shap,0.5,72,36,21,Fwd IAT Std
+fold_2,shap,0.5,72,36,22,Flow IAT Mean
+fold_2,shap,0.5,72,36,23,Total Fwd Packet
+fold_2,shap,0.5,72,36,24,Idle Mean
+fold_2,shap,0.5,72,36,25,ACK Flag Count
+fold_2,shap,0.5,72,36,26,Bwd IAT Max
+fold_2,shap,0.5,72,36,27,Bwd IAT Min
+fold_2,shap,0.5,72,36,28,Total Length of Fwd Packet
+fold_2,shap,0.5,72,36,29,Flow IAT Std
+fold_2,shap,0.5,72,36,30,Bwd Packets/s
+fold_2,shap,0.5,72,36,31,Fwd IAT Mean
+fold_2,shap,0.5,72,36,32,Bwd Bulk Rate Avg
+fold_2,shap,0.5,72,36,33,Bwd Packet Length Max
+fold_2,shap,0.5,72,36,34,Fwd Packet Length Std
+fold_2,shap,0.5,72,36,35,Idle Max
+fold_2,shap,0.5,72,36,36,Subflow Fwd Bytes
+fold_2,mi,0.25,72,18,1,Flow IAT Max
+fold_2,mi,0.25,72,18,2,Fwd Header Length
+fold_2,mi,0.25,72,18,3,Fwd Packets/s
+fold_2,mi,0.25,72,18,4,Fwd IAT Max
+fold_2,mi,0.25,72,18,5,Fwd IAT Mean
+fold_2,mi,0.25,72,18,6,Flow Packets/s
+fold_2,mi,0.25,72,18,7,Flow Duration
+fold_2,mi,0.25,72,18,8,Flow IAT Mean
+fold_2,mi,0.25,72,18,9,Fwd IAT Std
+fold_2,mi,0.25,72,18,10,Flow IAT Std
+fold_2,mi,0.25,72,18,11,Fwd IAT Total
+fold_2,mi,0.25,72,18,12,Fwd IAT Min
+fold_2,mi,0.25,72,18,13,Fwd Segment Size Avg
+fold_2,mi,0.25,72,18,14,Fwd Packet Length Mean
+fold_2,mi,0.25,72,18,15,Bwd Packets/s
+fold_2,mi,0.25,72,18,16,Packet Length Mean
+fold_2,mi,0.25,72,18,17,Fwd Packet Length Max
+fold_2,mi,0.25,72,18,18,Average Packet Size
+fold_2,mi,0.5,72,36,1,Flow IAT Max
+fold_2,mi,0.5,72,36,2,Fwd Header Length
+fold_2,mi,0.5,72,36,3,Fwd Packets/s
+fold_2,mi,0.5,72,36,4,Fwd IAT Max
+fold_2,mi,0.5,72,36,5,Fwd IAT Mean
+fold_2,mi,0.5,72,36,6,Flow Packets/s
+fold_2,mi,0.5,72,36,7,Flow Duration
+fold_2,mi,0.5,72,36,8,Flow IAT Mean
+fold_2,mi,0.5,72,36,9,Fwd IAT Std
+fold_2,mi,0.5,72,36,10,Flow IAT Std
+fold_2,mi,0.5,72,36,11,Fwd IAT Total
+fold_2,mi,0.5,72,36,12,Fwd IAT Min
+fold_2,mi,0.5,72,36,13,Fwd Segment Size Avg
+fold_2,mi,0.5,72,36,14,Fwd Packet Length Mean
+fold_2,mi,0.5,72,36,15,Bwd Packets/s
+fold_2,mi,0.5,72,36,16,Packet Length Mean
+fold_2,mi,0.5,72,36,17,Fwd Packet Length Max
+fold_2,mi,0.5,72,36,18,Average Packet Size
+fold_2,mi,0.5,72,36,19,Flow Bytes/s
+fold_2,mi,0.5,72,36,20,Total Fwd Packet
+fold_2,mi,0.5,72,36,21,Packet Length Max
+fold_2,mi,0.5,72,36,22,Total Length of Fwd Packet
+fold_2,mi,0.5,72,36,23,Bwd Header Length
+fold_2,mi,0.5,72,36,24,FWD Init Win Bytes
+fold_2,mi,0.5,72,36,25,Flow IAT Min
+fold_2,mi,0.5,72,36,26,ACK Flag Count
+fold_2,mi,0.5,72,36,27,Fwd Act Data Pkts
+fold_2,mi,0.5,72,36,28,Total Bwd packets
+fold_2,mi,0.5,72,36,29,Bwd Segment Size Avg
+fold_2,mi,0.5,72,36,30,Bwd Packet Length Mean
+fold_2,mi,0.5,72,36,31,SYN Flag Count
+fold_2,mi,0.5,72,36,32,Total Length of Bwd Packet
+fold_2,mi,0.5,72,36,33,Bwd Bulk Rate Avg
+fold_2,mi,0.5,72,36,34,Bwd IAT Std
+fold_2,mi,0.5,72,36,35,Bwd IAT Max
+fold_2,mi,0.5,72,36,36,Bwd IAT Mean
+development,shap,0.25,72,18,1,FWD Init Win Bytes
+development,shap,0.25,72,18,2,Packet Length Min
+development,shap,0.25,72,18,3,Fwd IAT Min
+development,shap,0.25,72,18,4,Protocol
+development,shap,0.25,72,18,5,Fwd Seg Size Min
+development,shap,0.25,72,18,6,FIN Flag Count
+development,shap,0.25,72,18,7,Bwd Init Win Bytes
+development,shap,0.25,72,18,8,Fwd PSH Flags
+development,shap,0.25,72,18,9,Fwd Header Length
+development,shap,0.25,72,18,10,Flow IAT Min
+development,shap,0.25,72,18,11,Flow IAT Max
+development,shap,0.25,72,18,12,Flow Duration
+development,shap,0.25,72,18,13,Flow IAT Mean
+development,shap,0.25,72,18,14,Packet Length Max
+development,shap,0.25,72,18,15,Total Fwd Packet
+development,shap,0.25,72,18,16,Subflow Bwd Bytes
+development,shap,0.25,72,18,17,Bwd IAT Min
+development,shap,0.25,72,18,18,Fwd IAT Max
+development,shap,0.5,72,36,1,FWD Init Win Bytes
+development,shap,0.5,72,36,2,Packet Length Min
+development,shap,0.5,72,36,3,Fwd IAT Min
+development,shap,0.5,72,36,4,Protocol
+development,shap,0.5,72,36,5,Fwd Seg Size Min
+development,shap,0.5,72,36,6,FIN Flag Count
+development,shap,0.5,72,36,7,Bwd Init Win Bytes
+development,shap,0.5,72,36,8,Fwd PSH Flags
+development,shap,0.5,72,36,9,Fwd Header Length
+development,shap,0.5,72,36,10,Flow IAT Min
+development,shap,0.5,72,36,11,Flow IAT Max
+development,shap,0.5,72,36,12,Flow Duration
+development,shap,0.5,72,36,13,Flow IAT Mean
+development,shap,0.5,72,36,14,Packet Length Max
+development,shap,0.5,72,36,15,Total Fwd Packet
+development,shap,0.5,72,36,16,Subflow Bwd Bytes
+development,shap,0.5,72,36,17,Bwd IAT Min
+development,shap,0.5,72,36,18,Fwd IAT Max
+development,shap,0.5,72,36,19,Flow Packets/s
+development,shap,0.5,72,36,20,SYN Flag Count
+development,shap,0.5,72,36,21,Fwd IAT Std
+development,shap,0.5,72,36,22,Fwd Packet Length Std
+development,shap,0.5,72,36,23,Idle Mean
+development,shap,0.5,72,36,24,Idle Max
+development,shap,0.5,72,36,25,Fwd Packets/s
+development,shap,0.5,72,36,26,Bwd Packets/s
+development,shap,0.5,72,36,27,ACK Flag Count
+development,shap,0.5,72,36,28,Idle Min
+development,shap,0.5,72,36,29,Fwd IAT Total
+development,shap,0.5,72,36,30,RST Flag Count
+development,shap,0.5,72,36,31,Total Length of Fwd Packet
+development,shap,0.5,72,36,32,Bwd Packet Length Std
+development,shap,0.5,72,36,33,Flow IAT Std
+development,shap,0.5,72,36,34,Bwd IAT Mean
+development,shap,0.5,72,36,35,Fwd Packet Length Max
+development,shap,0.5,72,36,36,Bwd Packet Length Min
+development,mi,0.25,72,18,1,Flow IAT Max
+development,mi,0.25,72,18,2,Fwd Header Length
+development,mi,0.25,72,18,3,Fwd Packets/s
+development,mi,0.25,72,18,4,Fwd IAT Max
+development,mi,0.25,72,18,5,Fwd IAT Mean
+development,mi,0.25,72,18,6,Flow Packets/s
+development,mi,0.25,72,18,7,Fwd IAT Std
+development,mi,0.25,72,18,8,Flow IAT Std
+development,mi,0.25,72,18,9,Flow Duration
+development,mi,0.25,72,18,10,Flow IAT Mean
+development,mi,0.25,72,18,11,Fwd Segment Size Avg
+development,mi,0.25,72,18,12,Fwd Packet Length Mean
+development,mi,0.25,72,18,13,Fwd IAT Total
+development,mi,0.25,72,18,14,Packet Length Mean
+development,mi,0.25,72,18,15,Fwd Packet Length Max
+development,mi,0.25,72,18,16,Fwd IAT Min
+development,mi,0.25,72,18,17,Average Packet Size
+development,mi,0.25,72,18,18,Flow Bytes/s
+development,mi,0.5,72,36,1,Flow IAT Max
+development,mi,0.5,72,36,2,Fwd Header Length
+development,mi,0.5,72,36,3,Fwd Packets/s
+development,mi,0.5,72,36,4,Fwd IAT Max
+development,mi,0.5,72,36,5,Fwd IAT Mean
+development,mi,0.5,72,36,6,Flow Packets/s
+development,mi,0.5,72,36,7,Fwd IAT Std
+development,mi,0.5,72,36,8,Flow IAT Std
+development,mi,0.5,72,36,9,Flow Duration
+development,mi,0.5,72,36,10,Flow IAT Mean
+development,mi,0.5,72,36,11,Fwd Segment Size Avg
+development,mi,0.5,72,36,12,Fwd Packet Length Mean
+development,mi,0.5,72,36,13,Fwd IAT Total
+development,mi,0.5,72,36,14,Packet Length Mean
+development,mi,0.5,72,36,15,Fwd Packet Length Max
+development,mi,0.5,72,36,16,Fwd IAT Min
+development,mi,0.5,72,36,17,Average Packet Size
+development,mi,0.5,72,36,18,Flow Bytes/s
+development,mi,0.5,72,36,19,Bwd Packets/s
+development,mi,0.5,72,36,20,Total Length of Fwd Packet
+development,mi,0.5,72,36,21,Packet Length Max
+development,mi,0.5,72,36,22,Bwd Header Length
+development,mi,0.5,72,36,23,Total Fwd Packet
+development,mi,0.5,72,36,24,ACK Flag Count
+development,mi,0.5,72,36,25,Fwd Act Data Pkts
+development,mi,0.5,72,36,26,FWD Init Win Bytes
+development,mi,0.5,72,36,27,Flow IAT Min
+development,mi,0.5,72,36,28,Total Bwd packets
+development,mi,0.5,72,36,29,Bwd Packet Length Mean
+development,mi,0.5,72,36,30,Bwd Segment Size Avg
+development,mi,0.5,72,36,31,Total Length of Bwd Packet
+development,mi,0.5,72,36,32,Bwd IAT Max
+development,mi,0.5,72,36,33,Bwd IAT Std
+development,mi,0.5,72,36,34,Bwd Bulk Rate Avg
+development,mi,0.5,72,36,35,Bwd IAT Mean
+development,mi,0.5,72,36,36,Bwd Bytes/Bulk Avg

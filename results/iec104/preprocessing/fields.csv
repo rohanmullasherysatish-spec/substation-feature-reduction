@@ -1,0 +1,309 @@
+original_field,kind,training_rows,training_missing,status,reason,encoded_columns,median,mean,scale,training_categories,scope
+Protocol,categorical_integer,170649,0,active,,3,,,,"[""0"", ""17"", ""6""]",fold_0
+Flow Duration,numeric_measurement,170649,0,active,,1,4142247.0,5039772.58913911,6031382.065509299,,fold_0
+Total Fwd Packet,integer_count,170649,0,active,,1,3.0,4.832345926433791,64.46168410764633,,fold_0
+Total Bwd packets,integer_count,170649,0,active,,1,1.0,1.7716013571717384,81.42461532409408,,fold_0
+Total Length of Fwd Packet,numeric_measurement,170649,0,active,,1,0.0,127.63092077890876,1060.9925329495652,,fold_0
+Total Length of Bwd Packet,numeric_measurement,170649,0,active,,1,0.0,44.02689145556083,2993.6855142799054,,fold_0
+Fwd Packet Length Max,numeric_measurement,170649,0,active,,1,0.0,105.30704545587727,353.80270420371573,,fold_0
+Fwd Packet Length Min,numeric_measurement,170649,0,active,,1,0.0,105.16528078101835,353.83339097538885,,fold_0
+Fwd Packet Length Mean,numeric_measurement,170649,0,active,,1,0.0,105.18527383345577,353.82778507327333,,fold_0
+Fwd Packet Length Std,numeric_measurement,170649,0,active,,1,0.0,0.04509061251962335,0.8901346341127985,,fold_0
+Bwd Packet Length Max,numeric_measurement,170649,0,active,,1,0.0,0.8572039683795393,16.441444397044073,,fold_0
+Bwd Packet Length Min,numeric_measurement,170649,0,active,,1,0.0,0.18927740566894619,2.9965986376649,,fold_0
+Bwd Packet Length Mean,numeric_measurement,170649,0,active,,1,0.0,0.29448530551290614,3.690044403364562,,fold_0
+Bwd Packet Length Std,numeric_measurement,170649,0,active,,1,0.0,0.12316806643964745,3.039392476112849,,fold_0
+Flow Bytes/s,numeric_measurement,170649,0,active,,1,0.0,306578.58059896063,1120759.9862529617,,fold_0
+Flow Packets/s,numeric_measurement,170649,0,active,,1,0.9437162886847,2141.604110646845,3943.3066155228294,,fold_0
+Flow IAT Mean,numeric_measurement,170649,0,active,,1,1685566.75,1227909.0612083517,1129477.2854089565,,fold_0
+Flow IAT Std,numeric_measurement,170649,0,active,,1,34094.60688465333,246583.56138429377,540148.4597403819,,fold_0
+Flow IAT Max,numeric_measurement,170649,0,active,,1,2115587.0,1455741.1418115548,1468923.9828814694,,fold_0
+Flow IAT Min,numeric_measurement,170649,1,active,,1,1499.5,1016177.6266107624,1146871.5037016538,,fold_0
+Fwd IAT Total,numeric_measurement,170649,0,active,,1,4142196.0,5039524.084881834,6031507.929665572,,fold_0
+Fwd IAT Mean,numeric_measurement,170649,0,active,,1,2051982.5714285711,1348767.4996725651,1178822.8070257492,,fold_0
+Fwd IAT Std,numeric_measurement,170649,0,active,,1,14517.609324541008,76592.06227372964,291358.8746557855,,fold_0
+Fwd IAT Max,numeric_measurement,170649,0,active,,1,2115587.0,1455722.075130824,1469428.8238632425,,fold_0
+Fwd IAT Min,numeric_measurement,170649,0,active,,1,2007309.0,1293397.2442381731,1135503.006879682,,fold_0
+Bwd IAT Total,numeric_measurement,170649,0,active,,1,0.0,77196.50505423413,1318185.0144705824,,fold_0
+Bwd IAT Mean,numeric_measurement,170649,0,active,,1,0.0,4739.65166184575,68799.91537805599,,fold_0
+Bwd IAT Std,numeric_measurement,170649,0,active,,1,0.0,8326.321734534136,128715.66532870005,,fold_0
+Bwd IAT Max,numeric_measurement,170649,0,active,,1,0.0,22372.263564392408,414750.6255427829,,fold_0
+Bwd IAT Min,numeric_measurement,170649,0,active,,1,0.0,138.79828771337657,23937.354774952746,,fold_0
+Fwd PSH Flags,integer_count,170649,0,active,,1,0.0,0.0008496973319503777,0.029137181510819714,,fold_0
+Bwd PSH Flags,integer_count,170649,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_0
+Fwd URG Flags,integer_count,170649,0,active,,1,0.0,3.5159889597946665e-05,0.005929473280158207,,fold_0
+Bwd URG Flags,integer_count,170649,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_0
+Fwd Header Length,integer_count,170649,0,active,,1,60.0,67.31124120270262,1240.646604476552,,fold_0
+Bwd Header Length,integer_count,170649,0,active,,1,20.0,31.943416017673705,1625.4968579605843,,fold_0
+Fwd Packets/s,numeric_measurement,170649,0,active,,1,0.733469970639197,1072.0493859155863,1972.1170524216525,,fold_0
+Bwd Packets/s,numeric_measurement,170649,0,active,,1,0.1474480864777129,1069.5547247312586,1971.734363596389,,fold_0
+Packet Length Min,numeric_measurement,170649,0,active,,1,0.0,0.22184718339984413,3.283934464968886,,fold_0
+Packet Length Max,numeric_measurement,170649,0,active,,1,0.0,105.90351540296163,353.99306926554516,,fold_0
+Packet Length Mean,numeric_measurement,170649,0,active,,1,0.0,70.24715701663645,235.86426359248986,,fold_0
+Packet Length Std,numeric_measurement,170649,0,active,,1,0.0,60.711743800343854,204.29249680370222,,fold_0
+Packet Length Variance,numeric_measurement,170649,0,active,,1,0.0,45421.34008556927,165421.52608497418,,fold_0
+FIN Flag Count,integer_count,170649,0,active,,1,0.0,0.006692098986809182,0.11287911968829317,,fold_0
+SYN Flag Count,integer_count,170649,0,active,,1,0.0,0.04615321507890465,0.25290067856536247,,fold_0
+RST Flag Count,integer_count,170649,0,active,,1,0.0,0.49298853201600945,0.5000094390436105,,fold_0
+PSH Flag Count,integer_count,170649,0,active,,1,0.0,1.5486349172863598,142.33465082685422,,fold_0
+ACK Flag Count,integer_count,170649,0,active,,1,0.0,2.3093425686643343,142.53464914573738,,fold_0
+URG Flag Count,integer_count,170649,0,active,,1,0.0,3.5159889597946665e-05,0.005929473280158207,,fold_0
+CWR Flag Count,integer_count,170649,0,active,,1,0.0,2.343992639863111e-05,0.004841423031349516,,fold_0
+ECE Flag Count,integer_count,170649,0,active,,1,0.0,2.343992639863111e-05,0.004841423031349516,,fold_0
+Down/Up Ratio,numeric_measurement,170649,0,active,,1,0.0,0.36512959349307644,0.48147865312166904,,fold_0
+Average Packet Size,numeric_measurement,170649,0,active,,1,0.0,105.23500390783244,353.81705079080365,,fold_0
+Fwd Segment Size Avg,numeric_measurement,170649,0,active,,1,0.0,105.18527383345577,353.82778507327333,,fold_0
+Bwd Segment Size Avg,numeric_measurement,170649,0,active,,1,0.0,0.29448530551290614,3.690044403364562,,fold_0
+Fwd Bytes/Bulk Avg,numeric_measurement,170649,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_0
+Fwd Packet/Bulk Avg,numeric_measurement,170649,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_0
+Fwd Bulk Rate Avg,numeric_measurement,170649,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_0
+Bwd Bytes/Bulk Avg,numeric_measurement,170649,0,active,,1,0.0,65.91278589385229,3523.5614665768767,,fold_0
+Bwd Packet/Bulk Avg,numeric_measurement,170649,0,active,,1,0.0,2.3451704961646422,142.8216570479901,,fold_0
+Bwd Bulk Rate Avg,numeric_measurement,170649,0,active,,1,0.0,160.62355478203798,2377.6159382153137,,fold_0
+Subflow Fwd Packets,integer_count,170649,0,active,,1,1.0,0.990342750323764,15.9261119380835,,fold_0
+Subflow Fwd Bytes,numeric_measurement,170649,0,active,,1,0.0,0.3062074785085175,30.316924530395937,,fold_0
+Subflow Bwd Packets,integer_count,170649,0,active,,1,0.0,0.21256497254598622,2.7899039464071382,,fold_0
+Subflow Bwd Bytes,numeric_measurement,170649,0,active,,1,0.0,1.560120481221689,53.05269033833458,,fold_0
+FWD Init Win Bytes,numeric_measurement,170649,0,active,,1,512.0,1647.1624679898505,8791.42070999622,,fold_0
+Bwd Init Win Bytes,numeric_measurement,170649,0,active,,1,0.0,96.71367543905912,1292.0820818625086,,fold_0
+Fwd Act Data Pkts,integer_count,170649,0,active,,1,0.0,1.150085848730435,62.26836992927159,,fold_0
+Fwd Seg Size Min,numeric_measurement,170649,0,active,,1,20.0,17.706754800789927,5.431001782946924,,fold_0
+Active Mean,numeric_measurement,170649,0,active,,1,0.0,577.2723489408362,82089.62315136896,,fold_0
+Active Std,numeric_measurement,170649,0,active,,1,0.0,211.31675946741132,66396.32387246107,,fold_0
+Active Max,numeric_measurement,170649,0,active,,1,0.0,1039.2637753517454,193705.3212391225,,fold_0
+Active Min,numeric_measurement,170649,0,active,,1,0.0,480.7942033062016,74254.3591711409,,fold_0
+Idle Mean,numeric_measurement,170649,0,active,,1,0.0,11417.602610161377,931457.3524447876,,fold_0
+Idle Std,numeric_measurement,170649,0,active,,1,0.0,796.949774062203,134174.24443312568,,fold_0
+Idle Max,numeric_measurement,170649,0,active,,1,0.0,12130.201864646146,966287.9227696401,,fold_0
+Idle Min,numeric_measurement,170649,0,active,,1,0.0,10789.4176115887,911139.616144113,,fold_0
+Protocol,categorical_integer,170650,0,active,,3,,,,"[""0"", ""17"", ""6""]",fold_1
+Flow Duration,numeric_measurement,170650,0,active,,1,4142287.0,5026976.772083212,6035046.694979327,,fold_1
+Total Fwd Packet,integer_count,170650,0,active,,1,3.0,5.144207442133021,113.52263055619191,,fold_1
+Total Bwd packets,integer_count,170650,0,active,,1,1.0,2.011555815997656,104.48871769465251,,fold_1
+Total Length of Fwd Packet,numeric_measurement,170650,0,active,,1,0.0,140.77334895985936,3775.9543760695447,,fold_1
+Total Length of Bwd Packet,numeric_measurement,170650,0,active,,1,0.0,47.09129211837094,3339.215674606802,,fold_1
+Fwd Packet Length Max,numeric_measurement,170650,0,active,,1,0.0,105.93026662760035,354.0219553345658,,fold_1
+Fwd Packet Length Min,numeric_measurement,170650,0,active,,1,0.0,105.78008203926164,354.0477608746628,,fold_1
+Fwd Packet Length Mean,numeric_measurement,170650,0,active,,1,0.0,105.8004424487565,354.04208351970186,,fold_1
+Fwd Packet Length Std,numeric_measurement,170650,0,active,,1,0.0,0.04536770020084042,0.9334722967978973,,fold_1
+Bwd Packet Length Max,numeric_measurement,170650,0,active,,1,0.0,0.8288895399941401,15.56727271962395,,fold_1
+Bwd Packet Length Min,numeric_measurement,170650,0,active,,1,0.0,0.19367711690594785,3.0216774946998615,,fold_1
+Bwd Packet Length Mean,numeric_measurement,170650,0,active,,1,0.0,0.2955589534850508,3.6572522647903916,,fold_1
+Bwd Packet Length Std,numeric_measurement,170650,0,active,,1,0.0,0.11876100636710742,2.8296537004260984,,fold_1
+Flow Bytes/s,numeric_measurement,170650,0,active,,1,0.0,301442.78770359367,1096641.9764020215,,fold_1
+Flow Packets/s,numeric_measurement,170650,0,active,,1,0.9437479060593336,2160.965349067142,4097.81347637668,,fold_1
+Flow IAT Mean,numeric_measurement,170650,0,active,,1,1677865.625,1226662.4336647377,1097959.2479898243,,fold_1
+Flow IAT Std,numeric_measurement,170650,0,active,,1,34121.706707278165,247248.2309101776,542871.8858930753,,fold_1
+Flow IAT Max,numeric_measurement,170650,0,active,,1,2115983.5,1454869.5391971872,1428165.8560050563,,fold_1
+Flow IAT Min,numeric_measurement,170650,1,active,,1,1378.0,1014704.2959800762,1120306.364709227,,fold_1
+Fwd IAT Total,numeric_measurement,170650,0,active,,1,4142210.5,5026725.065701729,6035166.785201201,,fold_1
+Fwd IAT Mean,numeric_measurement,170650,0,active,,1,2052253.785714286,1348011.240094151,1152533.97533383,,fold_1
+Fwd IAT Std,numeric_measurement,170650,0,active,,1,14352.49989113395,77132.44859277838,318477.70652271697,,fold_1
+Fwd IAT Max,numeric_measurement,170650,0,active,,1,2115983.5,1454844.747008497,1428685.9423171862,,fold_1
+Fwd IAT Min,numeric_measurement,170650,0,active,,1,2007347.0,1292283.670993261,1109132.1057180972,,fold_1
+Bwd IAT Total,numeric_measurement,170650,0,active,,1,0.0,80603.5688778201,1381985.0209745918,,fold_1
+Bwd IAT Mean,numeric_measurement,170650,0,active,,1,0.0,4979.834917106592,101924.64317872502,,fold_1
+Bwd IAT Std,numeric_measurement,170650,0,active,,1,0.0,8735.109577267565,182774.97220249928,,fold_1
+Bwd IAT Max,numeric_measurement,170650,0,active,,1,0.0,23292.432475827718,455756.36415166524,,fold_1
+Bwd IAT Min,numeric_measurement,170650,0,active,,1,0.0,114.29687664811017,21416.174359827248,,fold_1
+Fwd PSH Flags,integer_count,170650,0,active,,1,0.0,0.0008789920890711983,0.029634767790191113,,fold_1
+Bwd PSH Flags,integer_count,170650,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_1
+Fwd URG Flags,integer_count,170650,0,active,,1,0.0,6.445941986522122e-05,0.008028403630137926,,fold_1
+Bwd URG Flags,integer_count,170650,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_1
+Fwd Header Length,integer_count,170650,0,active,,1,60.0,73.81145033694696,2240.319780391469,,fold_1
+Bwd Header Length,integer_count,170650,0,active,,1,20.0,36.72525051274538,2087.458672971275,,fold_1
+Fwd Packets/s,numeric_measurement,170650,0,active,,1,0.7335499587867181,1081.7285147644952,2049.5208434122073,,fold_1
+Bwd Packets/s,numeric_measurement,170650,0,active,,1,0.14763108939490915,1079.2368343026474,2048.9358428118567,,fold_1
+Packet Length Min,numeric_measurement,170650,0,active,,1,0.0,0.22335774978025197,3.224080302097142,,fold_1
+Packet Length Max,numeric_measurement,170650,0,active,,1,0.0,106.49364781716965,354.17990338112605,,fold_1
+Packet Length Mean,numeric_measurement,170650,0,active,,1,0.0,70.65615442900057,236.00663680256062,,fold_1
+Packet Length Std,numeric_measurement,170650,0,active,,1,0.0,61.062375635683054,204.41653482382486,,fold_1
+Packet Length Variance,numeric_measurement,170650,0,active,,1,0.0,45514.73342765324,165424.2060138485,,fold_1
+FIN Flag Count,integer_count,170650,0,active,,1,0.0,0.0067799589803691765,0.1133656741546101,,fold_1
+SYN Flag Count,integer_count,170650,0,active,,1,0.0,0.046012305889247,0.25257781868678275,,fold_1
+RST Flag Count,integer_count,170650,0,active,,1,0.0,0.493419279226487,0.5000035736794137,,fold_1
+PSH Flag Count,integer_count,170650,0,active,,1,0.0,2.1220568414884267,211.47778827838857,,fold_1
+ACK Flag Count,integer_count,170650,0,active,,1,0.0,2.8777263404629356,211.58959845756607,,fold_1
+URG Flag Count,integer_count,170650,0,active,,1,0.0,6.445941986522122e-05,0.008028403630137926,,fold_1
+CWR Flag Count,integer_count,170650,0,active,,1,0.0,1.7579841781423967e-05,0.0041927953361196755,,fold_1
+ECE Flag Count,integer_count,170650,0,active,,1,0.0,1.7579841781423967e-05,0.0041927953361196755,,fold_1
+Down/Up Ratio,numeric_measurement,170650,0,active,,1,0.0,0.36567242894813945,0.48166687994234264,,fold_1
+Average Packet Size,numeric_measurement,170650,0,active,,1,0.0,105.8482677511715,354.0314249900005,,fold_1
+Fwd Segment Size Avg,numeric_measurement,170650,0,active,,1,0.0,105.8004424487565,354.04208351970186,,fold_1
+Bwd Segment Size Avg,numeric_measurement,170650,0,active,,1,0.0,0.29555895348505085,3.6572522647903916,,fold_1
+Fwd Bytes/Bulk Avg,numeric_measurement,170650,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_1
+Fwd Packet/Bulk Avg,numeric_measurement,170650,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_1
+Fwd Bulk Rate Avg,numeric_measurement,170650,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_1
+Bwd Bytes/Bulk Avg,numeric_measurement,170650,0,active,,1,0.0,81.40620568414884,5530.484413358949,,fold_1
+Bwd Packet/Bulk Avg,numeric_measurement,170650,0,active,,1,0.0,2.9022912393788456,211.79547922660433,,fold_1
+Bwd Bulk Rate Avg,numeric_measurement,170650,0,active,,1,0.0,163.99602109581014,2416.4513197841584,,fold_1
+Subflow Fwd Packets,integer_count,170650,0,active,,1,1.0,0.9659654263111632,13.854720303849382,,fold_1
+Subflow Fwd Bytes,numeric_measurement,170650,0,active,,1,0.0,0.37961910342806915,39.53419935123325,,fold_1
+Subflow Bwd Packets,integer_count,170650,0,active,,1,0.0,0.2126692059771462,2.8196474971292522,,fold_1
+Subflow Bwd Bytes,numeric_measurement,170650,0,active,,1,0.0,1.6108584822736596,58.77757132265918,,fold_1
+FWD Init Win Bytes,numeric_measurement,170650,0,active,,1,512.0,1674.0979431585115,8883.24776742804,,fold_1
+Bwd Init Win Bytes,numeric_measurement,170650,0,active,,1,0.0,98.22676237913859,1338.6133387030122,,fold_1
+Fwd Act Data Pkts,integer_count,170650,0,active,,1,0.0,1.4741048930559626,112.15629675704028,,fold_1
+Fwd Seg Size Min,numeric_measurement,170650,0,active,,1,20.0,17.730231467916788,5.4361557959658935,,fold_1
+Active Mean,numeric_measurement,170650,0,active,,1,0.0,775.5402849283087,98079.27087318456,,fold_1
+Active Std,numeric_measurement,170650,0,active,,1,0.0,267.05197057072826,67401.9941105965,,fold_1
+Active Max,numeric_measurement,170650,0,active,,1,0.0,1256.8980544975095,201772.67911570604,,fold_1
+Active Min,numeric_measurement,170650,0,active,,1,0.0,637.6686551421037,86976.98361326086,,fold_1
+Idle Mean,numeric_measurement,170650,0,active,,1,0.0,10907.925922709157,874496.2913785012,,fold_1
+Idle Std,numeric_measurement,170650,0,active,,1,0.0,711.7368118869068,100463.73440162875,,fold_1
+Idle Max,numeric_measurement,170650,0,active,,1,0.0,11524.264371520656,901509.958169123,,fold_1
+Idle Min,numeric_measurement,170650,0,active,,1,0.0,10268.940316437152,855598.9597761502,,fold_1
+Protocol,categorical_integer,170649,0,active,,3,,,,"[""0"", ""17"", ""6""]",fold_2
+Flow Duration,numeric_measurement,170649,0,active,,1,4143715.0,5054583.046487234,6045206.601169345,,fold_2
+Total Fwd Packet,integer_count,170649,0,active,,1,3.0,4.908097908572567,98.62089193911626,,fold_2
+Total Bwd packets,integer_count,170649,0,active,,1,1.0,1.7095441520313626,74.51550315160206,,fold_2
+Total Length of Fwd Packet,numeric_measurement,170649,0,active,,1,0.0,137.64676616915423,3654.07758187549,,fold_2
+Total Length of Bwd Packet,numeric_measurement,170649,0,active,,1,0.0,37.96866081840503,1990.0284277726641,,fold_2
+Fwd Packet Length Max,numeric_measurement,170649,0,active,,1,0.0,106.44275676974374,353.44681082883227,,fold_2
+Fwd Packet Length Min,numeric_measurement,170649,0,active,,1,0.0,106.29859536241057,353.4762199901345,,fold_2
+Fwd Packet Length Mean,numeric_measurement,170649,0,active,,1,0.0,106.31864376300571,353.4705780031701,,fold_2
+Fwd Packet Length Std,numeric_measurement,170649,0,active,,1,0.0,0.04510463664166658,0.9540307493887557,,fold_2
+Bwd Packet Length Max,numeric_measurement,170649,0,active,,1,0.0,0.8544497770277001,16.108020996245422,,fold_2
+Bwd Packet Length Min,numeric_measurement,170649,0,active,,1,0.0,0.19455724909023786,3.0351440051467478,,fold_2
+Bwd Packet Length Mean,numeric_measurement,170649,0,active,,1,0.0,0.2980332859584416,3.685406187988372,,fold_2
+Bwd Packet Length Std,numeric_measurement,170649,0,active,,1,0.0,0.1220790010780926,2.979979573942201,,fold_2
+Flow Bytes/s,numeric_measurement,170649,0,active,,1,0.0,309387.54008527927,1120113.544704311,,fold_2
+Flow Packets/s,numeric_measurement,170649,0,active,,1,0.9436526150501268,2154.238700399018,4010.470148552596,,fold_2
+Flow IAT Mean,numeric_measurement,170649,0,active,,1,1685602.5,1228590.5119897362,1108244.017683832,,fold_2
+Flow IAT Std,numeric_measurement,170649,0,active,,1,34137.78696135773,247853.5265782616,557056.7118253134,,fold_2
+Flow IAT Max,numeric_measurement,170649,0,active,,1,2115821.0,1457925.6387848742,1483289.0517312496,,fold_2
+Flow IAT Min,numeric_measurement,170649,0,active,,1,1452.0,1016021.766532473,1126676.7671008157,,fold_2
+Fwd IAT Total,numeric_measurement,170649,0,active,,1,4143715.0,5054337.925759893,6045349.94622124,,fold_2
+Fwd IAT Mean,numeric_measurement,170649,0,active,,1,2052148.5714285716,1350017.4202892592,1162200.4939410184,,fold_2
+Fwd IAT Std,numeric_measurement,170649,0,active,,1,14572.763653473556,77534.9191404745,342723.0595643509,,fold_2
+Fwd IAT Max,numeric_measurement,170649,0,active,,1,2115821.0,1457907.761815188,1483784.8912994529,,fold_2
+Fwd IAT Min,numeric_measurement,170649,0,active,,1,2007221.0,1294042.5265603666,1115164.299582654,,fold_2
+Bwd IAT Total,numeric_measurement,170649,0,active,,1,0.0,78175.05823063715,1317782.117294296,,fold_2
+Bwd IAT Mean,numeric_measurement,170649,0,active,,1,0.0,4944.844658548548,100543.74955196805,,fold_2
+Bwd IAT Std,numeric_measurement,170649,0,active,,1,0.0,8845.016865581516,185969.77576006152,,fold_2
+Bwd IAT Max,numeric_measurement,170649,0,active,,1,0.0,23468.1964324432,507495.0259335412,,fold_2
+Bwd IAT Min,numeric_measurement,170649,0,active,,1,0.0,54.82285275624235,10730.17731502042,,fold_2
+Fwd PSH Flags,integer_count,170649,0,active,,1,0.0,0.0008496973319503777,0.029137181510819714,,fold_2
+Bwd PSH Flags,integer_count,170649,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_2
+Fwd URG Flags,integer_count,170649,0,active,,1,0.0,5.273983439691999e-05,0.007262028153814043,,fold_2
+Bwd URG Flags,integer_count,170649,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_2
+Fwd Header Length,integer_count,170649,0,active,,1,60.0,68.87878628061108,1937.7351831172957,,fold_2
+Bwd Header Length,integer_count,170649,0,active,,1,20.0,30.620490011661364,1486.9406599049757,,fold_2
+Fwd Packets/s,numeric_measurement,170649,0,active,,1,0.7330292727909796,1078.2751288528848,2005.4140944619294,,fold_2
+Bwd Packets/s,numeric_measurement,170649,0,active,,1,0.1474151997748675,1075.9635715461332,2005.3915682928935,,fold_2
+Packet Length Min,numeric_measurement,170649,0,active,,1,0.0,0.2253631723596388,3.30689104500115,,fold_2
+Packet Length Max,numeric_measurement,170649,0,active,,1,0.0,107.02870804985672,353.6209295023886,,fold_2
+Packet Length Mean,numeric_measurement,170649,0,active,,1,0.0,71.00283117176538,235.6257484895781,,fold_2
+Packet Length Std,numeric_measurement,170649,0,active,,1,0.0,61.36244856210665,204.08678886058922,,fold_2
+Packet Length Variance,numeric_measurement,170649,0,active,,1,0.0,45416.76748096391,164886.0467424471,,fold_2
+FIN Flag Count,integer_count,170649,0,active,,1,0.0,0.006674519042010208,0.1129061142171263,,fold_2
+SYN Flag Count,integer_count,170649,0,active,,1,0.0,0.04621181489490123,0.253098439967246,,fold_2
+RST Flag Count,integer_count,170649,0,active,,1,0.0,0.4926603730464286,0.4999812894156944,,fold_2
+PSH Flag Count,integer_count,170649,0,active,,1,0.0,1.5663496416621252,167.80184444956188,,fold_2
+ACK Flag Count,integer_count,170649,0,active,,1,0.0,2.3201600946973024,167.92036523676882,,fold_2
+URG Flag Count,integer_count,170649,0,active,,1,0.0,5.273983439691999e-05,0.007262028153814043,,fold_2
+CWR Flag Count,integer_count,170649,0,active,,1,0.0,1.7579944798973332e-05,0.00419280762073747,,fold_2
+ECE Flag Count,integer_count,170649,0,active,,1,0.0,1.7579944798973332e-05,0.00419280762073747,,fold_2
+Down/Up Ratio,numeric_measurement,170649,0,active,,1,0.0,0.3646373550387052,0.48136484524597384,,fold_2
+Average Packet Size,numeric_measurement,170649,0,active,,1,0.0,106.3678489907125,353.4603865297721,,fold_2
+Fwd Segment Size Avg,numeric_measurement,170649,0,active,,1,0.0,106.31864376300571,353.4705780031701,,fold_2
+Bwd Segment Size Avg,numeric_measurement,170649,0,active,,1,0.0,0.2980332859584416,3.685406187988372,,fold_2
+Fwd Bytes/Bulk Avg,numeric_measurement,170649,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_2
+Fwd Packet/Bulk Avg,numeric_measurement,170649,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_2
+Fwd Bulk Rate Avg,numeric_measurement,170649,0,dropped,constant_after_training_imputation,0,0.0,,,,fold_2
+Bwd Bytes/Bulk Avg,numeric_measurement,170649,0,active,,1,0.0,68.75504690915271,4539.165340604469,,fold_2
+Bwd Packet/Bulk Avg,numeric_measurement,170649,0,active,,1,0.0,2.357570217229518,168.21719192527257,,fold_2
+Bwd Bulk Rate Avg,numeric_measurement,170649,0,active,,1,0.0,162.3921030887963,2352.130596415856,,fold_2
+Subflow Fwd Packets,integer_count,170649,0,active,,1,1.0,0.9632227554805478,13.61230387422768,,fold_2
+Subflow Fwd Bytes,numeric_measurement,170649,0,active,,1,0.0,0.2831191510058658,28.451434388348677,,fold_2
+Subflow Bwd Packets,integer_count,170649,0,active,,1,0.0,0.20800590686145246,2.0103900407672595,,fold_2
+Subflow Bwd Bytes,numeric_measurement,170649,0,active,,1,0.0,1.4491851695585676,35.862972094211734,,fold_2
+FWD Init Win Bytes,numeric_measurement,170649,0,active,,1,512.0,1714.3890324584381,9029.259011480579,,fold_2
+Bwd Init Win Bytes,numeric_measurement,170649,0,active,,1,0.0,96.96362123422932,1293.6628846201672,,fold_2
+Fwd Act Data Pkts,integer_count,170649,0,active,,1,0.0,1.227121166839536,97.05773608452144,,fold_2
+Fwd Seg Size Min,numeric_measurement,170649,0,active,,1,20.0,17.71200534430322,5.483630534364578,,fold_2
+Active Mean,numeric_measurement,170649,0,active,,1,0.0,482.262053534513,63276.46094412216,,fold_2
+Active Std,numeric_measurement,170649,0,active,,1,0.0,127.39733505099784,18651.20577021061,,fold_2
+Active Max,numeric_measurement,170649,0,active,,1,0.0,686.7415279316023,81977.01824860896,,fold_2
+Active Min,numeric_measurement,170649,0,active,,1,0.0,406.75096836195934,55751.58431059731,,fold_2
+Idle Mean,numeric_measurement,170649,0,active,,1,0.0,12104.111973830624,959577.3231275972,,fold_2
+Idle Std,numeric_measurement,170649,0,active,,1,0.0,885.1607741620765,131408.676761667,,fold_2
+Idle Max,numeric_measurement,170649,0,active,,1,0.0,12802.95824177112,989341.1364745431,,fold_2
+Idle Min,numeric_measurement,170649,0,active,,1,0.0,11322.642834121501,937353.9925945144,,fold_2
+Protocol,categorical_integer,255974,0,active,,3,,,,"[""0"", ""17"", ""6""]",development
+Flow Duration,numeric_measurement,255974,0,active,,1,4142574.0,5040444.109597068,6037225.153389507,,development
+Total Fwd Packet,integer_count,255974,0,active,,1,3.0,4.961550782501348,94.46137277487196,,development
+Total Bwd packets,integer_count,255974,0,active,,1,1.0,1.8309007946119529,87.75057464617784,,development
+Total Length of Fwd Packet,numeric_measurement,255974,0,active,,1,0.0,135.35035589552064,3094.9389477897366,,development
+Total Length of Bwd Packet,numeric_measurement,255974,0,active,,1,0.0,43.02895606585044,2832.7130015414155,,development
+Fwd Packet Length Max,numeric_measurement,255974,0,active,,1,0.0,105.89335635650495,353.7575415008525,,development
+Fwd Packet Length Min,numeric_measurement,255974,0,active,,1,0.0,105.74798612359068,353.7861729346611,,development
+Fwd Packet Length Mean,numeric_measurement,255974,0,active,,1,0.0,105.76812007820882,353.7805312254163,,development
+Fwd Packet Length Std,numeric_measurement,255974,0,active,,1,0.0,0.045187650139073464,0.9262622007863992,,development
+Bwd Packet Length Max,numeric_measurement,255974,0,active,,1,0.0,0.8468477267222452,16.042961214923825,,development
+Bwd Packet Length Min,numeric_measurement,255974,0,active,,1,0.0,0.19250392618000264,3.017849871880559,,development
+Bwd Packet Length Mean,numeric_measurement,255974,0,active,,1,0.0,0.2960258474068029,3.67759642267498,,development
+Bwd Packet Length Std,numeric_measurement,255974,0,active,,1,0.0,0.12133601959843912,2.950995954930023,,development
+Flow Bytes/s,numeric_measurement,255974,0,active,,1,0.0,305802.9609457661,1112566.579293067,,development
+Flow Packets/s,numeric_measurement,255974,0,active,,1,0.9437069374728096,2152.2694036903617,4017.7029183330706,,development
+Flow IAT Mean,numeric_measurement,255974,0,active,,1,1685506.625,1227720.6668871997,1111971.2199157916,,development
+Flow IAT Std,numeric_measurement,255974,0,active,,1,34119.24635937193,247228.43966290317,546742.841903899,,development
+Flow IAT Max,numeric_measurement,255974,0,active,,1,2115751.0,1456178.7707071812,1460313.4599289268,,development
+Flow IAT Min,numeric_measurement,255974,1,active,,1,1444.0,1015634.5612445014,1131341.7253936292,,development
+Fwd IAT Total,numeric_measurement,255974,0,active,,1,4142286.5,5040195.665801995,6037354.932997279,,development
+Fwd IAT Mean,numeric_measurement,255974,0,active,,1,2052126.5714285714,1348932.051553346,1164569.9710413779,,development
+Fwd IAT Std,numeric_measurement,255974,0,active,,1,14507.709829604397,77086.47675879221,318212.5011157163,,development
+Fwd IAT Max,numeric_measurement,255974,0,active,,1,2115751.0,1456158.192085915,1460820.1607376335,,development
+Fwd IAT Min,numeric_measurement,255974,0,active,,1,2007270.0,1293241.1453936729,1119990.1730428406,,development
+Bwd IAT Total,numeric_measurement,255974,0,active,,1,0.0,78658.38118715183,1339658.024616444,,development
+Bwd IAT Mean,numeric_measurement,255974,0,active,,1,0.0,4888.110591667915,91708.14591557691,,development
+Bwd IAT Std,numeric_measurement,255974,0,active,,1,0.0,8635.482920397864,167888.20731073397,,development
+Bwd IAT Max,numeric_measurement,255974,0,active,,1,0.0,23044.297975575646,460899.0531078066,,development
+Bwd IAT Min,numeric_measurement,255974,0,active,,1,0.0,102.63936181018384,19551.558850619487,,development
+Fwd PSH Flags,integer_count,255974,0,active,,1,0.0,0.0008594622891387407,0.02930398631094905,,development
+Bwd PSH Flags,integer_count,255974,0,dropped,constant_after_training_imputation,0,0.0,,,,development
+Fwd URG Flags,integer_count,255974,0,active,,1,0.0,5.078640799456195e-05,0.007126277340612345,,development
+Bwd URG Flags,integer_count,255974,0,dropped,constant_after_training_imputation,0,0.0,,,,development
+Fwd Header Length,integer_count,255974,0,active,,1,60.0,70.00050005078641,1854.1023556689959,,development
+Bwd Header Length,integer_count,255974,0,active,,1,20.0,33.096392602373676,1752.212358134104,,development
+Fwd Packets/s,numeric_measurement,255974,0,active,,1,0.7333758365389487,1077.3510183950048,2009.2715203510709,,development
+Bwd Packets/s,numeric_measurement,255974,0,active,,1,0.1475083334842277,1074.918385295357,2008.9399602917847,,development
+Packet Length Min,numeric_measurement,255974,0,active,,1,0.0,0.22352270152437356,3.2718217225614374,,development
+Packet Length Max,numeric_measurement,255974,0,active,,1,0.0,106.47529045918726,353.9316757953917,,development
+Packet Length Mean,numeric_measurement,255974,0,active,,1,0.0,70.63538091304493,235.83247122816329,,development
+Packet Length Std,numeric_measurement,255974,0,active,,1,0.0,61.0455226989638,204.26549214458117,,development
+Packet Length Variance,numeric_measurement,255974,0,active,,1,0.0,45450.947122657664,165244.12657280674,,development
+FIN Flag Count,integer_count,255974,0,active,,1,0.0,0.006715525795588614,0.11305053319334712,,development
+SYN Flag Count,integer_count,255974,0,active,,1,0.0,0.04612577839936868,0.25285908343272895,,development
+RST Flag Count,integer_count,255974,0,active,,1,0.0,0.49302272887090093,0.49999819744556767,,development
+PSH Flag Count,integer_count,255974,0,active,,1,0.0,1.7456812019970778,176.2004157684999,,development
+ACK Flag Count,integer_count,255974,0,active,,1,0.0,2.5024104010563573,176.33663349353023,,development
+URG Flag Count,integer_count,255974,0,active,,1,0.0,5.078640799456195e-05,0.007126277340612345,,development
+CWR Flag Count,integer_count,255974,0,active,,1,0.0,1.953323384406229e-05,0.004419598657891674,,development
+ECE Flag Count,integer_count,255974,0,active,,1,0.0,1.953323384406229e-05,0.004419598657891674,,development
+Down/Up Ratio,numeric_measurement,255974,0,active,,1,0.0,0.3651464601873628,0.48150366143379625,,development
+Average Packet Size,numeric_measurement,255974,0,active,,1,0.0,105.81704027756962,353.77000267243574,,development
+Fwd Segment Size Avg,numeric_measurement,255974,0,active,,1,0.0,105.76812007820882,353.7805312254163,,development
+Bwd Segment Size Avg,numeric_measurement,255974,0,active,,1,0.0,0.2960258474068029,3.67759642267498,,development
+Fwd Bytes/Bulk Avg,numeric_measurement,255974,0,dropped,constant_after_training_imputation,0,0.0,,,,development
+Fwd Packet/Bulk Avg,numeric_measurement,255974,0,dropped,constant_after_training_imputation,0,0.0,,,,development
+Fwd Bulk Rate Avg,numeric_measurement,255974,0,dropped,constant_after_training_imputation,0,0.0,,,,development
+Bwd Bytes/Bulk Avg,numeric_measurement,255974,0,active,,1,0.0,72.02469782087243,4604.561372358582,,development
+Bwd Packet/Bulk Avg,numeric_measurement,255974,0,active,,1,0.0,2.535011368342097,176.59054046611845,,development
+Bwd Bulk Rate Avg,numeric_measurement,255974,0,active,,1,0.0,162.33722956237742,2382.2132235391064,,development
+Subflow Fwd Packets,integer_count,255974,0,active,,1,1.0,0.9731769632853337,14.501603028547537,,development
+Subflow Fwd Bytes,numeric_measurement,255974,0,active,,1,0.0,0.3229820216115699,33.12381196697752,,development
+Subflow Bwd Packets,integer_count,255974,0,active,,1,0.0,0.2110800315657059,2.567467383497162,,development
+Subflow Bwd Bytes,numeric_measurement,255974,0,active,,1,0.0,1.540054849320634,50.18486747305046,,development
+FWD Init Win Bytes,numeric_measurement,255974,0,active,,1,512.0,1678.5498058396556,8901.890712753662,,development
+Bwd Init Win Bytes,numeric_measurement,255974,0,active,,1,0.0,97.30135482509942,1308.29752247043,,development
+Fwd Act Data Pkts,integer_count,255974,0,active,,1,0.0,1.2837710079929994,92.87387398185385,,development
+Fwd Seg Size Min,numeric_measurement,255974,0,active,,1,20.0,17.71633056482299,5.450323439240759,,development
+Active Mean,numeric_measurement,255974,0,active,,1,0.0,611.6918825174271,82385.72184804354,,development
+Active Std,numeric_measurement,255974,0,active,,1,0.0,201.92214891623132,55675.80699008088,,development
+Active Max,numeric_measurement,255974,0,active,,1,0.0,994.30163219702,168279.96041906605,,development
+Active Min,numeric_measurement,255974,0,active,,1,0.0,508.4048614312391,73455.16819771902,,development
+Idle Mean,numeric_measurement,255974,0,active,,1,0.0,11476.545724866526,922522.8844530972,,development
+Idle Std,numeric_measurement,255974,0,active,,1,0.0,797.9489516365445,122968.71648357176,,development
+Idle Max,numeric_measurement,255974,0,active,,1,0.0,12152.473598881137,953105.2226322921,,development
+Idle Min,numeric_measurement,255974,0,active,,1,0.0,10793.665895755037,902008.419156374,,development

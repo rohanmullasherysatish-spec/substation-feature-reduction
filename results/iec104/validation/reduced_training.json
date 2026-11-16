@@ -1,0 +1,534 @@
+{
+  "status": "complete",
+  "recipe": {
+    "selection_recipe": {
+      "selectors": [
+        "shap",
+        "mi"
+      ],
+      "retention_fractions": [
+        0.25,
+        0.5
+      ],
+      "denominator": "active original fields in this training scope; round counts upward",
+      "shap_foreground_cap_per_true_class": 128,
+      "shap_background_cap_per_true_class": 16,
+      "shap_sample_seed": 45,
+      "shap_sampling": "without replacement within each true class; all available when below cap",
+      "shap_perturbation": "interventional with independent encoded components and explicit background",
+      "shap_output": {
+        "logistic_regression": "linear_decision_score",
+        "decision_tree": "class_probability",
+        "random_forest": "class_probability",
+        "xgboost": "class_margin",
+        "lightgbm": "class_margin"
+      },
+      "shap_field_aggregation": "signed component sum, then absolute value; mean across output classes, then within true class, then equal true-class mean",
+      "shap_group_interpretation": "aggregated component attributions, not jointly masked coalition-group SHAP",
+      "shap_common_rank": "equal model mean of average-tie ranks; exact doubled integer sums; alphabetical final ties",
+      "additivity_atol": 1e-05,
+      "additivity_rtol": 1e-05,
+      "tree_precision_correction": "https://github.com/shap/shap/pull/5122; preserve float64 thresholds in SHAP 0.53.0",
+      "mi_sample_cap_per_true_class": 2000,
+      "mi_sample_seed": 46,
+      "mi_estimator_seed": 47,
+      "mi_neighbours": 3,
+      "mi_field_representation": "one variable per original field; nominal Protocol integer-coded jointly; semantic counts discrete; measurements continuous",
+      "mi_distribution": "capped stratified training sample; residual class imbalance retained; no duplicated rare rows",
+      "mi_ties": "average-tie ranks; alphabetical final ties",
+      "reduced_parameter_policy": "reuse_selected_full_parameters",
+      "performance_interpretation": "paired observed differences; no formal equivalence claim or unapproved loss margin",
+      "additional_conditions": "no PI selector, classifier-specific reduced SHAP fits, or frequency-versus-balanced SHAP experiment",
+      "test_scoring": false
+    },
+    "parameter_policy": "reuse_selected_full_parameters",
+    "seed": 44,
+    "prediction_repeats": 3,
+    "comparison": "same saved observations and allocation; reduced minus full; no equivalence pass/fail",
+    "test_scoring": false
+  },
+  "pipelines": [
+    {
+      "model": "logistic_regression",
+      "condition": "shap_25",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/shap_25/logistic_regression/fold_0.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "shap_25",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/shap_25/logistic_regression/fold_1.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "shap_25",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/shap_25/logistic_regression/fold_2.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "shap_25",
+      "scope": "development",
+      "path": "models/iec104/reduced/shap_25/logistic_regression/development.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "shap_50",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/shap_50/logistic_regression/fold_0.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "shap_50",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/shap_50/logistic_regression/fold_1.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "shap_50",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/shap_50/logistic_regression/fold_2.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "shap_50",
+      "scope": "development",
+      "path": "models/iec104/reduced/shap_50/logistic_regression/development.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_25",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/mi_25/logistic_regression/fold_0.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_25",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/mi_25/logistic_regression/fold_1.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_25",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/mi_25/logistic_regression/fold_2.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_25",
+      "scope": "development",
+      "path": "models/iec104/reduced/mi_25/logistic_regression/development.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_50",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/mi_50/logistic_regression/fold_0.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_50",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/mi_50/logistic_regression/fold_1.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_50",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/mi_50/logistic_regression/fold_2.joblib"
+    },
+    {
+      "model": "logistic_regression",
+      "condition": "mi_50",
+      "scope": "development",
+      "path": "models/iec104/reduced/mi_50/logistic_regression/development.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "shap_25",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/shap_25/decision_tree/fold_0.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "shap_25",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/shap_25/decision_tree/fold_1.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "shap_25",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/shap_25/decision_tree/fold_2.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "shap_25",
+      "scope": "development",
+      "path": "models/iec104/reduced/shap_25/decision_tree/development.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "shap_50",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/shap_50/decision_tree/fold_0.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "shap_50",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/shap_50/decision_tree/fold_1.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "shap_50",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/shap_50/decision_tree/fold_2.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "shap_50",
+      "scope": "development",
+      "path": "models/iec104/reduced/shap_50/decision_tree/development.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_25",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/mi_25/decision_tree/fold_0.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_25",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/mi_25/decision_tree/fold_1.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_25",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/mi_25/decision_tree/fold_2.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_25",
+      "scope": "development",
+      "path": "models/iec104/reduced/mi_25/decision_tree/development.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_50",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/mi_50/decision_tree/fold_0.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_50",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/mi_50/decision_tree/fold_1.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_50",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/mi_50/decision_tree/fold_2.joblib"
+    },
+    {
+      "model": "decision_tree",
+      "condition": "mi_50",
+      "scope": "development",
+      "path": "models/iec104/reduced/mi_50/decision_tree/development.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "shap_25",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/shap_25/random_forest/fold_0.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "shap_25",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/shap_25/random_forest/fold_1.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "shap_25",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/shap_25/random_forest/fold_2.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "shap_25",
+      "scope": "development",
+      "path": "models/iec104/reduced/shap_25/random_forest/development.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "shap_50",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/shap_50/random_forest/fold_0.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "shap_50",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/shap_50/random_forest/fold_1.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "shap_50",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/shap_50/random_forest/fold_2.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "shap_50",
+      "scope": "development",
+      "path": "models/iec104/reduced/shap_50/random_forest/development.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_25",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/mi_25/random_forest/fold_0.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_25",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/mi_25/random_forest/fold_1.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_25",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/mi_25/random_forest/fold_2.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_25",
+      "scope": "development",
+      "path": "models/iec104/reduced/mi_25/random_forest/development.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_50",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/mi_50/random_forest/fold_0.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_50",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/mi_50/random_forest/fold_1.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_50",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/mi_50/random_forest/fold_2.joblib"
+    },
+    {
+      "model": "random_forest",
+      "condition": "mi_50",
+      "scope": "development",
+      "path": "models/iec104/reduced/mi_50/random_forest/development.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "shap_25",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/shap_25/xgboost/fold_0.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "shap_25",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/shap_25/xgboost/fold_1.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "shap_25",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/shap_25/xgboost/fold_2.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "shap_25",
+      "scope": "development",
+      "path": "models/iec104/reduced/shap_25/xgboost/development.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "shap_50",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/shap_50/xgboost/fold_0.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "shap_50",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/shap_50/xgboost/fold_1.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "shap_50",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/shap_50/xgboost/fold_2.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "shap_50",
+      "scope": "development",
+      "path": "models/iec104/reduced/shap_50/xgboost/development.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_25",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/mi_25/xgboost/fold_0.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_25",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/mi_25/xgboost/fold_1.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_25",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/mi_25/xgboost/fold_2.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_25",
+      "scope": "development",
+      "path": "models/iec104/reduced/mi_25/xgboost/development.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_50",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/mi_50/xgboost/fold_0.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_50",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/mi_50/xgboost/fold_1.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_50",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/mi_50/xgboost/fold_2.joblib"
+    },
+    {
+      "model": "xgboost",
+      "condition": "mi_50",
+      "scope": "development",
+      "path": "models/iec104/reduced/mi_50/xgboost/development.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "shap_25",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/shap_25/lightgbm/fold_0.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "shap_25",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/shap_25/lightgbm/fold_1.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "shap_25",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/shap_25/lightgbm/fold_2.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "shap_25",
+      "scope": "development",
+      "path": "models/iec104/reduced/shap_25/lightgbm/development.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "shap_50",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/shap_50/lightgbm/fold_0.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "shap_50",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/shap_50/lightgbm/fold_1.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "shap_50",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/shap_50/lightgbm/fold_2.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "shap_50",
+      "scope": "development",
+      "path": "models/iec104/reduced/shap_50/lightgbm/development.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_25",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/mi_25/lightgbm/fold_0.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_25",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/mi_25/lightgbm/fold_1.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_25",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/mi_25/lightgbm/fold_2.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_25",
+      "scope": "development",
+      "path": "models/iec104/reduced/mi_25/lightgbm/development.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_50",
+      "scope": "fold_0",
+      "path": "models/iec104/reduced/mi_50/lightgbm/fold_0.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_50",
+      "scope": "fold_1",
+      "path": "models/iec104/reduced/mi_50/lightgbm/fold_1.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_50",
+      "scope": "fold_2",
+      "path": "models/iec104/reduced/mi_50/lightgbm/fold_2.joblib"
+    },
+    {
+      "model": "lightgbm",
+      "condition": "mi_50",
+      "scope": "development",
+      "path": "models/iec104/reduced/mi_50/lightgbm/development.joblib"
+    }
+  ],
+  "logical_fits_completed": 80,
+  "fit_attempts": 80
+}

@@ -1,0 +1,9 @@
+scope,numeric_view,training_rows,validation_rows,active_original_fields,encoded_columns,validation_unknown_protocol,validation_rows_matching_training_float64,validation_rows_matching_training_float32,float32_nonfinite_rows
+fold_0,unscaled,170649,85325,72,74,0,0.0,0.0,0
+fold_0,standardised,170649,85325,72,74,0,0.0,0.0,0
+fold_1,unscaled,170650,85324,72,74,0,0.0,0.0,0
+fold_1,standardised,170650,85324,72,74,0,0.0,0.0,0
+fold_2,unscaled,170649,85325,72,74,0,0.0,0.0,0
+fold_2,standardised,170649,85325,72,74,0,0.0,0.0,0
+development,unscaled,255974,0,72,74,0,,,0
+development,standardised,255974,0,72,74,0,,,0

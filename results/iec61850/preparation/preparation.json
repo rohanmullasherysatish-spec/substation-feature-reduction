@@ -1,0 +1,1945 @@
+{
+  "status": "complete",
+  "recipe": {
+    "classes": [
+      "flood",
+      "fuzzy",
+      "normal",
+      "ptp_attack",
+      "replay"
+    ],
+    "sampling": {
+      "maximum_records_per_source": 25000,
+      "block_records": 16
+    },
+    "sampling_seed": 49,
+    "previous_packets": 8,
+    "grouping_dtype": "float32",
+    "field_settings": {
+      "maximum_field_characters": 65536,
+      "maximum_list_items": 64,
+      "exact_float_integer_limit": 9007199254740992,
+      "sv_payload_encoding": {
+        "maximum_asdus": 2,
+        "maximum_bytes_per_asdu": 32,
+        "representation": "ordered_unsigned_bytes_by_asdu_and_position",
+        "feature_unit": "sv.seqData",
+        "missingness": "payload_presence_and_asdu_lengths; no_repeated_byte_indicators",
+        "physical_measurement_decoder": false
+      },
+      "missing_tokens": [
+        "",
+        "nan",
+        "+nan",
+        "-nan",
+        "inf",
+        "+inf",
+        "-inf",
+        "infinity",
+        "+infinity",
+        "-infinity"
+      ],
+      "field_rules": [
+        {
+          "field": "frame.time_delta",
+          "role": "eligible",
+          "kind": "float64",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Relative inter-frame duration; first interval in each retained block is masked.",
+          "feature_unit": "frame.time_delta"
+        },
+        {
+          "field": "frame.len",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "frame.len"
+        },
+        {
+          "field": "frame.protocols",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "frame.protocols"
+        },
+        {
+          "field": "eth.dst",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "eth.dst"
+        },
+        {
+          "field": "eth.src",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "eth.src"
+        },
+        {
+          "field": "eth.len",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "eth.len"
+        },
+        {
+          "field": "eth.type",
+          "role": "eligible",
+          "kind": "hex_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol/flag code: canonical hexadecimal category without numeric ordering.",
+          "feature_unit": "eth.type"
+        },
+        {
+          "field": "goose.appid",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "goose.appid"
+        },
+        {
+          "field": "goose.length",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "goose.length"
+        },
+        {
+          "field": "goose.reserve1",
+          "role": "eligible",
+          "kind": "hex_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol/flag code: canonical hexadecimal category without numeric ordering.",
+          "feature_unit": "goose.reserve1"
+        },
+        {
+          "field": "goose.reserve2",
+          "role": "eligible",
+          "kind": "hex_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol/flag code: canonical hexadecimal category without numeric ordering.",
+          "feature_unit": "goose.reserve2"
+        },
+        {
+          "field": "goose.float_value",
+          "role": "eligible",
+          "kind": "float_list",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": true,
+          "list_component_limit": 64,
+          "reason": "Ordered floating-point message measurements; preserve each item.",
+          "feature_unit": "goose.float_value"
+        },
+        {
+          "field": "goose.gseMngtPdu_element",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.gseMngtPdu_element"
+        },
+        {
+          "field": "goose.goosePdu_element",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Dissector structure-presence flag; observed nonmissing values are 1. Retain as a binary occurrence measurement, with training-only missingness handling.",
+          "feature_unit": "goose.goosePdu_element"
+        },
+        {
+          "field": "goose.stateID",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.stateID"
+        },
+        {
+          "field": "goose.requestResp",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.requestResp"
+        },
+        {
+          "field": "goose.requests",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.requests"
+        },
+        {
+          "field": "goose.responses",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.responses"
+        },
+        {
+          "field": "goose.getGoReference_element",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.getGoReference_element"
+        },
+        {
+          "field": "goose.getGOOSEElementNumber_element",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.getGOOSEElementNumber_element"
+        },
+        {
+          "field": "goose.getGsReference_element",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.getGsReference_element"
+        },
+        {
+          "field": "goose.getGSSEDataOffset_element",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.getGSSEDataOffset_element"
+        },
+        {
+          "field": "goose.gseMngtNotSupported_element",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.gseMngtNotSupported_element"
+        },
+        {
+          "field": "goose.ident",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "goose.ident"
+        },
+        {
+          "field": "goose.getReferenceRequest.offset",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.getReferenceRequest.offset"
+        },
+        {
+          "field": "goose.offset_item",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.offset_item"
+        },
+        {
+          "field": "goose.references",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.references"
+        },
+        {
+          "field": "goose.references_item",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "goose.references_item"
+        },
+        {
+          "field": "goose.confRev",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "goose.confRev"
+        },
+        {
+          "field": "goose.posNeg",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.posNeg"
+        },
+        {
+          "field": "goose.responsePositive_element",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.responsePositive_element"
+        },
+        {
+          "field": "goose.datSet",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "goose.datSet"
+        },
+        {
+          "field": "goose.result",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.result"
+        },
+        {
+          "field": "goose.RequestResults",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.RequestResults"
+        },
+        {
+          "field": "goose.responseNegative",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.responseNegative"
+        },
+        {
+          "field": "goose.offset",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.offset"
+        },
+        {
+          "field": "goose.reference",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "goose.reference"
+        },
+        {
+          "field": "goose.error",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.error"
+        },
+        {
+          "field": "goose.gocbRef",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "goose.gocbRef"
+        },
+        {
+          "field": "goose.timeAllowedtoLive",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "goose.timeAllowedtoLive"
+        },
+        {
+          "field": "goose.goID",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "goose.goID"
+        },
+        {
+          "field": "goose.t",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "goose.t"
+        },
+        {
+          "field": "goose.stNum",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "goose.stNum"
+        },
+        {
+          "field": "goose.sqNum",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "goose.sqNum"
+        },
+        {
+          "field": "goose.simulation",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "goose.simulation"
+        },
+        {
+          "field": "goose.ndsCom",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "goose.ndsCom"
+        },
+        {
+          "field": "goose.numDatSetEntries",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "goose.numDatSetEntries"
+        },
+        {
+          "field": "goose.allData",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "goose.allData"
+        },
+        {
+          "field": "goose.Data",
+          "role": "eligible",
+          "kind": "decimal_category_list",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": 64,
+          "reason": "ASN.1 Data CHOICE tags identify payload data types, not numerical magnitudes; preserve ordered categorical positions. Wireshark 4.4.0 packet-goose.c goose_Data_vals.",
+          "feature_unit": "goose.Data"
+        },
+        {
+          "field": "goose.array",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.array"
+        },
+        {
+          "field": "goose.structure",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.structure"
+        },
+        {
+          "field": "goose.boolean",
+          "role": "eligible",
+          "kind": "int_list",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": 64,
+          "reason": "Ordered repeated numeric dissector fields; preserve every item and list length under a fixed 64-item limit.",
+          "feature_unit": "goose.boolean"
+        },
+        {
+          "field": "goose.bit_string",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.",
+          "feature_unit": "goose.bit_string"
+        },
+        {
+          "field": "goose.integer",
+          "role": "eligible",
+          "kind": "int_list",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": 64,
+          "reason": "Ordered repeated numeric dissector fields; preserve every item and list length under a fixed 64-item limit.",
+          "feature_unit": "goose.integer"
+        },
+        {
+          "field": "goose.unsigned",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.unsigned"
+        },
+        {
+          "field": "goose.floating_point",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.",
+          "feature_unit": "goose.floating_point"
+        },
+        {
+          "field": "goose.real",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.real"
+        },
+        {
+          "field": "goose.octet_string",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.",
+          "feature_unit": "goose.octet_string"
+        },
+        {
+          "field": "goose.visible_string",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.visible_string"
+        },
+        {
+          "field": "goose.binary_time",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "goose.binary_time"
+        },
+        {
+          "field": "goose.bcd",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.bcd"
+        },
+        {
+          "field": "goose.booleanArray",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.",
+          "feature_unit": "goose.booleanArray"
+        },
+        {
+          "field": "goose.objId",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "goose.objId"
+        },
+        {
+          "field": "goose.mMSString",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.mMSString"
+        },
+        {
+          "field": "goose.utc_time",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "goose.utc_time"
+        },
+        {
+          "field": "goose.malformed.utctime",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.malformed.utctime"
+        },
+        {
+          "field": "goose.zero_pdu",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.zero_pdu"
+        },
+        {
+          "field": "goose.invalid_sim",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "goose.invalid_sim"
+        },
+        {
+          "field": "sv.appid",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "sv.appid"
+        },
+        {
+          "field": "sv.length",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "sv.length"
+        },
+        {
+          "field": "sv.reserve1",
+          "role": "eligible",
+          "kind": "hex_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol/flag code: canonical hexadecimal category without numeric ordering.",
+          "feature_unit": "sv.reserve1"
+        },
+        {
+          "field": "sv.reserve2",
+          "role": "eligible",
+          "kind": "hex_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol/flag code: canonical hexadecimal category without numeric ordering.",
+          "feature_unit": "sv.reserve2"
+        },
+        {
+          "field": "sv.meas_value",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "sv.meas_value"
+        },
+        {
+          "field": "sv.meas_quality",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "sv.meas_quality"
+        },
+        {
+          "field": "sv.gmidentity",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "sv.gmidentity"
+        },
+        {
+          "field": "sv.savPdu_element",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Dissector structure-presence flag; observed nonmissing values are 1. Retain as a binary occurrence measurement, with training-only missingness handling.",
+          "feature_unit": "sv.savPdu_element"
+        },
+        {
+          "field": "sv.noASDU",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "sv.noASDU"
+        },
+        {
+          "field": "sv.seqASDU",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "sv.seqASDU"
+        },
+        {
+          "field": "sv.ASDU_element",
+          "role": "eligible",
+          "kind": "int_list",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": 64,
+          "reason": "Repeated structure-presence flags; observed nonmissing items are 1. Preserve ordered binary occurrences, count and list length under the fixed 64-item limit.",
+          "feature_unit": "sv.ASDU_element"
+        },
+        {
+          "field": "sv.svID",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "sv.svID"
+        },
+        {
+          "field": "sv.datSet",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "sv.datSet"
+        },
+        {
+          "field": "sv.smpCnt",
+          "role": "eligible",
+          "kind": "int_list",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": 64,
+          "reason": "Ordered repeated numeric dissector fields; preserve every item and list length under a fixed 64-item limit.",
+          "feature_unit": "sv.smpCnt"
+        },
+        {
+          "field": "sv.confRev",
+          "role": "eligible",
+          "kind": "int_list",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": 64,
+          "reason": "Ordered repeated numeric dissector fields; preserve every item and list length under a fixed 64-item limit.",
+          "feature_unit": "sv.confRev"
+        },
+        {
+          "field": "sv.refrTm",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "sv.refrTm"
+        },
+        {
+          "field": "sv.smpSynch",
+          "role": "eligible",
+          "kind": "decimal_category_list",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": 64,
+          "reason": "Ordered repeated nominal type/synchronisation codes; per-component categories rather than numerical magnitudes.",
+          "feature_unit": "sv.smpSynch"
+        },
+        {
+          "field": "sv.smpRate",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "sv.smpRate"
+        },
+        {
+          "field": "sv.seqData",
+          "role": "eligible",
+          "kind": "sv_payload",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Ordered unsigned bytes within two ASDU slots of up to 32 bytes; retain lengths/count/presence as one original field. No physical channel interpretation. Omit from grouping to preserve conservative base-measurement components.",
+          "feature_unit": "sv.seqData"
+        },
+        {
+          "field": "sv.smpMod",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "sv.smpMod"
+        },
+        {
+          "field": "sv.gmidData",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "sv.gmidData"
+        },
+        {
+          "field": "sv.malformed.utctime",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "sv.malformed.utctime"
+        },
+        {
+          "field": "sv.zero_pdu",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "sv.zero_pdu"
+        },
+        {
+          "field": "sv.malformed.gmidentity",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "sv.malformed.gmidentity"
+        },
+        {
+          "field": "ip.src",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ip.src"
+        },
+        {
+          "field": "ip.dst",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ip.dst"
+        },
+        {
+          "field": "tcp.srcport",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Connection/service port or PTP source-port identifier excluded from the endpoint-independent predictor pool; useful service context may be lost.",
+          "feature_unit": "tcp.srcport"
+        },
+        {
+          "field": "tcp.dstport",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Connection/service port or PTP source-port identifier excluded from the endpoint-independent predictor pool; useful service context may be lost.",
+          "feature_unit": "tcp.dstport"
+        },
+        {
+          "field": "tcp.seq",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "tcp.seq"
+        },
+        {
+          "field": "tcp.ack",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "tcp.ack"
+        },
+        {
+          "field": "ptp.sourceuuid",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ptp.sourceuuid"
+        },
+        {
+          "field": "ptp.sourceportid",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Connection/service port or PTP source-port identifier excluded from the endpoint-independent predictor pool; useful service context may be lost.",
+          "feature_unit": "ptp.sourceportid"
+        },
+        {
+          "field": "ptp.sequenceid",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "ptp.sequenceid"
+        },
+        {
+          "field": "ptp.controlfield",
+          "role": "eligible",
+          "kind": "decimal_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Communication-role or protocol code: exact decimal category without an assumed metric distance.",
+          "feature_unit": "ptp.controlfield"
+        },
+        {
+          "field": "ptp.flags",
+          "role": "eligible",
+          "kind": "hex_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol/flag code: canonical hexadecimal category without numeric ordering.",
+          "feature_unit": "ptp.flags"
+        },
+        {
+          "field": "ptp.v2.majorsdoid",
+          "role": "eligible",
+          "kind": "hex_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol/flag code: canonical hexadecimal category without numeric ordering.",
+          "feature_unit": "ptp.v2.majorsdoid"
+        },
+        {
+          "field": "ptp.v2.messagetype",
+          "role": "eligible",
+          "kind": "hex_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol/flag code: canonical hexadecimal category without numeric ordering.",
+          "feature_unit": "ptp.v2.messagetype"
+        },
+        {
+          "field": "ptp.v2.minorversionptp",
+          "role": "eligible",
+          "kind": "decimal_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Communication-role or protocol code: exact decimal category without an assumed metric distance.",
+          "feature_unit": "ptp.v2.minorversionptp"
+        },
+        {
+          "field": "ptp.v2.versionptp",
+          "role": "eligible",
+          "kind": "decimal_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Communication-role or protocol code: exact decimal category without an assumed metric distance.",
+          "feature_unit": "ptp.v2.versionptp"
+        },
+        {
+          "field": "ptp.v2.messagelength",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "ptp.v2.messagelength"
+        },
+        {
+          "field": "ptp.v2.minorsdoid",
+          "role": "eligible",
+          "kind": "decimal_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Communication-role or protocol code: exact decimal category without an assumed metric distance.",
+          "feature_unit": "ptp.v2.minorsdoid"
+        },
+        {
+          "field": "ptp.v2.domainnumber",
+          "role": "eligible",
+          "kind": "decimal_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Communication-role or protocol code: exact decimal category without an assumed metric distance.",
+          "feature_unit": "ptp.v2.domainnumber"
+        },
+        {
+          "field": "ptp.v2.flags",
+          "role": "eligible",
+          "kind": "hex_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol/flag code: canonical hexadecimal category without numeric ordering.",
+          "feature_unit": "ptp.v2.flags"
+        },
+        {
+          "field": "ptp.v2.messagetypespecific",
+          "role": "eligible",
+          "kind": "decimal_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Communication-role or protocol code: exact decimal category without an assumed metric distance.",
+          "feature_unit": "ptp.v2.messagetypespecific"
+        },
+        {
+          "field": "ptp.v2.correction.ns",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "ptp.v2.correction.ns"
+        },
+        {
+          "field": "ptp.v2.correction.subns",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "ptp.v2.correction.subns"
+        },
+        {
+          "field": "ptp.v2.clockidentity",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ptp.v2.clockidentity"
+        },
+        {
+          "field": "ptp.v2.clockidentity_manuf",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ptp.v2.clockidentity_manuf"
+        },
+        {
+          "field": "ptp.v2.sourceportid",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Connection/service port or PTP source-port identifier excluded from the endpoint-independent predictor pool; useful service context may be lost.",
+          "feature_unit": "ptp.v2.sourceportid"
+        },
+        {
+          "field": "ptp.v2.sequenceid",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "ptp.v2.sequenceid"
+        },
+        {
+          "field": "ptp.v2.controlfield",
+          "role": "eligible",
+          "kind": "decimal_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Communication-role or protocol code: exact decimal category without an assumed metric distance.",
+          "feature_unit": "ptp.v2.controlfield"
+        },
+        {
+          "field": "ptp.v2.logmessageperiod",
+          "role": "eligible",
+          "kind": "decimal_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Log-interval codes include the special 0x7f control value; nominal coding avoids an assumed numerical distance. LinuxPTP v4.2 port.c uses this value for delay requests and unicast messages.",
+          "feature_unit": "ptp.v2.logmessageperiod"
+        },
+        {
+          "field": "ptp.v2.an.origintimestamp.seconds",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.an.origintimestamp.seconds"
+        },
+        {
+          "field": "ptp.v2.an.origintimestamp.nanoseconds",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.an.origintimestamp.nanoseconds"
+        },
+        {
+          "field": "ptp.v2.an.origincurrentutcoffset",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "ptp.v2.an.origincurrentutcoffset"
+        },
+        {
+          "field": "ptp.v2.timesource",
+          "role": "eligible",
+          "kind": "hex_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol/flag code: canonical hexadecimal category without numeric ordering.",
+          "feature_unit": "ptp.v2.timesource"
+        },
+        {
+          "field": "ptp.v2.an.localstepsremoved",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "ptp.v2.an.localstepsremoved"
+        },
+        {
+          "field": "ptp.v2.an.grandmasterclockidentity",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ptp.v2.an.grandmasterclockidentity"
+        },
+        {
+          "field": "ptp.v2.an.grandmasterclockclass",
+          "role": "eligible",
+          "kind": "decimal_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Communication-role or protocol code: exact decimal category without an assumed metric distance.",
+          "feature_unit": "ptp.v2.an.grandmasterclockclass"
+        },
+        {
+          "field": "ptp.v2.an.grandmasterclockaccuracy",
+          "role": "eligible",
+          "kind": "hex_category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol/flag code: canonical hexadecimal category without numeric ordering.",
+          "feature_unit": "ptp.v2.an.grandmasterclockaccuracy"
+        },
+        {
+          "field": "ptp.v2.an.grandmasterclockvariance",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "ptp.v2.an.grandmasterclockvariance"
+        },
+        {
+          "field": "ptp.v2.an.priority1",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "ptp.v2.an.priority1"
+        },
+        {
+          "field": "ptp.v2.an.priority2",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "ptp.v2.an.priority2"
+        },
+        {
+          "field": "ptp.v2.an.tlvType",
+          "role": "eligible",
+          "kind": "decimal_category_list",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": 64,
+          "reason": "Ordered repeated nominal type/synchronisation codes; per-component categories rather than numerical magnitudes.",
+          "feature_unit": "ptp.v2.an.tlvType"
+        },
+        {
+          "field": "ptp.v2.an.lengthField",
+          "role": "eligible",
+          "kind": "int_list",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": 64,
+          "reason": "Ordered repeated numeric dissector fields; preserve every item and list length under a fixed 64-item limit.",
+          "feature_unit": "ptp.v2.an.lengthField"
+        },
+        {
+          "field": "ptp.v2.an.oe.organizationId",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ptp.v2.an.oe.organizationId"
+        },
+        {
+          "field": "ptp.v2.an.oe.organizationSubType",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ptp.v2.an.oe.organizationSubType"
+        },
+        {
+          "field": "ptp.v2.an.oe.dataField",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.",
+          "feature_unit": "ptp.v2.an.oe.dataField"
+        },
+        {
+          "field": "ptp.v2.an.oe.cern.wr.wrMessageID",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "ptp.v2.an.oe.cern.wr.wrMessageID"
+        },
+        {
+          "field": "ptp.v2.an.oe.cern.wr.wrFlags",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "ptp.v2.an.oe.cern.wr.wrFlags"
+        },
+        {
+          "field": "ptp.v2.an.oe.grandmasterID",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ptp.v2.an.oe.grandmasterID"
+        },
+        {
+          "field": "ptp.v2.an.oe.grandmasterTimeInaccuracy",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "ptp.v2.an.oe.grandmasterTimeInaccuracy"
+        },
+        {
+          "field": "ptp.v2.an.oe.networkTimeInaccuracy",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "ptp.v2.an.oe.networkTimeInaccuracy"
+        },
+        {
+          "field": "ptp.v2.an.oe.reserved",
+          "role": "eligible",
+          "kind": "hex_category_list",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": 64,
+          "reason": "Ordered repeated reserved/flag words retained as canonical nominal codes, without numerical ordering.",
+          "feature_unit": "ptp.v2.an.oe.reserved"
+        },
+        {
+          "field": "ptp.v2.an.oe.totalTimeInaccuracy",
+          "role": "eligible",
+          "kind": "int64",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": true,
+          "list_component_limit": null,
+          "reason": "Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation.",
+          "feature_unit": "ptp.v2.an.oe.totalTimeInaccuracy"
+        },
+        {
+          "field": "ptp.v2.an.pathsequence",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ptp.v2.an.pathsequence"
+        },
+        {
+          "field": "ptp.v2.an.tlv.data",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.",
+          "feature_unit": "ptp.v2.an.tlv.data"
+        },
+        {
+          "field": "ptp.v2.sdr.origintimestamp.seconds",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.sdr.origintimestamp.seconds"
+        },
+        {
+          "field": "ptp.v2.sdr.origintimestamp.nanoseconds",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.sdr.origintimestamp.nanoseconds"
+        },
+        {
+          "field": "ptp.v2.fu.preciseorigintimestamp.seconds",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.fu.preciseorigintimestamp.seconds"
+        },
+        {
+          "field": "ptp.v2.fu.preciseorigintimestamp.nanoseconds",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.fu.preciseorigintimestamp.nanoseconds"
+        },
+        {
+          "field": "ptp.v2.fu.preciseorigintimestamp.32bit",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.fu.preciseorigintimestamp.32bit"
+        },
+        {
+          "field": "ptp.as.fu.tlvType",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "ptp.as.fu.tlvType"
+        },
+        {
+          "field": "ptp.as.fu.lengthField",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "ptp.as.fu.lengthField"
+        },
+        {
+          "field": "ptp.as.fu.organizationId",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ptp.as.fu.organizationId"
+        },
+        {
+          "field": "ptp.as.fu.organizationSubType",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "ptp.as.fu.organizationSubType"
+        },
+        {
+          "field": "ptp.as.fu.cumulativeScaledRateOffset",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "ptp.as.fu.cumulativeScaledRateOffset"
+        },
+        {
+          "field": "ptp.as.fu.gmTimeBaseIndicator",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "ptp.as.fu.gmTimeBaseIndicator"
+        },
+        {
+          "field": "ptp.as.fu.lastGmPhaseChange",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.",
+          "feature_unit": "ptp.as.fu.lastGmPhaseChange"
+        },
+        {
+          "field": "ptp.as.fu.scaledLastGmFreqChange",
+          "role": "eligible",
+          "kind": "category",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later.",
+          "feature_unit": "ptp.as.fu.scaledLastGmFreqChange"
+        },
+        {
+          "field": "ptp.v2.dr.receivetimestamp.seconds",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.dr.receivetimestamp.seconds"
+        },
+        {
+          "field": "ptp.v2.dr.receivetimestamp.nanoseconds",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.dr.receivetimestamp.nanoseconds"
+        },
+        {
+          "field": "ptp.v2.dr.requestingsourceportidentity",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ptp.v2.dr.requestingsourceportidentity"
+        },
+        {
+          "field": "ptp.v2.dr.requestingsourceportid",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "discrete",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Connection/service port or PTP source-port identifier excluded from the endpoint-independent predictor pool; useful service context may be lost.",
+          "feature_unit": "ptp.v2.dr.requestingsourceportid"
+        },
+        {
+          "field": "ptp.v2.pdrq.origintimestamp.seconds",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.pdrq.origintimestamp.seconds"
+        },
+        {
+          "field": "ptp.v2.pdrq.origintimestamp.nanoseconds",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.pdrq.origintimestamp.nanoseconds"
+        },
+        {
+          "field": "ptp.v2.pdrs.requestreceipttimestamp.seconds",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.pdrs.requestreceipttimestamp.seconds"
+        },
+        {
+          "field": "ptp.v2.pdrs.requestreceipttimestamp.nanoseconds",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Absolute message/clock time can identify a capture rather than traffic behaviour.",
+          "feature_unit": "ptp.v2.pdrs.requestreceipttimestamp.nanoseconds"
+        },
+        {
+          "field": "ptp.v2.pdrs.requestingportidentity",
+          "role": "excluded",
+          "kind": "exclude",
+          "mi_component_type": "continuous",
+          "numeric_grouping_field": false,
+          "list_component_limit": null,
+          "reason": "Endpoint, device, application/object or manufacturer identity.",
+          "feature_unit": "ptp.v2.pdrs.requestingportidentity"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "path": "attack-data/capture61850-floodattack_withfault.csv",
+        "scenario": "flood_with_fault",
+        "class_label": "flood",
+        "raw_label": "floodattack",
+        "records": 4939146
+      },
+      {
+        "path": "attack-data/capture61850-floodattack_withoutfault.csv",
+        "scenario": "flood_without_fault",
+        "class_label": "flood",
+        "raw_label": "floodattack",
+        "records": 5720704
+      },
+      {
+        "path": "attack-data/capture61850-fuzzyattack_withfault.csv",
+        "scenario": "fuzzy_with_fault",
+        "class_label": "fuzzy",
+        "raw_label": "fuzzyattack",
+        "records": 345839
+      },
+      {
+        "path": "attack-data/capture61850-fuzzyattack_withoutfault.csv",
+        "scenario": "fuzzy_without_fault",
+        "class_label": "fuzzy",
+        "raw_label": "fuzzyattack",
+        "records": 716307
+      },
+      {
+        "path": "attack-data/capture61850-ptpattack.csv",
+        "scenario": "ptp_attack",
+        "class_label": "ptp_attack",
+        "raw_label": "ptpattack",
+        "records": 159
+      },
+      {
+        "path": "attack-data/capture61850-replay.csv",
+        "scenario": "replay",
+        "class_label": "replay",
+        "raw_label": "replay",
+        "records": 327373
+      },
+      {
+        "path": "attack-free-data/capture61850-attackfree.csv",
+        "scenario": "normal",
+        "class_label": "normal",
+        "raw_label": "attackfree",
+        "records": 9478223
+      },
+      {
+        "path": "attack-free-data/capture61850-attackfree_PTP.csv",
+        "scenario": "normal_ptp",
+        "class_label": "normal",
+        "raw_label": "attackfree",
+        "records": 162073
+      },
+      {
+        "path": "attack-free-data/capture61850-attackfree_normalfault.csv",
+        "scenario": "normal_fault",
+        "class_label": "normal",
+        "raw_label": "attackfree",
+        "records": 385772
+      }
+    ],
+    "target": "provided capture-scenario label, not independently verified packet maliciousness",
+    "population": "unweighted source-capped block sample; not natural deployment prevalence",
+    "history": "preceding packets within the same source block; first inter-block interval masked",
+    "predictor_pool": "author-listed candidates minus declared exclusions, plus ten causal history units",
+    "duplicate_policy": "retain packet occurrences and conflicting labels; link block dependencies",
+    "grouping": "whole source blocks connected by equal base numeric/history vectors at float32; payload does not weaken groups; labels/identities excluded"
+  },
+  "completed_sources": [
+    {
+      "source_index": 0,
+      "source_file": "attack-data/capture61850-floodattack_withfault.csv",
+      "class_label": "flood",
+      "source_bytes": 9515298195,
+      "fresh_validated_records": 4939146,
+      "selected_records": 24992,
+      "selected_source_blocks": 1562,
+      "all_record_widths_and_labels_checked": true,
+      "full_block_inclusion_probability": 0.0050599942985979736,
+      "unselected_large_source_tail": 10,
+      "elapsed_seconds": 50.786222749971785,
+      "sample_parquet_roundtrip_exact": true,
+      "source_mtime_ns": 1718661305000000000
+    },
+    {
+      "source_index": 1,
+      "source_file": "attack-data/capture61850-floodattack_withoutfault.csv",
+      "class_label": "flood",
+      "source_bytes": 11022588121,
+      "fresh_validated_records": 5720704,
+      "selected_records": 24992,
+      "selected_source_blocks": 1562,
+      "all_record_widths_and_labels_checked": true,
+      "full_block_inclusion_probability": 0.004368693083928132,
+      "unselected_large_source_tail": 0,
+      "elapsed_seconds": 58.48342450003838,
+      "sample_parquet_roundtrip_exact": true,
+      "source_mtime_ns": 1718661959000000000
+    },
+    {
+      "source_index": 2,
+      "source_file": "attack-data/capture61850-fuzzyattack_withfault.csv",
+      "class_label": "fuzzy",
+      "source_bytes": 650137132,
+      "fresh_validated_records": 345839,
+      "selected_records": 24992,
+      "selected_source_blocks": 1562,
+      "all_record_widths_and_labels_checked": true,
+      "full_block_inclusion_probability": 0.0722679744609975,
+      "unselected_large_source_tail": 15,
+      "elapsed_seconds": 3.826113916002214,
+      "sample_parquet_roundtrip_exact": true,
+      "source_mtime_ns": 1718662001000000000
+    },
+    {
+      "source_index": 3,
+      "source_file": "attack-data/capture61850-fuzzyattack_withoutfault.csv",
+      "class_label": "fuzzy",
+      "source_bytes": 1346957666,
+      "fresh_validated_records": 716307,
+      "selected_records": 24992,
+      "selected_source_blocks": 1562,
+      "all_record_widths_and_labels_checked": true,
+      "full_block_inclusion_probability": 0.034890214210726175,
+      "unselected_large_source_tail": 3,
+      "elapsed_seconds": 7.7430629169684835,
+      "sample_parquet_roundtrip_exact": true,
+      "source_mtime_ns": 1718662084000000000
+    },
+    {
+      "source_index": 4,
+      "source_file": "attack-data/capture61850-ptpattack.csv",
+      "class_label": "ptp_attack",
+      "source_bytes": 325222,
+      "fresh_validated_records": 159,
+      "selected_records": 159,
+      "selected_source_blocks": 10,
+      "all_record_widths_and_labels_checked": true,
+      "full_block_inclusion_probability": 1.0,
+      "unselected_large_source_tail": 0,
+      "elapsed_seconds": 0.018494290998205543,
+      "sample_parquet_roundtrip_exact": true,
+      "source_mtime_ns": 1718662085000000000
+    },
+    {
+      "source_index": 5,
+      "source_file": "attack-data/capture61850-replay.csv",
+      "class_label": "replay",
+      "source_bytes": 613864030,
+      "fresh_validated_records": 327373,
+      "selected_records": 24992,
+      "selected_source_blocks": 1562,
+      "all_record_widths_and_labels_checked": true,
+      "full_block_inclusion_probability": 0.07634408602150537,
+      "unselected_large_source_tail": 13,
+      "elapsed_seconds": 3.5637457920238376,
+      "sample_parquet_roundtrip_exact": true,
+      "source_mtime_ns": 1718662124000000000
+    },
+    {
+      "source_index": 6,
+      "source_file": "attack-free-data/capture61850-attackfree.csv",
+      "class_label": "normal",
+      "source_bytes": 18000870113,
+      "fresh_validated_records": 9478223,
+      "selected_records": 24992,
+      "selected_source_blocks": 1562,
+      "all_record_widths_and_labels_checked": true,
+      "full_block_inclusion_probability": 0.0026367853501421366,
+      "unselected_large_source_tail": 15,
+      "elapsed_seconds": 93.87877945799846,
+      "sample_parquet_roundtrip_exact": true,
+      "source_mtime_ns": 1724944984000000000
+    },
+    {
+      "source_index": 7,
+      "source_file": "attack-free-data/capture61850-attackfree_PTP.csv",
+      "class_label": "normal",
+      "source_bytes": 299902443,
+      "fresh_validated_records": 162073,
+      "selected_records": 24992,
+      "selected_source_blocks": 1562,
+      "all_record_widths_and_labels_checked": true,
+      "full_block_inclusion_probability": 0.15421068219962483,
+      "unselected_large_source_tail": 9,
+      "elapsed_seconds": 1.9047925419872627,
+      "sample_parquet_roundtrip_exact": true,
+      "source_mtime_ns": 1718660704000000000
+    },
+    {
+      "source_index": 8,
+      "source_file": "attack-free-data/capture61850-attackfree_normalfault.csv",
+      "class_label": "normal",
+      "source_bytes": 724854263,
+      "fresh_validated_records": 385772,
+      "selected_records": 24992,
+      "selected_source_blocks": 1562,
+      "all_record_widths_and_labels_checked": true,
+      "full_block_inclusion_probability": 0.06478639568643717,
+      "unselected_large_source_tail": 12,
+      "elapsed_seconds": 4.104017291974742,
+      "sample_parquet_roundtrip_exact": true,
+      "source_mtime_ns": 1718660751000000000
+    }
+  ],
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "pyarrow": "23.0.1"
+  },
+  "raw_schema_columns": 1194,
+  "author_candidate_inputs": 167,
+  "models_fitted": 0,
+  "reused_validated_source_samples": true,
+  "fresh_source_records_read": 0,
+  "parsed_source_records": 22075596,
+  "prepared_records": 200095,
+  "prepared_original_fields": 120,
+  "source_blocks": 12506,
+  "dependency_groups": 10050,
+  "largest_group": 2416,
+  "conflicting_label_components": 1120,
+  "minimum_groups_for_test_and_three_validation_folds_necessary": true,
+  "actual_partition_feasibility_checked": false,
+  "records_removed_or_relabelled": 0,
+  "elapsed_seconds": 16.26930258295033
+}

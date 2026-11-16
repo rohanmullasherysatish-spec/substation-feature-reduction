@@ -1,0 +1,511 @@
+{
+  "status": "complete",
+  "recipe": {
+    "classifier_panel": [
+      "logistic_regression",
+      "decision_tree",
+      "random_forest",
+      "xgboost",
+      "lightgbm"
+    ],
+    "reference_strategy": "most_frequent",
+    "fixed_parameters": {
+      "logistic_regression": {
+        "solver": "lbfgs",
+        "l1_ratio": 0.0,
+        "max_iter": 5000,
+        "tol": 0.0001
+      },
+      "decision_tree": {},
+      "random_forest": {
+        "n_estimators": 200,
+        "max_features": "sqrt",
+        "bootstrap": true
+      },
+      "xgboost": {
+        "n_estimators": 200,
+        "objective": "multi:softprob",
+        "tree_method": "hist",
+        "device": "cpu",
+        "eval_metric": "mlogloss",
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "verbosity": 1
+      },
+      "lightgbm": {
+        "n_estimators": 200,
+        "objective": "multiclass",
+        "learning_rate": 0.05,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "deterministic": true,
+        "force_col_wise": true,
+        "verbosity": -1
+      }
+    },
+    "candidate_grid": {
+      "logistic_regression": [
+        {
+          "C": 0.01
+        },
+        {
+          "C": 0.1
+        },
+        {
+          "C": 1.0
+        },
+        {
+          "C": 10.0
+        }
+      ],
+      "decision_tree": [
+        {
+          "max_depth": 8,
+          "min_samples_leaf": 10
+        },
+        {
+          "max_depth": 8,
+          "min_samples_leaf": 2
+        },
+        {
+          "max_depth": 16,
+          "min_samples_leaf": 10
+        },
+        {
+          "max_depth": 16,
+          "min_samples_leaf": 2
+        }
+      ],
+      "random_forest": [
+        {
+          "max_depth": 12,
+          "min_samples_leaf": 5
+        },
+        {
+          "max_depth": 12,
+          "min_samples_leaf": 1
+        },
+        {
+          "max_depth": 24,
+          "min_samples_leaf": 5
+        },
+        {
+          "max_depth": 24,
+          "min_samples_leaf": 1
+        }
+      ],
+      "xgboost": [
+        {
+          "max_depth": 3,
+          "learning_rate": 0.05
+        },
+        {
+          "max_depth": 3,
+          "learning_rate": 0.1
+        },
+        {
+          "max_depth": 6,
+          "learning_rate": 0.05
+        },
+        {
+          "max_depth": 6,
+          "learning_rate": 0.1
+        }
+      ],
+      "lightgbm": [
+        {
+          "num_leaves": 15,
+          "min_child_samples": 20
+        },
+        {
+          "num_leaves": 15,
+          "min_child_samples": 5
+        },
+        {
+          "num_leaves": 31,
+          "min_child_samples": 20
+        },
+        {
+          "num_leaves": 31,
+          "min_child_samples": 5
+        }
+      ]
+    },
+    "estimator_seed": 44,
+    "workers": 2,
+    "parallel_fits": 1,
+    "class_weighting": "balanced training-observation weights once per learned classifier; dummy unweighted",
+    "selection_metric": "mean of three validation macro F1 scores, fixed five-class label order",
+    "tie_tolerance": 1e-06,
+    "tie_break": "first candidate in declared order within tolerance of the maximum",
+    "lr_iteration_caps": [
+      5000,
+      10000,
+      20000
+    ],
+    "lr_retry_rule": "retry only warning fits; stop on unresolved convergence",
+    "validation_interpretation": "selection evidence, not an independent estimate of the entire tuning procedure",
+    "test_scoring": false,
+    "grouping_fields": [
+      "frame.time_delta",
+      "frame.len",
+      "eth.len",
+      "goose.length",
+      "goose.float_value",
+      "goose.goosePdu_element",
+      "goose.confRev",
+      "goose.timeAllowedtoLive",
+      "goose.stNum",
+      "goose.sqNum",
+      "goose.simulation",
+      "goose.ndsCom",
+      "goose.numDatSetEntries",
+      "goose.allData",
+      "goose.boolean",
+      "goose.integer",
+      "sv.length",
+      "sv.savPdu_element",
+      "sv.noASDU",
+      "sv.seqASDU",
+      "sv.ASDU_element",
+      "sv.smpCnt",
+      "sv.confRev",
+      "tcp.seq",
+      "tcp.ack",
+      "ptp.sequenceid",
+      "ptp.v2.messagelength",
+      "ptp.v2.correction.ns",
+      "ptp.v2.correction.subns",
+      "ptp.v2.sequenceid",
+      "ptp.v2.an.origincurrentutcoffset",
+      "ptp.v2.an.localstepsremoved",
+      "ptp.v2.an.grandmasterclockvariance",
+      "ptp.v2.an.priority1",
+      "ptp.v2.an.priority2",
+      "ptp.v2.an.lengthField",
+      "ptp.v2.an.oe.totalTimeInaccuracy",
+      "history_packet_count",
+      "history_frame_len_mean",
+      "history_frame_len_std",
+      "history_frame_len_min",
+      "history_frame_len_max",
+      "history_interarrival_mean",
+      "history_interarrival_std",
+      "history_interarrival_sum",
+      "history_interarrival_count",
+      "history_same_protocol_fraction"
+    ],
+    "grouping_dtype": "float32",
+    "outer_seed": 42,
+    "validation_seed": 43,
+    "classes": [
+      "flood",
+      "fuzzy",
+      "normal",
+      "ptp_attack",
+      "replay"
+    ],
+    "standardize_numeric_for": [
+      "logistic_regression"
+    ],
+    "prediction_timing": "estimator predict_proba on already encoded inputs; excludes preprocessing and packet/history extraction",
+    "transform_timing": "one shared transformation per model/scope; repeated table value must not be summed across candidates",
+    "predictor_fields": [
+      "frame.time_delta",
+      "frame.len",
+      "frame.protocols",
+      "eth.len",
+      "eth.type",
+      "goose.length",
+      "goose.reserve1",
+      "goose.reserve2",
+      "goose.float_value",
+      "goose.gseMngtPdu_element",
+      "goose.goosePdu_element",
+      "goose.stateID",
+      "goose.requestResp",
+      "goose.requests",
+      "goose.responses",
+      "goose.getGoReference_element",
+      "goose.getGOOSEElementNumber_element",
+      "goose.getGsReference_element",
+      "goose.getGSSEDataOffset_element",
+      "goose.gseMngtNotSupported_element",
+      "goose.getReferenceRequest.offset",
+      "goose.offset_item",
+      "goose.references",
+      "goose.confRev",
+      "goose.posNeg",
+      "goose.responsePositive_element",
+      "goose.result",
+      "goose.RequestResults",
+      "goose.responseNegative",
+      "goose.offset",
+      "goose.error",
+      "goose.timeAllowedtoLive",
+      "goose.stNum",
+      "goose.sqNum",
+      "goose.simulation",
+      "goose.ndsCom",
+      "goose.numDatSetEntries",
+      "goose.allData",
+      "goose.Data",
+      "goose.array",
+      "goose.structure",
+      "goose.boolean",
+      "goose.integer",
+      "goose.unsigned",
+      "goose.real",
+      "goose.visible_string",
+      "goose.bcd",
+      "goose.mMSString",
+      "goose.malformed.utctime",
+      "goose.zero_pdu",
+      "goose.invalid_sim",
+      "sv.length",
+      "sv.reserve1",
+      "sv.reserve2",
+      "sv.meas_value",
+      "sv.meas_quality",
+      "sv.savPdu_element",
+      "sv.noASDU",
+      "sv.seqASDU",
+      "sv.ASDU_element",
+      "sv.smpCnt",
+      "sv.confRev",
+      "sv.smpSynch",
+      "sv.smpRate",
+      "sv.seqData",
+      "sv.smpMod",
+      "sv.malformed.utctime",
+      "sv.zero_pdu",
+      "sv.malformed.gmidentity",
+      "tcp.seq",
+      "tcp.ack",
+      "ptp.sequenceid",
+      "ptp.controlfield",
+      "ptp.flags",
+      "ptp.v2.majorsdoid",
+      "ptp.v2.messagetype",
+      "ptp.v2.minorversionptp",
+      "ptp.v2.versionptp",
+      "ptp.v2.messagelength",
+      "ptp.v2.minorsdoid",
+      "ptp.v2.domainnumber",
+      "ptp.v2.flags",
+      "ptp.v2.messagetypespecific",
+      "ptp.v2.correction.ns",
+      "ptp.v2.correction.subns",
+      "ptp.v2.sequenceid",
+      "ptp.v2.controlfield",
+      "ptp.v2.logmessageperiod",
+      "ptp.v2.an.origincurrentutcoffset",
+      "ptp.v2.timesource",
+      "ptp.v2.an.localstepsremoved",
+      "ptp.v2.an.grandmasterclockclass",
+      "ptp.v2.an.grandmasterclockaccuracy",
+      "ptp.v2.an.grandmasterclockvariance",
+      "ptp.v2.an.priority1",
+      "ptp.v2.an.priority2",
+      "ptp.v2.an.tlvType",
+      "ptp.v2.an.lengthField",
+      "ptp.v2.an.oe.cern.wr.wrMessageID",
+      "ptp.v2.an.oe.cern.wr.wrFlags",
+      "ptp.v2.an.oe.grandmasterTimeInaccuracy",
+      "ptp.v2.an.oe.networkTimeInaccuracy",
+      "ptp.v2.an.oe.reserved",
+      "ptp.v2.an.oe.totalTimeInaccuracy",
+      "ptp.as.fu.tlvType",
+      "ptp.as.fu.lengthField",
+      "ptp.as.fu.organizationSubType",
+      "ptp.as.fu.cumulativeScaledRateOffset",
+      "ptp.as.fu.gmTimeBaseIndicator",
+      "ptp.as.fu.scaledLastGmFreqChange",
+      "history_packet_count",
+      "history_frame_len_mean",
+      "history_frame_len_std",
+      "history_frame_len_min",
+      "history_frame_len_max",
+      "history_interarrival_mean",
+      "history_interarrival_std",
+      "history_interarrival_sum",
+      "history_interarrival_count",
+      "history_same_protocol_fraction"
+    ],
+    "preprocessing_policy": {
+      "list_component_limit": 64,
+      "maximum_categories_per_field": 128,
+      "numeric_imputation": "training_median",
+      "screening": "training_only_all_missing_or_constant_components",
+      "missingness": "retain_training_varying_indicators; no_new_evaluation_columns",
+      "category_pooling": "training_frequency; lexical_ties; missing_and_infrequent_in_cap",
+      "unseen_categories": "existing_infrequent_bucket_otherwise_all_zero",
+      "standardize_numeric_for": [
+        "logistic_regression"
+      ],
+      "output_dtype": "float64",
+      "sv_payload_encoding": {
+        "maximum_asdus": 2,
+        "maximum_bytes_per_asdu": 32,
+        "representation": "ordered_unsigned_bytes_by_asdu_and_position",
+        "feature_unit": "sv.seqData",
+        "missingness": "payload_presence_and_asdu_lengths; no_repeated_byte_indicators",
+        "physical_measurement_decoder": false
+      }
+    }
+  },
+  "selected": {
+    "logistic_regression": {
+      "candidate_index": 3,
+      "parameters": {
+        "solver": "lbfgs",
+        "l1_ratio": 0.0,
+        "max_iter": 5000,
+        "tol": 0.0001,
+        "C": 10.0
+      },
+      "candidate_mean_validation_macro_f1": [
+        0.5209483877069223,
+        0.5263187867374555,
+        0.5430086075827268,
+        0.6096281840629287
+      ],
+      "mean_validation_macro_f1": 0.6096281840629287,
+      "pipelines": {
+        "fold_0": "models/iec61850/full/logistic_regression/fold_0.joblib",
+        "fold_1": "models/iec61850/full/logistic_regression/fold_1.joblib",
+        "fold_2": "models/iec61850/full/logistic_regression/fold_2.joblib",
+        "development": "models/iec61850/full/logistic_regression/development.joblib"
+      }
+    },
+    "decision_tree": {
+      "candidate_index": 2,
+      "parameters": {
+        "max_depth": 16,
+        "min_samples_leaf": 10
+      },
+      "candidate_mean_validation_macro_f1": [
+        0.6264832166981315,
+        0.6264580522155649,
+        0.6365537615929497,
+        0.6350378499301772
+      ],
+      "mean_validation_macro_f1": 0.6365537615929497,
+      "pipelines": {
+        "fold_0": "models/iec61850/full/decision_tree/fold_0.joblib",
+        "fold_1": "models/iec61850/full/decision_tree/fold_1.joblib",
+        "fold_2": "models/iec61850/full/decision_tree/fold_2.joblib",
+        "development": "models/iec61850/full/decision_tree/development.joblib"
+      }
+    },
+    "random_forest": {
+      "candidate_index": 3,
+      "parameters": {
+        "n_estimators": 200,
+        "max_features": "sqrt",
+        "bootstrap": true,
+        "max_depth": 24,
+        "min_samples_leaf": 1
+      },
+      "candidate_mean_validation_macro_f1": [
+        0.669689374742422,
+        0.6920074303639926,
+        0.7063551478938677,
+        0.7767526571973681
+      ],
+      "mean_validation_macro_f1": 0.7767526571973681,
+      "pipelines": {
+        "fold_0": "models/iec61850/full/random_forest/fold_0.joblib",
+        "fold_1": "models/iec61850/full/random_forest/fold_1.joblib",
+        "fold_2": "models/iec61850/full/random_forest/fold_2.joblib",
+        "development": "models/iec61850/full/random_forest/development.joblib"
+      }
+    },
+    "xgboost": {
+      "candidate_index": 3,
+      "parameters": {
+        "n_estimators": 200,
+        "objective": "multi:softprob",
+        "tree_method": "hist",
+        "device": "cpu",
+        "eval_metric": "mlogloss",
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "verbosity": 1,
+        "max_depth": 6,
+        "learning_rate": 0.1
+      },
+      "candidate_mean_validation_macro_f1": [
+        0.683028115011339,
+        0.7556837101539434,
+        0.7688421805072573,
+        0.7967699331286227
+      ],
+      "mean_validation_macro_f1": 0.7967699331286227,
+      "pipelines": {
+        "fold_0": "models/iec61850/full/xgboost/fold_0.joblib",
+        "fold_1": "models/iec61850/full/xgboost/fold_1.joblib",
+        "fold_2": "models/iec61850/full/xgboost/fold_2.joblib",
+        "development": "models/iec61850/full/xgboost/development.joblib"
+      }
+    },
+    "lightgbm": {
+      "candidate_index": 2,
+      "parameters": {
+        "n_estimators": 200,
+        "objective": "multiclass",
+        "learning_rate": 0.05,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "deterministic": true,
+        "force_col_wise": true,
+        "verbosity": -1,
+        "num_leaves": 31,
+        "min_child_samples": 20
+      },
+      "candidate_mean_validation_macro_f1": [
+        0.7622149700760031,
+        0.7663486035045298,
+        0.7696320471872203,
+        0.7671782026407986
+      ],
+      "mean_validation_macro_f1": 0.7696320471872203,
+      "pipelines": {
+        "fold_0": "models/iec61850/full/lightgbm/fold_0.joblib",
+        "fold_1": "models/iec61850/full/lightgbm/fold_1.joblib",
+        "fold_2": "models/iec61850/full/lightgbm/fold_2.joblib",
+        "development": "models/iec61850/full/lightgbm/development.joblib"
+      }
+    },
+    "dummy": {
+      "candidate_index": 0,
+      "parameters": {
+        "strategy": "most_frequent"
+      },
+      "candidate_mean_validation_macro_f1": [
+        0.10902266616741756
+      ],
+      "mean_validation_macro_f1": 0.10902266616741756,
+      "pipelines": {
+        "fold_0": "models/iec61850/full/dummy/fold_0.joblib",
+        "fold_1": "models/iec61850/full/dummy/fold_1.joblib",
+        "fold_2": "models/iec61850/full/dummy/fold_2.joblib",
+        "development": "models/iec61850/full/dummy/development.joblib"
+      }
+    }
+  },
+  "python": "3.13.7",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "lightgbm": "4.7.0",
+    "pyarrow": "23.0.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0"
+  },
+  "logical_fits_completed": 69,
+  "estimator_fit_attempts": 69
+}

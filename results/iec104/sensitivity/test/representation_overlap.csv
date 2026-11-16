@@ -1,0 +1,7 @@
+condition,numeric_view,test_records,matches_development_float64,matches_development_float32,rows_removed
+full,standardised,63994,0,0,0
+mi_matched_25,standardised,63994,8300,8300,0
+mi_matched_50,standardised,63994,50,50,0
+full,unscaled,63994,0,0,0
+mi_matched_25,unscaled,63994,8300,8300,0
+mi_matched_50,unscaled,63994,50,50,0

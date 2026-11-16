@@ -1,0 +1,10 @@
+source_file,class_label,development_records,sv_protocol_records,payload_present,payload_missing,malformed_payloads,asdu_byte_shapes,maximum_text_characters,payload_rows_with_missing_asdu_metadata,asdu_metadata_mismatches,metadata_mismatches_by_field,sv.datSet_present,sv.smpRate_present,sv.smpMod_present,sv.meas_value_present,sv.meas_quality_present
+attack-data/capture61850-floodattack_withfault.csv,flood,19840,586,586,19254,0,"{""32+32"":586}",129,0,0,"{""sv.ASDU_element"":0,""sv.confRev"":0,""sv.noASDU"":0,""sv.seqASDU"":0,""sv.smpCnt"":0,""sv.smpSynch"":0,""sv.svID"":0}",0,0,0,0,0
+attack-data/capture61850-floodattack_withoutfault.csv,flood,20160,467,467,19693,0,"{""32+32"":467}",129,0,0,"{""sv.ASDU_element"":0,""sv.confRev"":0,""sv.noASDU"":0,""sv.seqASDU"":0,""sv.smpCnt"":0,""sv.smpSynch"":0,""sv.svID"":0}",0,0,0,0,0
+attack-data/capture61850-fuzzyattack_withfault.csv,fuzzy,20048,20026,20026,22,0,"{""32+32"":20026}",129,0,0,"{""sv.ASDU_element"":0,""sv.confRev"":0,""sv.noASDU"":0,""sv.seqASDU"":0,""sv.smpCnt"":0,""sv.smpSynch"":0,""sv.svID"":0}",0,0,0,0,0
+attack-data/capture61850-fuzzyattack_withoutfault.csv,fuzzy,19952,19917,19917,35,0,"{""32+32"":19917}",129,0,0,"{""sv.ASDU_element"":0,""sv.confRev"":0,""sv.noASDU"":0,""sv.seqASDU"":0,""sv.smpCnt"":0,""sv.smpSynch"":0,""sv.svID"":0}",0,0,0,0,0
+attack-data/capture61850-ptpattack.csv,ptp_attack,127,0,0,127,0,{},0,0,0,{},0,0,0,0,0
+attack-data/capture61850-replay.csv,replay,19984,19973,19973,11,0,"{""32+32"":19973}",129,0,0,"{""sv.ASDU_element"":0,""sv.confRev"":0,""sv.noASDU"":0,""sv.seqASDU"":0,""sv.smpCnt"":0,""sv.smpSynch"":0,""sv.svID"":0}",0,0,0,0,0
+attack-free-data/capture61850-attackfree.csv,normal,19904,0,0,19904,0,{},0,0,0,{},0,0,0,0,0
+attack-free-data/capture61850-attackfree_PTP.csv,normal,18832,0,0,18832,0,{},0,0,0,{},0,0,0,0,0
+attack-free-data/capture61850-attackfree_normalfault.csv,normal,21248,21202,21202,46,0,"{""32+32"":21202}",129,0,0,"{""sv.ASDU_element"":0,""sv.confRev"":0,""sv.noASDU"":0,""sv.seqASDU"":0,""sv.smpCnt"":0,""sv.smpSynch"":0,""sv.svID"":0}",0,0,0,0,0

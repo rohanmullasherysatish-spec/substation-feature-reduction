@@ -1,0 +1,9 @@
+class_label,rows_read,rows_retained,duplicate_copies_removed
+dos,304627,304627,0
+flood,108,105,3
+fuzzy,939,939,0
+iec104_starvation,2028,2028,0
+mitm,26,26,0
+normal,255,255,0
+ntp_ddos,2278,2278,0
+port_scan,9710,9710,0

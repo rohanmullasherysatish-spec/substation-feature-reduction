@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "population": "development only",
+  "development_records": 160095,
+  "parser_limits": {
+    "maximum_characters": 65536,
+    "maximum_asdus": 64,
+    "maximum_bytes_per_asdu": 32768
+  },
+  "payload_records": 82171,
+  "missing_payload_records": 77924,
+  "malformed_payload_records": 0,
+  "asdu_metadata_mismatches": 0,
+  "source_metric_rows": 54,
+  "lossless_byte_roundtrip_checked": true,
+  "test_records_inspected": 0,
+  "classifiers_fitted": 0,
+  "new_predictions": 0,
+  "diagnostic_changes_representation": false,
+  "payload_is_model_input": true,
+  "physical_channel_schema_verified": false,
+  "byte_shapes": "Each shape lists ASDU byte lengths in order; e.g. 32+32 is two 32-byte ASDUs."
+}

@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "models": [
+    "logistic_regression",
+    "decision_tree",
+    "random_forest",
+    "xgboost",
+    "lightgbm",
+    "dummy"
+  ],
+  "validation_records_per_model": 255974,
+  "predictions": 1535844,
+  "all_training_metrics_reproduced": true,
+  "fitting_performed": false,
+  "test_scoring": false,
+  "pooled_interpretation": "one held-fold prediction per development row; differs from mean fold macro F1",
+  "timing": "three repeated full-pipeline predictions after a 16-row warm-up; descriptive wall time"
+}

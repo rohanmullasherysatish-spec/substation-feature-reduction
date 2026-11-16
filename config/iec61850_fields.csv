@@ -1,0 +1,168 @@
+field,role,kind,mi_component_type,numeric_grouping_field,list_component_limit,reason
+frame.time_delta,eligible,float64,continuous,True,,Relative inter-frame duration; first interval in each retained block is masked.
+frame.len,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+frame.protocols,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+eth.dst,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+eth.src,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+eth.len,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+eth.type,eligible,hex_category,discrete,False,,Protocol/flag code: canonical hexadecimal category without numeric ordering.
+goose.appid,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+goose.length,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+goose.reserve1,eligible,hex_category,discrete,False,,Protocol/flag code: canonical hexadecimal category without numeric ordering.
+goose.reserve2,eligible,hex_category,discrete,False,,Protocol/flag code: canonical hexadecimal category without numeric ordering.
+goose.float_value,eligible,float_list,continuous,True,64,Ordered floating-point message measurements; preserve each item.
+goose.gseMngtPdu_element,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.goosePdu_element,eligible,int64,discrete,True,,"Dissector structure-presence flag; observed nonmissing values are 1. Retain as a binary occurrence measurement, with training-only missingness handling."
+goose.stateID,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.requestResp,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.requests,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.responses,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.getGoReference_element,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.getGOOSEElementNumber_element,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.getGsReference_element,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.getGSSEDataOffset_element,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.gseMngtNotSupported_element,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.ident,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+goose.getReferenceRequest.offset,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.offset_item,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.references,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.references_item,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+goose.confRev,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+goose.posNeg,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.responsePositive_element,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.datSet,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+goose.result,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.RequestResults,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.responseNegative,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.offset,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.reference,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+goose.error,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.gocbRef,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+goose.timeAllowedtoLive,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+goose.goID,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+goose.t,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+goose.stNum,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+goose.sqNum,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+goose.simulation,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+goose.ndsCom,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+goose.numDatSetEntries,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+goose.allData,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+goose.Data,eligible,decimal_category_list,discrete,False,64,"ASN.1 Data CHOICE tags identify payload data types, not numerical magnitudes; preserve ordered categorical positions. Wireshark 4.4.0 packet-goose.c goose_Data_vals."
+goose.array,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.structure,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.boolean,eligible,int_list,discrete,True,64,Ordered repeated numeric dissector fields; preserve every item and list length under a fixed 64-item limit.
+goose.bit_string,excluded,exclude,continuous,False,,Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.
+goose.integer,eligible,int_list,discrete,True,64,Ordered repeated numeric dissector fields; preserve every item and list length under a fixed 64-item limit.
+goose.unsigned,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.floating_point,excluded,exclude,continuous,False,,Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.
+goose.real,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.octet_string,excluded,exclude,continuous,False,,Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.
+goose.visible_string,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.binary_time,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+goose.bcd,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.booleanArray,excluded,exclude,continuous,False,,Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.
+goose.objId,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+goose.mMSString,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.utc_time,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+goose.malformed.utctime,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.zero_pdu,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+goose.invalid_sim,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+sv.appid,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+sv.length,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+sv.reserve1,eligible,hex_category,discrete,False,,Protocol/flag code: canonical hexadecimal category without numeric ordering.
+sv.reserve2,eligible,hex_category,discrete,False,,Protocol/flag code: canonical hexadecimal category without numeric ordering.
+sv.meas_value,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+sv.meas_quality,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+sv.gmidentity,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+sv.savPdu_element,eligible,int64,discrete,True,,"Dissector structure-presence flag; observed nonmissing values are 1. Retain as a binary occurrence measurement, with training-only missingness handling."
+sv.noASDU,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+sv.seqASDU,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+sv.ASDU_element,eligible,int_list,discrete,True,64,"Repeated structure-presence flags; observed nonmissing items are 1. Preserve ordered binary occurrences, count and list length under the fixed 64-item limit."
+sv.svID,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+sv.datSet,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+sv.smpCnt,eligible,int_list,discrete,True,64,Ordered repeated numeric dissector fields; preserve every item and list length under a fixed 64-item limit.
+sv.confRev,eligible,int_list,discrete,True,64,Ordered repeated numeric dissector fields; preserve every item and list length under a fixed 64-item limit.
+sv.refrTm,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+sv.smpSynch,eligible,decimal_category_list,discrete,False,64,Ordered repeated nominal type/synchronisation codes; per-component categories rather than numerical magnitudes.
+sv.smpRate,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+sv.seqData,eligible,sv_payload,discrete,False,,Ordered unsigned bytes within two ASDU slots of up to 32 bytes; retain lengths/count/presence as one original field. No physical channel interpretation. Omit from grouping to preserve conservative base-measurement components.
+sv.smpMod,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+sv.gmidData,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+sv.malformed.utctime,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+sv.zero_pdu,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+sv.malformed.gmidentity,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+ip.src,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+ip.dst,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+tcp.srcport,excluded,exclude,discrete,False,,Connection/service port or PTP source-port identifier excluded from the endpoint-independent predictor pool; useful service context may be lost.
+tcp.dstport,excluded,exclude,discrete,False,,Connection/service port or PTP source-port identifier excluded from the endpoint-independent predictor pool; useful service context may be lost.
+tcp.seq,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+tcp.ack,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+ptp.sourceuuid,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+ptp.sourceportid,excluded,exclude,discrete,False,,Connection/service port or PTP source-port identifier excluded from the endpoint-independent predictor pool; useful service context may be lost.
+ptp.sequenceid,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+ptp.controlfield,eligible,decimal_category,discrete,False,,Communication-role or protocol code: exact decimal category without an assumed metric distance.
+ptp.flags,eligible,hex_category,discrete,False,,Protocol/flag code: canonical hexadecimal category without numeric ordering.
+ptp.v2.majorsdoid,eligible,hex_category,discrete,False,,Protocol/flag code: canonical hexadecimal category without numeric ordering.
+ptp.v2.messagetype,eligible,hex_category,discrete,False,,Protocol/flag code: canonical hexadecimal category without numeric ordering.
+ptp.v2.minorversionptp,eligible,decimal_category,discrete,False,,Communication-role or protocol code: exact decimal category without an assumed metric distance.
+ptp.v2.versionptp,eligible,decimal_category,discrete,False,,Communication-role or protocol code: exact decimal category without an assumed metric distance.
+ptp.v2.messagelength,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+ptp.v2.minorsdoid,eligible,decimal_category,discrete,False,,Communication-role or protocol code: exact decimal category without an assumed metric distance.
+ptp.v2.domainnumber,eligible,decimal_category,discrete,False,,Communication-role or protocol code: exact decimal category without an assumed metric distance.
+ptp.v2.flags,eligible,hex_category,discrete,False,,Protocol/flag code: canonical hexadecimal category without numeric ordering.
+ptp.v2.messagetypespecific,eligible,decimal_category,discrete,False,,Communication-role or protocol code: exact decimal category without an assumed metric distance.
+ptp.v2.correction.ns,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+ptp.v2.correction.subns,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+ptp.v2.clockidentity,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+ptp.v2.clockidentity_manuf,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+ptp.v2.sourceportid,excluded,exclude,discrete,False,,Connection/service port or PTP source-port identifier excluded from the endpoint-independent predictor pool; useful service context may be lost.
+ptp.v2.sequenceid,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+ptp.v2.controlfield,eligible,decimal_category,discrete,False,,Communication-role or protocol code: exact decimal category without an assumed metric distance.
+ptp.v2.logmessageperiod,eligible,decimal_category,discrete,False,,Log-interval codes include the special 0x7f control value; nominal coding avoids an assumed numerical distance. LinuxPTP v4.2 port.c uses this value for delay requests and unicast messages.
+ptp.v2.an.origintimestamp.seconds,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.v2.an.origintimestamp.nanoseconds,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.v2.an.origincurrentutcoffset,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+ptp.v2.timesource,eligible,hex_category,discrete,False,,Protocol/flag code: canonical hexadecimal category without numeric ordering.
+ptp.v2.an.localstepsremoved,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+ptp.v2.an.grandmasterclockidentity,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+ptp.v2.an.grandmasterclockclass,eligible,decimal_category,discrete,False,,Communication-role or protocol code: exact decimal category without an assumed metric distance.
+ptp.v2.an.grandmasterclockaccuracy,eligible,hex_category,discrete,False,,Protocol/flag code: canonical hexadecimal category without numeric ordering.
+ptp.v2.an.grandmasterclockvariance,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+ptp.v2.an.priority1,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+ptp.v2.an.priority2,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+ptp.v2.an.tlvType,eligible,decimal_category_list,discrete,False,64,Ordered repeated nominal type/synchronisation codes; per-component categories rather than numerical magnitudes.
+ptp.v2.an.lengthField,eligible,int_list,discrete,True,64,Ordered repeated numeric dissector fields; preserve every item and list length under a fixed 64-item limit.
+ptp.v2.an.oe.organizationId,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+ptp.v2.an.oe.organizationSubType,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+ptp.v2.an.oe.dataField,excluded,exclude,continuous,False,,Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.
+ptp.v2.an.oe.cern.wr.wrMessageID,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+ptp.v2.an.oe.cern.wr.wrFlags,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+ptp.v2.an.oe.grandmasterID,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+ptp.v2.an.oe.grandmasterTimeInaccuracy,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+ptp.v2.an.oe.networkTimeInaccuracy,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+ptp.v2.an.oe.reserved,eligible,hex_category_list,discrete,False,64,"Ordered repeated reserved/flag words retained as canonical nominal codes, without numerical ordering."
+ptp.v2.an.oe.totalTimeInaccuracy,eligible,int64,discrete,True,,"Documented packet count, length, state/sequence count or signed timing/quality measurement; strict decimal integer validation."
+ptp.v2.an.pathsequence,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+ptp.v2.an.tlv.data,excluded,exclude,continuous,False,,Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.
+ptp.v2.sdr.origintimestamp.seconds,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.v2.sdr.origintimestamp.nanoseconds,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.v2.fu.preciseorigintimestamp.seconds,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.v2.fu.preciseorigintimestamp.nanoseconds,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.v2.fu.preciseorigintimestamp.32bit,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.as.fu.tlvType,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+ptp.as.fu.lengthField,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+ptp.as.fu.organizationId,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+ptp.as.fu.organizationSubType,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+ptp.as.fu.cumulativeScaledRateOffset,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+ptp.as.fu.gmTimeBaseIndicator,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+ptp.as.fu.lastGmPhaseChange,excluded,exclude,continuous,False,,Opaque bytes have no declared physical-value decoder; not assigned arbitrary ordered numbers or high-cardinality categories.
+ptp.as.fu.scaledLastGmFreqChange,eligible,category,discrete,False,,"Protocol element, status or textual value retained as nominal text; meaning is not inferred from integer storage. Training-only screening and category limits apply later."
+ptp.v2.dr.receivetimestamp.seconds,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.v2.dr.receivetimestamp.nanoseconds,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.v2.dr.requestingsourceportidentity,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."
+ptp.v2.dr.requestingsourceportid,excluded,exclude,discrete,False,,Connection/service port or PTP source-port identifier excluded from the endpoint-independent predictor pool; useful service context may be lost.
+ptp.v2.pdrq.origintimestamp.seconds,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.v2.pdrq.origintimestamp.nanoseconds,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.v2.pdrs.requestreceipttimestamp.seconds,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.v2.pdrs.requestreceipttimestamp.nanoseconds,excluded,exclude,continuous,False,,Absolute message/clock time can identify a capture rather than traffic behaviour.
+ptp.v2.pdrs.requestingportidentity,excluded,exclude,continuous,False,,"Endpoint, device, application/object or manufacturer identity."

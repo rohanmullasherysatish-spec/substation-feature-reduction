@@ -1,0 +1,289 @@
+field,importance,rank,method,model,discrete,sample_unique_values,sample_rows,scope
+Protocol,0.46478303989597197,58.0,mi_matched,independent,True,3,838,fold_0
+Flow Duration,1.4027231366699966,20.0,mi_matched,independent,False,791,838,fold_0
+Total Fwd Packet,1.4510823909938702,11.0,mi_matched,independent,True,208,838,fold_0
+Total Bwd packets,1.3858450028030966,22.0,mi_matched,independent,True,202,838,fold_0
+Total Length of Fwd Packet,1.201029819433102,30.0,mi_matched,independent,False,235,838,fold_0
+Total Length of Bwd Packet,1.097576177847366,37.0,mi_matched,independent,False,271,838,fold_0
+Fwd Packet Length Max,1.4403705321900275,13.0,mi_matched,independent,False,16,838,fold_0
+Fwd Packet Length Min,0.8284579790808584,50.0,mi_matched,independent,False,10,838,fold_0
+Fwd Packet Length Mean,1.463517351713936,6.0,mi_matched,independent,False,219,838,fold_0
+Fwd Packet Length Std,0.970032529233263,43.0,mi_matched,independent,False,224,838,fold_0
+Bwd Packet Length Max,1.0947452160537658,38.0,mi_matched,independent,False,98,838,fold_0
+Bwd Packet Length Min,0.5920648238303454,55.0,mi_matched,independent,False,6,838,fold_0
+Bwd Packet Length Mean,1.267806775178867,27.0,mi_matched,independent,False,255,838,fold_0
+Bwd Packet Length Std,1.0645430433025826,39.0,mi_matched,independent,False,258,838,fold_0
+Flow Bytes/s,1.352483520254903,24.0,mi_matched,independent,False,536,838,fold_0
+Flow Packets/s,1.4598599262450225,8.0,mi_matched,independent,False,791,838,fold_0
+Flow IAT Mean,1.4513271270877568,10.0,mi_matched,independent,False,791,838,fold_0
+Flow IAT Std,1.379122137996069,23.0,mi_matched,independent,False,622,838,fold_0
+Flow IAT Max,1.613858007503252,2.0,mi_matched,independent,False,783,838,fold_0
+Flow IAT Min,1.41033513301959,18.0,mi_matched,independent,False,434,838,fold_0
+Fwd IAT Total,1.2873741458995247,26.0,mi_matched,independent,False,628,838,fold_0
+Fwd IAT Mean,1.51010371537626,4.0,mi_matched,independent,False,628,838,fold_0
+Fwd IAT Std,1.416934299184664,16.0,mi_matched,independent,False,615,838,fold_0
+Fwd IAT Max,1.4911351039137668,5.0,mi_matched,independent,False,626,838,fold_0
+Fwd IAT Min,1.4152743801160816,17.0,mi_matched,independent,False,493,838,fold_0
+Bwd IAT Total,0.9378883362830239,45.0,mi_matched,independent,False,460,838,fold_0
+Bwd IAT Mean,1.1023742446078053,36.0,mi_matched,independent,False,460,838,fold_0
+Bwd IAT Std,1.1378202664582031,33.0,mi_matched,independent,False,458,838,fold_0
+Bwd IAT Max,1.110040050652426,35.0,mi_matched,independent,False,451,838,fold_0
+Bwd IAT Min,0.9741058503378217,42.0,mi_matched,independent,False,302,838,fold_0
+Fwd PSH Flags,0.4061183027296716,59.0,mi_matched,independent,True,2,838,fold_0
+Fwd URG Flags,0.0,69.5,mi_matched,independent,True,1,838,fold_0
+Fwd Header Length,1.7489870457345533,1.0,mi_matched,independent,True,241,838,fold_0
+Bwd Header Length,1.444614896191422,12.0,mi_matched,independent,True,229,838,fold_0
+Fwd Packets/s,1.597412648896848,3.0,mi_matched,independent,False,791,838,fold_0
+Bwd Packets/s,1.433592086536081,14.0,mi_matched,independent,False,635,838,fold_0
+Packet Length Min,0.7940416599765392,51.0,mi_matched,independent,False,5,838,fold_0
+Packet Length Max,1.408659590254794,19.0,mi_matched,independent,False,103,838,fold_0
+Packet Length Mean,1.4199926189042107,15.0,mi_matched,independent,False,266,838,fold_0
+Packet Length Std,1.1363845858497819,34.0,mi_matched,independent,False,263,838,fold_0
+Packet Length Variance,1.1412993728321728,32.0,mi_matched,independent,False,265,838,fold_0
+FIN Flag Count,0.46817745073272066,57.0,mi_matched,independent,True,3,838,fold_0
+SYN Flag Count,0.8866197551381054,47.0,mi_matched,independent,True,3,838,fold_0
+RST Flag Count,0.5126415853387989,56.0,mi_matched,independent,True,2,838,fold_0
+PSH Flag Count,1.156269241955922,31.0,mi_matched,independent,True,182,838,fold_0
+ACK Flag Count,1.3950992477426958,21.0,mi_matched,independent,True,203,838,fold_0
+URG Flag Count,0.0,69.5,mi_matched,independent,True,1,838,fold_0
+CWR Flag Count,0.0,69.5,mi_matched,independent,True,1,838,fold_0
+ECE Flag Count,0.0,69.5,mi_matched,independent,True,1,838,fold_0
+Down/Up Ratio,0.3952322584643744,60.0,mi_matched,independent,False,3,838,fold_0
+Average Packet Size,1.4529727315318497,9.0,mi_matched,independent,False,363,838,fold_0
+Fwd Segment Size Avg,1.4626246826514855,7.0,mi_matched,independent,False,208,838,fold_0
+Bwd Segment Size Avg,1.2193598716267096,28.0,mi_matched,independent,False,248,838,fold_0
+Bwd Bytes/Bulk Avg,0.8501730416978588,49.0,mi_matched,independent,False,313,838,fold_0
+Bwd Packet/Bulk Avg,0.8763705954939742,48.0,mi_matched,independent,False,237,838,fold_0
+Bwd Bulk Rate Avg,1.0257659949764706,40.0,mi_matched,independent,False,349,838,fold_0
+Subflow Fwd Packets,0.9510213473455711,44.0,mi_matched,independent,True,53,838,fold_0
+Subflow Fwd Bytes,0.7761383917225873,52.0,mi_matched,independent,False,15,838,fold_0
+Subflow Bwd Packets,0.7153993098075787,53.0,mi_matched,independent,True,47,838,fold_0
+Subflow Bwd Bytes,0.7121147783414279,54.0,mi_matched,independent,False,90,838,fold_0
+FWD Init Win Bytes,1.2114412545622446,29.0,mi_matched,independent,False,13,838,fold_0
+Bwd Init Win Bytes,0.9808585166019961,41.0,mi_matched,independent,False,10,838,fold_0
+Fwd Act Data Pkts,1.3000030170848689,25.0,mi_matched,independent,True,183,838,fold_0
+Fwd Seg Size Min,0.9276099674032166,46.0,mi_matched,independent,False,6,838,fold_0
+Active Mean,0.03140740987812585,64.0,mi_matched,independent,False,16,838,fold_0
+Active Std,0.019294853775983167,65.0,mi_matched,independent,False,8,838,fold_0
+Active Max,0.01882486069667344,66.0,mi_matched,independent,False,16,838,fold_0
+Active Min,0.0,69.5,mi_matched,independent,False,15,838,fold_0
+Idle Mean,0.0901649496898882,61.0,mi_matched,independent,False,22,838,fold_0
+Idle Std,0.0,69.5,mi_matched,independent,False,10,838,fold_0
+Idle Max,0.07320243203308507,62.0,mi_matched,independent,False,22,838,fold_0
+Idle Min,0.06875299131119794,63.0,mi_matched,independent,False,22,838,fold_0
+Protocol,0.47131670293751454,58.0,mi_matched,independent,True,3,838,fold_1
+Flow Duration,1.3662271111110451,22.0,mi_matched,independent,False,786,838,fold_1
+Total Fwd Packet,1.383322520813219,19.0,mi_matched,independent,True,196,838,fold_1
+Total Bwd packets,1.3401582713494005,24.0,mi_matched,independent,True,183,838,fold_1
+Total Length of Fwd Packet,1.2408740450762035,30.0,mi_matched,independent,False,237,838,fold_1
+Total Length of Bwd Packet,1.129288635636864,38.0,mi_matched,independent,False,269,838,fold_1
+Fwd Packet Length Max,1.4571750802621322,11.0,mi_matched,independent,False,21,838,fold_1
+Fwd Packet Length Min,0.8738157084928266,46.0,mi_matched,independent,False,11,838,fold_1
+Fwd Packet Length Mean,1.4918486543431106,5.0,mi_matched,independent,False,210,838,fold_1
+Fwd Packet Length Std,1.0006191257966208,41.0,mi_matched,independent,False,219,838,fold_1
+Bwd Packet Length Max,1.1414300509243058,36.0,mi_matched,independent,False,92,838,fold_1
+Bwd Packet Length Min,0.6304941343552763,55.0,mi_matched,independent,False,6,838,fold_1
+Bwd Packet Length Mean,1.3030563643581825,26.0,mi_matched,independent,False,254,838,fold_1
+Bwd Packet Length Std,1.0766388100823565,39.0,mi_matched,independent,False,258,838,fold_1
+Flow Bytes/s,1.3764557848064018,20.0,mi_matched,independent,False,544,838,fold_1
+Flow Packets/s,1.4753583150840872,8.0,mi_matched,independent,False,787,838,fold_1
+Flow IAT Mean,1.451789211676362,12.0,mi_matched,independent,False,787,838,fold_1
+Flow IAT Std,1.4296436814405356,15.0,mi_matched,independent,False,612,838,fold_1
+Flow IAT Max,1.6544010256346187,2.0,mi_matched,independent,False,778,838,fold_1
+Flow IAT Min,1.3607860968365295,23.0,mi_matched,independent,False,410,838,fold_1
+Fwd IAT Total,1.2660781550001672,28.0,mi_matched,independent,False,618,838,fold_1
+Fwd IAT Mean,1.4748369118206475,9.0,mi_matched,independent,False,618,838,fold_1
+Fwd IAT Std,1.4763616550509358,7.0,mi_matched,independent,False,603,838,fold_1
+Fwd IAT Max,1.5222925050750278,4.0,mi_matched,independent,False,617,838,fold_1
+Fwd IAT Min,1.366422837286596,21.0,mi_matched,independent,False,480,838,fold_1
+Bwd IAT Total,0.9428541001302944,44.0,mi_matched,independent,False,472,838,fold_1
+Bwd IAT Mean,1.1577075797678895,35.0,mi_matched,independent,False,472,838,fold_1
+Bwd IAT Std,1.190849557438656,31.0,mi_matched,independent,False,469,838,fold_1
+Bwd IAT Max,1.1668095363850244,34.0,mi_matched,independent,False,460,838,fold_1
+Bwd IAT Min,0.9523051951910972,43.0,mi_matched,independent,False,304,838,fold_1
+Fwd PSH Flags,0.41348321968284896,59.0,mi_matched,independent,True,2,838,fold_1
+Fwd URG Flags,0.0,70.5,mi_matched,independent,True,1,838,fold_1
+Fwd Header Length,1.7204580394831124,1.0,mi_matched,independent,True,233,838,fold_1
+Bwd Header Length,1.4429011544602695,13.0,mi_matched,independent,True,229,838,fold_1
+Fwd Packets/s,1.586429937972565,3.0,mi_matched,independent,False,787,838,fold_1
+Bwd Packets/s,1.427095162753988,16.0,mi_matched,independent,False,653,838,fold_1
+Packet Length Min,0.8068460613680526,51.0,mi_matched,independent,False,5,838,fold_1
+Packet Length Max,1.4091199424844028,17.0,mi_matched,independent,False,99,838,fold_1
+Packet Length Mean,1.4357023184735211,14.0,mi_matched,independent,False,264,838,fold_1
+Packet Length Std,1.1765979818946684,33.0,mi_matched,independent,False,268,838,fold_1
+Packet Length Variance,1.1791788960745337,32.0,mi_matched,independent,False,269,838,fold_1
+FIN Flag Count,0.4841051063881483,57.0,mi_matched,independent,True,3,838,fold_1
+SYN Flag Count,0.8616693104488632,50.0,mi_matched,independent,True,3,838,fold_1
+RST Flag Count,0.5241936645972476,56.0,mi_matched,independent,True,2,838,fold_1
+PSH Flag Count,1.1372305683137636,37.0,mi_matched,independent,True,175,838,fold_1
+ACK Flag Count,1.3917537993322562,18.0,mi_matched,independent,True,195,838,fold_1
+URG Flag Count,0.0,70.5,mi_matched,independent,True,1,838,fold_1
+CWR Flag Count,0.0,70.5,mi_matched,independent,True,1,838,fold_1
+ECE Flag Count,0.0,70.5,mi_matched,independent,True,1,838,fold_1
+Down/Up Ratio,0.3171947487156288,60.0,mi_matched,independent,False,3,838,fold_1
+Average Packet Size,1.4620438125682378,10.0,mi_matched,independent,False,361,838,fold_1
+Fwd Segment Size Avg,1.4855988697579348,6.0,mi_matched,independent,False,204,838,fold_1
+Bwd Segment Size Avg,1.2757861677500182,27.0,mi_matched,independent,False,252,838,fold_1
+Bwd Bytes/Bulk Avg,0.8681202874579612,48.0,mi_matched,independent,False,321,838,fold_1
+Bwd Packet/Bulk Avg,0.8639212218059007,49.0,mi_matched,independent,False,219,838,fold_1
+Bwd Bulk Rate Avg,1.0464390991099566,40.0,mi_matched,independent,False,368,838,fold_1
+Subflow Fwd Packets,0.8729935832702255,47.0,mi_matched,independent,True,48,838,fold_1
+Subflow Fwd Bytes,0.7499865861250825,52.0,mi_matched,independent,False,11,838,fold_1
+Subflow Bwd Packets,0.6771102043961845,53.0,mi_matched,independent,True,42,838,fold_1
+Subflow Bwd Bytes,0.675124687766889,54.0,mi_matched,independent,False,96,838,fold_1
+FWD Init Win Bytes,1.26249984863012,29.0,mi_matched,independent,False,14,838,fold_1
+Bwd Init Win Bytes,0.9713791727715784,42.0,mi_matched,independent,False,13,838,fold_1
+Fwd Act Data Pkts,1.31021192641498,25.0,mi_matched,independent,True,177,838,fold_1
+Fwd Seg Size Min,0.9105085759766585,45.0,mi_matched,independent,False,6,838,fold_1
+Active Mean,0.036975481076310324,64.0,mi_matched,independent,False,16,838,fold_1
+Active Std,0.019583834501107233,66.0,mi_matched,independent,False,9,838,fold_1
+Active Max,0.02546949992863512,65.0,mi_matched,independent,False,16,838,fold_1
+Active Min,0.009052539146316985,67.0,mi_matched,independent,False,16,838,fold_1
+Idle Mean,0.09616098084520397,61.0,mi_matched,independent,False,20,838,fold_1
+Idle Std,0.0016589646511051548,68.0,mi_matched,independent,False,10,838,fold_1
+Idle Max,0.0733649601927806,62.0,mi_matched,independent,False,20,838,fold_1
+Idle Min,0.06550945425177446,63.0,mi_matched,independent,False,20,838,fold_1
+Protocol,0.47814182112785253,57.0,mi_matched,independent,True,3,838,fold_2
+Flow Duration,1.4479511870806598,17.0,mi_matched,independent,False,789,838,fold_2
+Total Fwd Packet,1.4143131022553705,19.0,mi_matched,independent,True,201,838,fold_2
+Total Bwd packets,1.4020483254939702,22.0,mi_matched,independent,True,198,838,fold_2
+Total Length of Fwd Packet,1.2478104330964586,29.0,mi_matched,independent,False,234,838,fold_2
+Total Length of Bwd Packet,1.1458790915943307,37.0,mi_matched,independent,False,275,838,fold_2
+Fwd Packet Length Max,1.4638074722032342,13.0,mi_matched,independent,False,22,838,fold_2
+Fwd Packet Length Min,0.8534087971038575,50.0,mi_matched,independent,False,12,838,fold_2
+Fwd Packet Length Mean,1.5003775323368613,10.0,mi_matched,independent,False,222,838,fold_2
+Fwd Packet Length Std,1.0089388343061436,42.0,mi_matched,independent,False,229,838,fold_2
+Bwd Packet Length Max,1.1747306549469203,32.0,mi_matched,independent,False,85,838,fold_2
+Bwd Packet Length Min,0.6315692504147976,55.0,mi_matched,independent,False,5,838,fold_2
+Bwd Packet Length Mean,1.321350614156324,26.0,mi_matched,independent,False,254,838,fold_2
+Bwd Packet Length Std,1.111698283180853,39.0,mi_matched,independent,False,258,838,fold_2
+Flow Bytes/s,1.3923743973648923,23.0,mi_matched,independent,False,539,838,fold_2
+Flow Packets/s,1.5705928342685016,5.0,mi_matched,independent,False,789,838,fold_2
+Flow IAT Mean,1.5265149879832454,7.0,mi_matched,independent,False,789,838,fold_2
+Flow IAT Std,1.4529573803499147,15.0,mi_matched,independent,False,626,838,fold_2
+Flow IAT Max,1.6835109944851308,2.0,mi_matched,independent,False,778,838,fold_2
+Flow IAT Min,1.406757748710451,20.0,mi_matched,independent,False,419,838,fold_2
+Fwd IAT Total,1.3333406334437652,25.0,mi_matched,independent,False,631,838,fold_2
+Fwd IAT Mean,1.551406462798044,6.0,mi_matched,independent,False,631,838,fold_2
+Fwd IAT Std,1.5214584052557725,8.0,mi_matched,independent,False,613,838,fold_2
+Fwd IAT Max,1.5789946632810166,4.0,mi_matched,independent,False,630,838,fold_2
+Fwd IAT Min,1.3923520822075106,24.0,mi_matched,independent,False,491,838,fold_2
+Bwd IAT Total,1.0197890957684674,41.0,mi_matched,independent,False,472,838,fold_2
+Bwd IAT Mean,1.1399534624267187,38.0,mi_matched,independent,False,472,838,fold_2
+Bwd IAT Std,1.1714269135844602,34.0,mi_matched,independent,False,470,838,fold_2
+Bwd IAT Max,1.177868368896622,31.0,mi_matched,independent,False,459,838,fold_2
+Bwd IAT Min,0.9121911272206631,48.0,mi_matched,independent,False,302,838,fold_2
+Fwd PSH Flags,0.4184119293939972,59.0,mi_matched,independent,True,2,838,fold_2
+Fwd URG Flags,0.0,70.5,mi_matched,independent,True,1,838,fold_2
+Fwd Header Length,1.7699772476821751,1.0,mi_matched,independent,True,246,838,fold_2
+Bwd Header Length,1.4692246768169146,12.0,mi_matched,independent,True,227,838,fold_2
+Fwd Packets/s,1.6624040755714562,3.0,mi_matched,independent,False,789,838,fold_2
+Bwd Packets/s,1.5094864033198747,9.0,mi_matched,independent,False,651,838,fold_2
+Packet Length Min,0.8068460613680526,51.0,mi_matched,independent,False,5,838,fold_2
+Packet Length Max,1.448891748432623,16.0,mi_matched,independent,False,93,838,fold_2
+Packet Length Mean,1.4047540018375877,21.0,mi_matched,independent,False,268,838,fold_2
+Packet Length Std,1.1524758777176913,36.0,mi_matched,independent,False,267,838,fold_2
+Packet Length Variance,1.1716236888552327,33.0,mi_matched,independent,False,267,838,fold_2
+FIN Flag Count,0.4602708985435455,58.0,mi_matched,independent,True,3,838,fold_2
+SYN Flag Count,0.9212338131111603,47.0,mi_matched,independent,True,3,838,fold_2
+RST Flag Count,0.519681364349275,56.0,mi_matched,independent,True,2,838,fold_2
+PSH Flag Count,1.1532804220183763,35.0,mi_matched,independent,True,176,838,fold_2
+ACK Flag Count,1.4187611221135588,18.0,mi_matched,independent,True,203,838,fold_2
+URG Flag Count,0.0,70.5,mi_matched,independent,True,1,838,fold_2
+CWR Flag Count,0.0,70.5,mi_matched,independent,True,1,838,fold_2
+ECE Flag Count,0.0,70.5,mi_matched,independent,True,1,838,fold_2
+Down/Up Ratio,0.36278918001165916,60.0,mi_matched,independent,False,3,838,fold_2
+Average Packet Size,1.4573561528670889,14.0,mi_matched,independent,False,353,838,fold_2
+Fwd Segment Size Avg,1.4921753592798943,11.0,mi_matched,independent,False,212,838,fold_2
+Bwd Segment Size Avg,1.2865352869561935,28.0,mi_matched,independent,False,248,838,fold_2
+Bwd Bytes/Bulk Avg,0.9354982530372136,46.0,mi_matched,independent,False,317,838,fold_2
+Bwd Packet/Bulk Avg,0.9033389567823651,49.0,mi_matched,independent,False,231,838,fold_2
+Bwd Bulk Rate Avg,1.0673409628485793,40.0,mi_matched,independent,False,359,838,fold_2
+Subflow Fwd Packets,0.9751009690890511,45.0,mi_matched,independent,True,53,838,fold_2
+Subflow Fwd Bytes,0.803322396045199,52.0,mi_matched,independent,False,10,838,fold_2
+Subflow Bwd Packets,0.7471283498776599,53.0,mi_matched,independent,True,46,838,fold_2
+Subflow Bwd Bytes,0.7317785218072936,54.0,mi_matched,independent,False,100,838,fold_2
+FWD Init Win Bytes,1.205991672301642,30.0,mi_matched,independent,False,14,838,fold_2
+Bwd Init Win Bytes,0.9823351982841282,44.0,mi_matched,independent,False,11,838,fold_2
+Fwd Act Data Pkts,1.3076780069190486,27.0,mi_matched,independent,True,183,838,fold_2
+Fwd Seg Size Min,0.9851360543115426,43.0,mi_matched,independent,False,6,838,fold_2
+Active Mean,0.04211450188412558,64.0,mi_matched,independent,False,17,838,fold_2
+Active Std,0.012351902090364408,66.0,mi_matched,independent,False,9,838,fold_2
+Active Max,0.029620376186205277,65.0,mi_matched,independent,False,17,838,fold_2
+Active Min,0.007144093201977508,67.0,mi_matched,independent,False,17,838,fold_2
+Idle Mean,0.10014770863867417,61.0,mi_matched,independent,False,20,838,fold_2
+Idle Std,0.0004874207651623941,68.0,mi_matched,independent,False,9,838,fold_2
+Idle Max,0.0792538851807083,62.0,mi_matched,independent,False,20,838,fold_2
+Idle Min,0.07423729076277219,63.0,mi_matched,independent,False,20,838,fold_2
+Protocol,0.4961534166057327,57.0,mi_matched,independent,True,3,873,development
+Flow Duration,1.4563840334709082,12.0,mi_matched,independent,False,831,873,development
+Total Fwd Packet,1.432384122892807,16.0,mi_matched,independent,True,206,873,development
+Total Bwd packets,1.3691722305775842,23.0,mi_matched,independent,True,199,873,development
+Total Length of Fwd Packet,1.2422724754714372,29.0,mi_matched,independent,False,246,873,development
+Total Length of Bwd Packet,1.1064368674339768,36.0,mi_matched,independent,False,286,873,development
+Fwd Packet Length Max,1.4186736342551494,20.0,mi_matched,independent,False,20,873,development
+Fwd Packet Length Min,0.8317055412224614,50.0,mi_matched,independent,False,10,873,development
+Fwd Packet Length Mean,1.4780878010821237,9.0,mi_matched,independent,False,219,873,development
+Fwd Packet Length Std,0.9882110015203036,41.0,mi_matched,independent,False,232,873,development
+Bwd Packet Length Max,1.1389701221207142,32.0,mi_matched,independent,False,93,873,development
+Bwd Packet Length Min,0.5822370794100462,55.0,mi_matched,independent,False,5,873,development
+Bwd Packet Length Mean,1.2817761287199894,27.0,mi_matched,independent,False,259,873,development
+Bwd Packet Length Std,1.0537151593381426,39.0,mi_matched,independent,False,258,873,development
+Flow Bytes/s,1.3225894074954514,24.0,mi_matched,independent,False,542,873,development
+Flow Packets/s,1.5396599085803646,5.0,mi_matched,independent,False,831,873,development
+Flow IAT Mean,1.5310940864855063,6.0,mi_matched,independent,False,831,873,development
+Flow IAT Std,1.424742708879457,19.0,mi_matched,independent,False,647,873,development
+Flow IAT Max,1.7091888426311512,2.0,mi_matched,independent,False,826,873,development
+Flow IAT Min,1.42869520099919,17.0,mi_matched,independent,False,433,873,development
+Fwd IAT Total,1.3180108389294705,25.0,mi_matched,independent,False,657,873,development
+Fwd IAT Mean,1.5065440108806514,7.0,mi_matched,independent,False,658,873,development
+Fwd IAT Std,1.4573284829663686,11.0,mi_matched,independent,False,632,873,development
+Fwd IAT Max,1.5793529109637652,4.0,mi_matched,independent,False,657,873,development
+Fwd IAT Min,1.4337713732829656,15.0,mi_matched,independent,False,518,873,development
+Bwd IAT Total,0.9388197539394956,45.0,mi_matched,independent,False,479,873,development
+Bwd IAT Mean,1.1061656256909176,37.0,mi_matched,independent,False,479,873,development
+Bwd IAT Std,1.1283485673985751,34.0,mi_matched,independent,False,475,873,development
+Bwd IAT Max,1.0971159696761255,38.0,mi_matched,independent,False,474,873,development
+Bwd IAT Min,0.904250855190567,46.0,mi_matched,independent,False,300,873,development
+Fwd PSH Flags,0.4168025472777651,59.0,mi_matched,independent,True,2,873,development
+Fwd URG Flags,0.0,70.5,mi_matched,independent,True,1,873,development
+Fwd Header Length,1.7532222628843326,1.0,mi_matched,independent,True,244,873,development
+Bwd Header Length,1.46678812952269,10.0,mi_matched,independent,True,245,873,development
+Fwd Packets/s,1.62355259562187,3.0,mi_matched,independent,False,831,873,development
+Bwd Packets/s,1.4491297328081099,13.0,mi_matched,independent,False,671,873,development
+Packet Length Min,0.802273008893378,51.0,mi_matched,independent,False,4,873,development
+Packet Length Max,1.3842458173790422,22.0,mi_matched,independent,False,100,873,development
+Packet Length Mean,1.4268056062729153,18.0,mi_matched,independent,False,276,873,development
+Packet Length Std,1.137522881206085,33.0,mi_matched,independent,False,277,873,development
+Packet Length Variance,1.1277022486308166,35.0,mi_matched,independent,False,276,873,development
+FIN Flag Count,0.46160242915980965,58.0,mi_matched,independent,True,3,873,development
+SYN Flag Count,0.8953817089751557,47.0,mi_matched,independent,True,3,873,development
+RST Flag Count,0.506529746988153,56.0,mi_matched,independent,True,2,873,development
+PSH Flag Count,1.1454370181379767,31.0,mi_matched,independent,True,176,873,development
+ACK Flag Count,1.3990731389505,21.0,mi_matched,independent,True,203,873,development
+URG Flag Count,0.0,70.5,mi_matched,independent,True,1,873,development
+CWR Flag Count,0.0,70.5,mi_matched,independent,True,1,873,development
+ECE Flag Count,0.0,70.5,mi_matched,independent,True,1,873,development
+Down/Up Ratio,0.3838320489516738,60.0,mi_matched,independent,False,3,873,development
+Average Packet Size,1.4466369784671347,14.0,mi_matched,independent,False,376,873,development
+Fwd Segment Size Avg,1.484369677996859,8.0,mi_matched,independent,False,214,873,development
+Bwd Segment Size Avg,1.2688165357868746,28.0,mi_matched,independent,False,252,873,development
+Bwd Bytes/Bulk Avg,0.8775203128036058,49.0,mi_matched,independent,False,333,873,development
+Bwd Packet/Bulk Avg,0.8808761390167823,48.0,mi_matched,independent,False,243,873,development
+Bwd Bulk Rate Avg,1.0072256021830137,40.0,mi_matched,independent,False,372,873,development
+Subflow Fwd Packets,0.9619161957518436,44.0,mi_matched,independent,True,54,873,development
+Subflow Fwd Bytes,0.7161289846722299,52.0,mi_matched,independent,False,12,873,development
+Subflow Bwd Packets,0.7007106686991195,53.0,mi_matched,independent,True,46,873,development
+Subflow Bwd Bytes,0.6996071956577392,54.0,mi_matched,independent,False,90,873,development
+FWD Init Win Bytes,1.2420002696521584,30.0,mi_matched,independent,False,13,873,development
+Bwd Init Win Bytes,0.9814751707648381,42.0,mi_matched,independent,False,10,873,development
+Fwd Act Data Pkts,1.2899087535332117,26.0,mi_matched,independent,True,186,873,development
+Fwd Seg Size Min,0.9778337151975689,43.0,mi_matched,independent,False,6,873,development
+Active Mean,0.07214697998456554,65.0,mi_matched,independent,False,23,873,development
+Active Std,0.006442714211623901,68.0,mi_matched,independent,False,11,873,development
+Active Max,0.07639488368298553,64.0,mi_matched,independent,False,23,873,development
+Active Min,0.029953081696338923,66.0,mi_matched,independent,False,22,873,development
+Idle Mean,0.09004425491426771,62.0,mi_matched,independent,False,28,873,development
+Idle Std,0.012880613815368314,67.0,mi_matched,independent,False,11,873,development
+Idle Max,0.12182626138336161,61.0,mi_matched,independent,False,28,873,development
+Idle Min,0.07797945898460101,63.0,mi_matched,independent,False,28,873,development

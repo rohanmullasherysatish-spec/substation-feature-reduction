@@ -1,0 +1,10 @@
+source_index,source_file,class_label,source_bytes,fresh_validated_records,selected_records,selected_source_blocks,all_record_widths_and_labels_checked,full_block_inclusion_probability,unselected_large_source_tail,elapsed_seconds,sample_parquet_roundtrip_exact,source_mtime_ns
+0,attack-data/capture61850-floodattack_withfault.csv,flood,9515298195,4939146,24992,1562,True,0.0050599942985979736,10,50.786222749971785,True,1718661305000000000
+1,attack-data/capture61850-floodattack_withoutfault.csv,flood,11022588121,5720704,24992,1562,True,0.004368693083928132,0,58.48342450003838,True,1718661959000000000
+2,attack-data/capture61850-fuzzyattack_withfault.csv,fuzzy,650137132,345839,24992,1562,True,0.0722679744609975,15,3.826113916002214,True,1718662001000000000
+3,attack-data/capture61850-fuzzyattack_withoutfault.csv,fuzzy,1346957666,716307,24992,1562,True,0.034890214210726175,3,7.7430629169684835,True,1718662084000000000
+4,attack-data/capture61850-ptpattack.csv,ptp_attack,325222,159,159,10,True,1.0,0,0.018494290998205543,True,1718662085000000000
+5,attack-data/capture61850-replay.csv,replay,613864030,327373,24992,1562,True,0.07634408602150537,13,3.5637457920238376,True,1718662124000000000
+6,attack-free-data/capture61850-attackfree.csv,normal,18000870113,9478223,24992,1562,True,0.0026367853501421366,15,93.87877945799846,True,1724944984000000000
+7,attack-free-data/capture61850-attackfree_PTP.csv,normal,299902443,162073,24992,1562,True,0.15421068219962483,9,1.9047925419872627,True,1718660704000000000
+8,attack-free-data/capture61850-attackfree_normalfault.csv,normal,724854263,385772,24992,1562,True,0.06478639568643717,12,4.104017291974742,True,1718660751000000000

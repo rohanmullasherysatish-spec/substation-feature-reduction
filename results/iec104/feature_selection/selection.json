@@ -1,0 +1,401 @@
+{
+  "status": "complete",
+  "recipe": {
+    "selectors": [
+      "shap",
+      "mi"
+    ],
+    "retention_fractions": [
+      0.25,
+      0.5
+    ],
+    "denominator": "active original fields in this training scope; round counts upward",
+    "shap_foreground_cap_per_true_class": 128,
+    "shap_background_cap_per_true_class": 16,
+    "shap_sample_seed": 45,
+    "shap_sampling": "without replacement within each true class; all available when below cap",
+    "shap_perturbation": "interventional with independent encoded components and explicit background",
+    "shap_output": {
+      "logistic_regression": "linear_decision_score",
+      "decision_tree": "class_probability",
+      "random_forest": "class_probability",
+      "xgboost": "class_margin",
+      "lightgbm": "class_margin"
+    },
+    "shap_field_aggregation": "signed component sum, then absolute value; mean across output classes, then within true class, then equal true-class mean",
+    "shap_group_interpretation": "aggregated component attributions, not jointly masked coalition-group SHAP",
+    "shap_common_rank": "equal model mean of average-tie ranks; exact doubled integer sums; alphabetical final ties",
+    "additivity_atol": 1e-05,
+    "additivity_rtol": 1e-05,
+    "tree_precision_correction": "https://github.com/shap/shap/pull/5122; preserve float64 thresholds in SHAP 0.53.0",
+    "mi_sample_cap_per_true_class": 2000,
+    "mi_sample_seed": 46,
+    "mi_estimator_seed": 47,
+    "mi_neighbours": 3,
+    "mi_field_representation": "one variable per original field; nominal Protocol integer-coded jointly; semantic counts discrete; measurements continuous",
+    "mi_distribution": "capped stratified training sample; residual class imbalance retained; no duplicated rare rows",
+    "mi_ties": "average-tie ranks; alphabetical final ties",
+    "reduced_parameter_policy": "reuse_selected_full_parameters",
+    "performance_interpretation": "paired observed differences; no formal equivalence claim or unapproved loss margin",
+    "additional_conditions": "no PI selector, classifier-specific reduced SHAP fits, or frequency-versus-balanced SHAP experiment",
+    "test_scoring": false
+  },
+  "completed_scopes": [
+    "fold_0",
+    "fold_1",
+    "fold_2",
+    "development"
+  ],
+  "analyses": [
+    {
+      "model": "logistic_regression",
+      "seconds_including_transform_and_save": 0.09993091702926904,
+      "maximum_additivity_absolute_error": 9.094947017729282e-13,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float64",
+      "precision_backend": null,
+      "warnings": [],
+      "scope": "fold_0"
+    },
+    {
+      "model": "decision_tree",
+      "seconds_including_transform_and_save": 0.6807147079962306,
+      "maximum_additivity_absolute_error": 4.793528185498275e-08,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float32",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "fold_0"
+    },
+    {
+      "model": "random_forest",
+      "seconds_including_transform_and_save": 34.898458374955226,
+      "maximum_additivity_absolute_error": 2.0354895102769888e-08,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float32",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "fold_0"
+    },
+    {
+      "model": "xgboost",
+      "seconds_including_transform_and_save": 49.82089479197748,
+      "maximum_additivity_absolute_error": 4.2279292742364305e-06,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float32",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "fold_0"
+    },
+    {
+      "model": "lightgbm",
+      "seconds_including_transform_and_save": 91.7395542919985,
+      "maximum_additivity_absolute_error": 3.1443743431225357e-07,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float64",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "fold_0"
+    },
+    {
+      "method": "mi",
+      "seconds_including_transform": 0.29398704099003226,
+      "rows": 7002,
+      "warnings": [],
+      "scope": "fold_0"
+    },
+    {
+      "model": "logistic_regression",
+      "seconds_including_transform_and_save": 0.08226254204055294,
+      "maximum_additivity_absolute_error": 6.821210263296962e-13,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float64",
+      "precision_backend": null,
+      "warnings": [],
+      "scope": "fold_1"
+    },
+    {
+      "model": "decision_tree",
+      "seconds_including_transform_and_save": 0.15284779097419232,
+      "maximum_additivity_absolute_error": 3.389910174789179e-08,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float32",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "fold_1"
+    },
+    {
+      "model": "random_forest",
+      "seconds_including_transform_and_save": 40.00830591603881,
+      "maximum_additivity_absolute_error": 1.8847604588145828e-08,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float32",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "fold_1"
+    },
+    {
+      "model": "xgboost",
+      "seconds_including_transform_and_save": 52.62146879098145,
+      "maximum_additivity_absolute_error": 2.813101842136234e-06,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float32",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "fold_1"
+    },
+    {
+      "model": "lightgbm",
+      "seconds_including_transform_and_save": 93.73037837503944,
+      "maximum_additivity_absolute_error": 2.782471728579594e-07,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float64",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "fold_1"
+    },
+    {
+      "method": "mi",
+      "seconds_including_transform": 0.2903369160485454,
+      "rows": 7003,
+      "warnings": [],
+      "scope": "fold_1"
+    },
+    {
+      "model": "logistic_regression",
+      "seconds_including_transform_and_save": 0.07832545897690579,
+      "maximum_additivity_absolute_error": 9.094947017729282e-13,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float64",
+      "precision_backend": null,
+      "warnings": [],
+      "scope": "fold_2"
+    },
+    {
+      "model": "decision_tree",
+      "seconds_including_transform_and_save": 0.14887879200978205,
+      "maximum_additivity_absolute_error": 4.250461071997336e-08,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float32",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "fold_2"
+    },
+    {
+      "model": "random_forest",
+      "seconds_including_transform_and_save": 38.237277708016336,
+      "maximum_additivity_absolute_error": 1.483746536745656e-08,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float32",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "fold_2"
+    },
+    {
+      "model": "xgboost",
+      "seconds_including_transform_and_save": 52.56249758397462,
+      "maximum_additivity_absolute_error": 2.9264458847322317e-06,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float32",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "fold_2"
+    },
+    {
+      "model": "lightgbm",
+      "seconds_including_transform_and_save": 95.58533962501679,
+      "maximum_additivity_absolute_error": 2.8326673096046306e-07,
+      "foreground_rows": 838,
+      "background_rows": 126,
+      "native_input_dtype": "float64",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "fold_2"
+    },
+    {
+      "method": "mi",
+      "seconds_including_transform": 0.2928692499990575,
+      "rows": 7003,
+      "warnings": [],
+      "scope": "fold_2"
+    },
+    {
+      "model": "logistic_regression",
+      "seconds_including_transform_and_save": 0.08057987497886643,
+      "maximum_additivity_absolute_error": 6.821210263296962e-13,
+      "foreground_rows": 873,
+      "background_rows": 128,
+      "native_input_dtype": "float64",
+      "precision_backend": null,
+      "warnings": [],
+      "scope": "development"
+    },
+    {
+      "model": "decision_tree",
+      "seconds_including_transform_and_save": 0.1559717080090195,
+      "maximum_additivity_absolute_error": 2.2334839977489196e-08,
+      "foreground_rows": 873,
+      "background_rows": 128,
+      "native_input_dtype": "float32",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "development"
+    },
+    {
+      "model": "random_forest",
+      "seconds_including_transform_and_save": 43.319564959034324,
+      "maximum_additivity_absolute_error": 1.7835893539874803e-08,
+      "foreground_rows": 873,
+      "background_rows": 128,
+      "native_input_dtype": "float32",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "development"
+    },
+    {
+      "model": "xgboost",
+      "seconds_including_transform_and_save": 57.32257012499031,
+      "maximum_additivity_absolute_error": 3.2138369832068747e-06,
+      "foreground_rows": 873,
+      "background_rows": 128,
+      "native_input_dtype": "float32",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "development"
+    },
+    {
+      "model": "lightgbm",
+      "seconds_including_transform_and_save": 102.90350266703172,
+      "maximum_additivity_absolute_error": 2.9908893672825343e-07,
+      "foreground_rows": 873,
+      "background_rows": 128,
+      "native_input_dtype": "float64",
+      "precision_backend": {
+        "compiler": "Apple clang version 12.0.5 (clang-1205.0.22.9)",
+        "python_abi": "cpython-313-darwin",
+        "numpy": "2.5.4",
+        "shap": "0.53.0",
+        "correction": "https://github.com/shap/shap/pull/5122"
+      },
+      "warnings": [],
+      "scope": "development"
+    },
+    {
+      "method": "mi",
+      "seconds_including_transform": 0.34461308404570445,
+      "rows": 8504,
+      "warnings": [],
+      "scope": "development"
+    }
+  ],
+  "packages": {
+    "shap": "0.53.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  }
+}

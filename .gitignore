@@ -1,0 +1,27 @@
+# Local input materials, writing files and environments
+Datasets/
+/experiment_*/
+Samples/
+Thesis Chapters/
+/docs/
+/*_HANDOVER.md
+.venv/
+
+# Large derived artifacts and temporary files
+data/
+models/
+# Record-linked prediction errors; aggregate metrics remain available
+results/**/*errors.csv
+results/**/duplicates.csv
+.cache/
+.prepare_*/
+.partition_*/
+.preprocess_*/
+.train_full_*/
+.validation_*/
+.selection_*/
+.reduce_*/
+.test_*/
+__pycache__/
+*.py[cod]
+.DS_Store

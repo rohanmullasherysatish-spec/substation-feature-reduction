@@ -1,0 +1,9 @@
+scope,numeric_view,training_rows,validation_rows,active_original_fields,encoded_columns,training_matrix_bytes,preprocessor_fit_seconds_shared,validation_rows_matching_training_float64,validation_rows_matching_training_float32,float32_nonfinite_rows
+fold_0,unscaled,106735,53360,68,387,330451560,13.506447541993111,0.0,0.0,0
+fold_0,standardised,106735,53360,68,387,330451560,13.506447541993111,0.0,0.0,0
+fold_1,unscaled,106735,53360,68,388,331305440,13.467032750020735,0.0,0.0,0
+fold_1,standardised,106735,53360,68,388,331305440,13.467032750020735,0.0,0.0,0
+fold_2,unscaled,106720,53375,68,389,332112640,13.1380537499208,0.0,0.0,0
+fold_2,standardised,106720,53375,68,389,332112640,13.1380537499208,0.0,0.0,0
+development,unscaled,160095,0,68,389,498215640,19.523129250039347,,,0
+development,standardised,160095,0,68,389,498215640,19.523129250039347,,,0

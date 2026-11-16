@@ -1,0 +1,297 @@
+column_index,original_field,component,encoding,mi_discrete,scope
+0,Protocol,category=0,one_hot,True,fold_0
+1,Protocol,category=17,one_hot,True,fold_0
+2,Protocol,category=6,one_hot,True,fold_0
+3,Flow Duration,value,numeric,False,fold_0
+4,Total Fwd Packet,value,numeric,True,fold_0
+5,Total Bwd packets,value,numeric,True,fold_0
+6,Total Length of Fwd Packet,value,numeric,False,fold_0
+7,Total Length of Bwd Packet,value,numeric,False,fold_0
+8,Fwd Packet Length Max,value,numeric,False,fold_0
+9,Fwd Packet Length Min,value,numeric,False,fold_0
+10,Fwd Packet Length Mean,value,numeric,False,fold_0
+11,Fwd Packet Length Std,value,numeric,False,fold_0
+12,Bwd Packet Length Max,value,numeric,False,fold_0
+13,Bwd Packet Length Min,value,numeric,False,fold_0
+14,Bwd Packet Length Mean,value,numeric,False,fold_0
+15,Bwd Packet Length Std,value,numeric,False,fold_0
+16,Flow Bytes/s,value,numeric,False,fold_0
+17,Flow Packets/s,value,numeric,False,fold_0
+18,Flow IAT Mean,value,numeric,False,fold_0
+19,Flow IAT Std,value,numeric,False,fold_0
+20,Flow IAT Max,value,numeric,False,fold_0
+21,Flow IAT Min,value,numeric,False,fold_0
+22,Fwd IAT Total,value,numeric,False,fold_0
+23,Fwd IAT Mean,value,numeric,False,fold_0
+24,Fwd IAT Std,value,numeric,False,fold_0
+25,Fwd IAT Max,value,numeric,False,fold_0
+26,Fwd IAT Min,value,numeric,False,fold_0
+27,Bwd IAT Total,value,numeric,False,fold_0
+28,Bwd IAT Mean,value,numeric,False,fold_0
+29,Bwd IAT Std,value,numeric,False,fold_0
+30,Bwd IAT Max,value,numeric,False,fold_0
+31,Bwd IAT Min,value,numeric,False,fold_0
+32,Fwd PSH Flags,value,numeric,True,fold_0
+33,Fwd URG Flags,value,numeric,True,fold_0
+34,Fwd Header Length,value,numeric,True,fold_0
+35,Bwd Header Length,value,numeric,True,fold_0
+36,Fwd Packets/s,value,numeric,False,fold_0
+37,Bwd Packets/s,value,numeric,False,fold_0
+38,Packet Length Min,value,numeric,False,fold_0
+39,Packet Length Max,value,numeric,False,fold_0
+40,Packet Length Mean,value,numeric,False,fold_0
+41,Packet Length Std,value,numeric,False,fold_0
+42,Packet Length Variance,value,numeric,False,fold_0
+43,FIN Flag Count,value,numeric,True,fold_0
+44,SYN Flag Count,value,numeric,True,fold_0
+45,RST Flag Count,value,numeric,True,fold_0
+46,PSH Flag Count,value,numeric,True,fold_0
+47,ACK Flag Count,value,numeric,True,fold_0
+48,URG Flag Count,value,numeric,True,fold_0
+49,CWR Flag Count,value,numeric,True,fold_0
+50,ECE Flag Count,value,numeric,True,fold_0
+51,Down/Up Ratio,value,numeric,False,fold_0
+52,Average Packet Size,value,numeric,False,fold_0
+53,Fwd Segment Size Avg,value,numeric,False,fold_0
+54,Bwd Segment Size Avg,value,numeric,False,fold_0
+55,Bwd Bytes/Bulk Avg,value,numeric,False,fold_0
+56,Bwd Packet/Bulk Avg,value,numeric,False,fold_0
+57,Bwd Bulk Rate Avg,value,numeric,False,fold_0
+58,Subflow Fwd Packets,value,numeric,True,fold_0
+59,Subflow Fwd Bytes,value,numeric,False,fold_0
+60,Subflow Bwd Packets,value,numeric,True,fold_0
+61,Subflow Bwd Bytes,value,numeric,False,fold_0
+62,FWD Init Win Bytes,value,numeric,False,fold_0
+63,Bwd Init Win Bytes,value,numeric,False,fold_0
+64,Fwd Act Data Pkts,value,numeric,True,fold_0
+65,Fwd Seg Size Min,value,numeric,False,fold_0
+66,Active Mean,value,numeric,False,fold_0
+67,Active Std,value,numeric,False,fold_0
+68,Active Max,value,numeric,False,fold_0
+69,Active Min,value,numeric,False,fold_0
+70,Idle Mean,value,numeric,False,fold_0
+71,Idle Std,value,numeric,False,fold_0
+72,Idle Max,value,numeric,False,fold_0
+73,Idle Min,value,numeric,False,fold_0
+0,Protocol,category=0,one_hot,True,fold_1
+1,Protocol,category=17,one_hot,True,fold_1
+2,Protocol,category=6,one_hot,True,fold_1
+3,Flow Duration,value,numeric,False,fold_1
+4,Total Fwd Packet,value,numeric,True,fold_1
+5,Total Bwd packets,value,numeric,True,fold_1
+6,Total Length of Fwd Packet,value,numeric,False,fold_1
+7,Total Length of Bwd Packet,value,numeric,False,fold_1
+8,Fwd Packet Length Max,value,numeric,False,fold_1
+9,Fwd Packet Length Min,value,numeric,False,fold_1
+10,Fwd Packet Length Mean,value,numeric,False,fold_1
+11,Fwd Packet Length Std,value,numeric,False,fold_1
+12,Bwd Packet Length Max,value,numeric,False,fold_1
+13,Bwd Packet Length Min,value,numeric,False,fold_1
+14,Bwd Packet Length Mean,value,numeric,False,fold_1
+15,Bwd Packet Length Std,value,numeric,False,fold_1
+16,Flow Bytes/s,value,numeric,False,fold_1
+17,Flow Packets/s,value,numeric,False,fold_1
+18,Flow IAT Mean,value,numeric,False,fold_1
+19,Flow IAT Std,value,numeric,False,fold_1
+20,Flow IAT Max,value,numeric,False,fold_1
+21,Flow IAT Min,value,numeric,False,fold_1
+22,Fwd IAT Total,value,numeric,False,fold_1
+23,Fwd IAT Mean,value,numeric,False,fold_1
+24,Fwd IAT Std,value,numeric,False,fold_1
+25,Fwd IAT Max,value,numeric,False,fold_1
+26,Fwd IAT Min,value,numeric,False,fold_1
+27,Bwd IAT Total,value,numeric,False,fold_1
+28,Bwd IAT Mean,value,numeric,False,fold_1
+29,Bwd IAT Std,value,numeric,False,fold_1
+30,Bwd IAT Max,value,numeric,False,fold_1
+31,Bwd IAT Min,value,numeric,False,fold_1
+32,Fwd PSH Flags,value,numeric,True,fold_1
+33,Fwd URG Flags,value,numeric,True,fold_1
+34,Fwd Header Length,value,numeric,True,fold_1
+35,Bwd Header Length,value,numeric,True,fold_1
+36,Fwd Packets/s,value,numeric,False,fold_1
+37,Bwd Packets/s,value,numeric,False,fold_1
+38,Packet Length Min,value,numeric,False,fold_1
+39,Packet Length Max,value,numeric,False,fold_1
+40,Packet Length Mean,value,numeric,False,fold_1
+41,Packet Length Std,value,numeric,False,fold_1
+42,Packet Length Variance,value,numeric,False,fold_1
+43,FIN Flag Count,value,numeric,True,fold_1
+44,SYN Flag Count,value,numeric,True,fold_1
+45,RST Flag Count,value,numeric,True,fold_1
+46,PSH Flag Count,value,numeric,True,fold_1
+47,ACK Flag Count,value,numeric,True,fold_1
+48,URG Flag Count,value,numeric,True,fold_1
+49,CWR Flag Count,value,numeric,True,fold_1
+50,ECE Flag Count,value,numeric,True,fold_1
+51,Down/Up Ratio,value,numeric,False,fold_1
+52,Average Packet Size,value,numeric,False,fold_1
+53,Fwd Segment Size Avg,value,numeric,False,fold_1
+54,Bwd Segment Size Avg,value,numeric,False,fold_1
+55,Bwd Bytes/Bulk Avg,value,numeric,False,fold_1
+56,Bwd Packet/Bulk Avg,value,numeric,False,fold_1
+57,Bwd Bulk Rate Avg,value,numeric,False,fold_1
+58,Subflow Fwd Packets,value,numeric,True,fold_1
+59,Subflow Fwd Bytes,value,numeric,False,fold_1
+60,Subflow Bwd Packets,value,numeric,True,fold_1
+61,Subflow Bwd Bytes,value,numeric,False,fold_1
+62,FWD Init Win Bytes,value,numeric,False,fold_1
+63,Bwd Init Win Bytes,value,numeric,False,fold_1
+64,Fwd Act Data Pkts,value,numeric,True,fold_1
+65,Fwd Seg Size Min,value,numeric,False,fold_1
+66,Active Mean,value,numeric,False,fold_1
+67,Active Std,value,numeric,False,fold_1
+68,Active Max,value,numeric,False,fold_1
+69,Active Min,value,numeric,False,fold_1
+70,Idle Mean,value,numeric,False,fold_1
+71,Idle Std,value,numeric,False,fold_1
+72,Idle Max,value,numeric,False,fold_1
+73,Idle Min,value,numeric,False,fold_1
+0,Protocol,category=0,one_hot,True,fold_2
+1,Protocol,category=17,one_hot,True,fold_2
+2,Protocol,category=6,one_hot,True,fold_2
+3,Flow Duration,value,numeric,False,fold_2
+4,Total Fwd Packet,value,numeric,True,fold_2
+5,Total Bwd packets,value,numeric,True,fold_2
+6,Total Length of Fwd Packet,value,numeric,False,fold_2
+7,Total Length of Bwd Packet,value,numeric,False,fold_2
+8,Fwd Packet Length Max,value,numeric,False,fold_2
+9,Fwd Packet Length Min,value,numeric,False,fold_2
+10,Fwd Packet Length Mean,value,numeric,False,fold_2
+11,Fwd Packet Length Std,value,numeric,False,fold_2
+12,Bwd Packet Length Max,value,numeric,False,fold_2
+13,Bwd Packet Length Min,value,numeric,False,fold_2
+14,Bwd Packet Length Mean,value,numeric,False,fold_2
+15,Bwd Packet Length Std,value,numeric,False,fold_2
+16,Flow Bytes/s,value,numeric,False,fold_2
+17,Flow Packets/s,value,numeric,False,fold_2
+18,Flow IAT Mean,value,numeric,False,fold_2
+19,Flow IAT Std,value,numeric,False,fold_2
+20,Flow IAT Max,value,numeric,False,fold_2
+21,Flow IAT Min,value,numeric,False,fold_2
+22,Fwd IAT Total,value,numeric,False,fold_2
+23,Fwd IAT Mean,value,numeric,False,fold_2
+24,Fwd IAT Std,value,numeric,False,fold_2
+25,Fwd IAT Max,value,numeric,False,fold_2
+26,Fwd IAT Min,value,numeric,False,fold_2
+27,Bwd IAT Total,value,numeric,False,fold_2
+28,Bwd IAT Mean,value,numeric,False,fold_2
+29,Bwd IAT Std,value,numeric,False,fold_2
+30,Bwd IAT Max,value,numeric,False,fold_2
+31,Bwd IAT Min,value,numeric,False,fold_2
+32,Fwd PSH Flags,value,numeric,True,fold_2
+33,Fwd URG Flags,value,numeric,True,fold_2
+34,Fwd Header Length,value,numeric,True,fold_2
+35,Bwd Header Length,value,numeric,True,fold_2
+36,Fwd Packets/s,value,numeric,False,fold_2
+37,Bwd Packets/s,value,numeric,False,fold_2
+38,Packet Length Min,value,numeric,False,fold_2
+39,Packet Length Max,value,numeric,False,fold_2
+40,Packet Length Mean,value,numeric,False,fold_2
+41,Packet Length Std,value,numeric,False,fold_2
+42,Packet Length Variance,value,numeric,False,fold_2
+43,FIN Flag Count,value,numeric,True,fold_2
+44,SYN Flag Count,value,numeric,True,fold_2
+45,RST Flag Count,value,numeric,True,fold_2
+46,PSH Flag Count,value,numeric,True,fold_2
+47,ACK Flag Count,value,numeric,True,fold_2
+48,URG Flag Count,value,numeric,True,fold_2
+49,CWR Flag Count,value,numeric,True,fold_2
+50,ECE Flag Count,value,numeric,True,fold_2
+51,Down/Up Ratio,value,numeric,False,fold_2
+52,Average Packet Size,value,numeric,False,fold_2
+53,Fwd Segment Size Avg,value,numeric,False,fold_2
+54,Bwd Segment Size Avg,value,numeric,False,fold_2
+55,Bwd Bytes/Bulk Avg,value,numeric,False,fold_2
+56,Bwd Packet/Bulk Avg,value,numeric,False,fold_2
+57,Bwd Bulk Rate Avg,value,numeric,False,fold_2
+58,Subflow Fwd Packets,value,numeric,True,fold_2
+59,Subflow Fwd Bytes,value,numeric,False,fold_2
+60,Subflow Bwd Packets,value,numeric,True,fold_2
+61,Subflow Bwd Bytes,value,numeric,False,fold_2
+62,FWD Init Win Bytes,value,numeric,False,fold_2
+63,Bwd Init Win Bytes,value,numeric,False,fold_2
+64,Fwd Act Data Pkts,value,numeric,True,fold_2
+65,Fwd Seg Size Min,value,numeric,False,fold_2
+66,Active Mean,value,numeric,False,fold_2
+67,Active Std,value,numeric,False,fold_2
+68,Active Max,value,numeric,False,fold_2
+69,Active Min,value,numeric,False,fold_2
+70,Idle Mean,value,numeric,False,fold_2
+71,Idle Std,value,numeric,False,fold_2
+72,Idle Max,value,numeric,False,fold_2
+73,Idle Min,value,numeric,False,fold_2
+0,Protocol,category=0,one_hot,True,development
+1,Protocol,category=17,one_hot,True,development
+2,Protocol,category=6,one_hot,True,development
+3,Flow Duration,value,numeric,False,development
+4,Total Fwd Packet,value,numeric,True,development
+5,Total Bwd packets,value,numeric,True,development
+6,Total Length of Fwd Packet,value,numeric,False,development
+7,Total Length of Bwd Packet,value,numeric,False,development
+8,Fwd Packet Length Max,value,numeric,False,development
+9,Fwd Packet Length Min,value,numeric,False,development
+10,Fwd Packet Length Mean,value,numeric,False,development
+11,Fwd Packet Length Std,value,numeric,False,development
+12,Bwd Packet Length Max,value,numeric,False,development
+13,Bwd Packet Length Min,value,numeric,False,development
+14,Bwd Packet Length Mean,value,numeric,False,development
+15,Bwd Packet Length Std,value,numeric,False,development
+16,Flow Bytes/s,value,numeric,False,development
+17,Flow Packets/s,value,numeric,False,development
+18,Flow IAT Mean,value,numeric,False,development
+19,Flow IAT Std,value,numeric,False,development
+20,Flow IAT Max,value,numeric,False,development
+21,Flow IAT Min,value,numeric,False,development
+22,Fwd IAT Total,value,numeric,False,development
+23,Fwd IAT Mean,value,numeric,False,development
+24,Fwd IAT Std,value,numeric,False,development
+25,Fwd IAT Max,value,numeric,False,development
+26,Fwd IAT Min,value,numeric,False,development
+27,Bwd IAT Total,value,numeric,False,development
+28,Bwd IAT Mean,value,numeric,False,development
+29,Bwd IAT Std,value,numeric,False,development
+30,Bwd IAT Max,value,numeric,False,development
+31,Bwd IAT Min,value,numeric,False,development
+32,Fwd PSH Flags,value,numeric,True,development
+33,Fwd URG Flags,value,numeric,True,development
+34,Fwd Header Length,value,numeric,True,development
+35,Bwd Header Length,value,numeric,True,development
+36,Fwd Packets/s,value,numeric,False,development
+37,Bwd Packets/s,value,numeric,False,development
+38,Packet Length Min,value,numeric,False,development
+39,Packet Length Max,value,numeric,False,development
+40,Packet Length Mean,value,numeric,False,development
+41,Packet Length Std,value,numeric,False,development
+42,Packet Length Variance,value,numeric,False,development
+43,FIN Flag Count,value,numeric,True,development
+44,SYN Flag Count,value,numeric,True,development
+45,RST Flag Count,value,numeric,True,development
+46,PSH Flag Count,value,numeric,True,development
+47,ACK Flag Count,value,numeric,True,development
+48,URG Flag Count,value,numeric,True,development
+49,CWR Flag Count,value,numeric,True,development
+50,ECE Flag Count,value,numeric,True,development
+51,Down/Up Ratio,value,numeric,False,development
+52,Average Packet Size,value,numeric,False,development
+53,Fwd Segment Size Avg,value,numeric,False,development
+54,Bwd Segment Size Avg,value,numeric,False,development
+55,Bwd Bytes/Bulk Avg,value,numeric,False,development
+56,Bwd Packet/Bulk Avg,value,numeric,False,development
+57,Bwd Bulk Rate Avg,value,numeric,False,development
+58,Subflow Fwd Packets,value,numeric,True,development
+59,Subflow Fwd Bytes,value,numeric,False,development
+60,Subflow Bwd Packets,value,numeric,True,development
+61,Subflow Bwd Bytes,value,numeric,False,development
+62,FWD Init Win Bytes,value,numeric,False,development
+63,Bwd Init Win Bytes,value,numeric,False,development
+64,Fwd Act Data Pkts,value,numeric,True,development
+65,Fwd Seg Size Min,value,numeric,False,development
+66,Active Mean,value,numeric,False,development
+67,Active Std,value,numeric,False,development
+68,Active Max,value,numeric,False,development
+69,Active Min,value,numeric,False,development
+70,Idle Mean,value,numeric,False,development
+71,Idle Std,value,numeric,False,development
+72,Idle Max,value,numeric,False,development
+73,Idle Min,value,numeric,False,development

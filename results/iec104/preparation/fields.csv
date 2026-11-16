@@ -1,0 +1,85 @@
+field,role,kind,reason,dtype,missing_read,missing_retained,unique_retained,constant_or_all_missing_retained,minimum_retained,maximum_retained,missing_tokens,positive_infinity,negative_infinity,negative_to_missing
+Flow ID,excluded,text,Composite endpoint/connection identifier; outside the chosen representation.,string,0,0,283706,False,,,,,,
+Src IP,excluded,text,Device/environment address; outside the chosen representation.,string,0,0,74,False,,,,,,
+Src Port,excluded,categorical_integer,Port-independent representation; sacrifices connection/service context.,Int64,0,0,65536,False,0.0,65535.0,0.0,0.0,0.0,0.0
+Dst IP,excluded,text,Device/environment address; outside the chosen representation.,string,0,0,31,False,,,,,,
+Dst Port,excluded,categorical_integer,Port-independent representation; sacrifices connection/service context.,Int64,0,0,1078,False,0.0,65443.0,0.0,0.0,0.0,0.0
+Protocol,predictor,categorical_integer,Nominal transport-protocol code; numerical magnitude does not imply order.,Int64,0,0,3,False,0.0,17.0,0.0,0.0,0.0,0.0
+Timestamp,excluded,text,Absolute capture time; relative duration and interval measurements remain.,string,0,0,1923,False,,,,,,
+Flow Duration,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,149669,False,6.0,119998863.0,0.0,0.0,0.0,0.0
+Total Fwd Packet,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,304,False,1.0,30160.0,0.0,0.0,0.0,0.0
+Total Bwd packets,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,302,False,0.0,37061.0,0.0,0.0,0.0,0.0
+Total Length of Fwd Packet,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,525,False,0.0,1216943.0,0.0,0.0,0.0,0.0
+Total Length of Bwd Packet,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,568,False,0.0,1425359.0,0.0,0.0,0.0,0.0
+Fwd Packet Length Max,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,50,False,0.0,1444.0,0.0,0.0,0.0,0.0
+Fwd Packet Length Min,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,14,False,0.0,1444.0,0.0,0.0,0.0,0.0
+Fwd Packet Length Mean,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,547,False,0.0,1444.0,0.0,0.0,0.0,0.0
+Fwd Packet Length Std,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,607,False,0.0,198.4329681709742,0.0,0.0,0.0,0.0
+Bwd Packet Length Max,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,149,False,0.0,1082.0,0.0,0.0,0.0,0.0
+Bwd Packet Length Min,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,7,False,0.0,120.0,0.0,0.0,0.0,0.0
+Bwd Packet Length Mean,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,1479,False,0.0,210.49999999999997,0.0,0.0,0.0,0.0
+Bwd Packet Length Std,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,1768,False,0.0,421.0,0.0,0.0,0.0,0.0
+Flow Bytes/s,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,8155,False,0.0,10712121.212121213,0.0,0.0,0.0,0.0
+Flow Packets/s,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,152951,False,0.017122435067788,333333.3333333333,0.0,0.0,0.0,0.0
+Flow IAT Mean,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,154424,False,6.0,116805816.0,0.0,0.0,0.0,0.0
+Flow IAT Std,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,172956,False,0.0,42986629.18915064,0.0,0.0,0.0,0.0
+Flow IAT Max,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,129796,False,6.0,116805816.0,0.0,0.0,0.0,0.0
+Flow IAT Min,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,1,1,59597,False,0.0,116805816.0,0.0,0.0,0.0,1.0
+Fwd IAT Total,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,144824,False,0.0,119998352.0,0.0,0.0,0.0,0.0
+Fwd IAT Mean,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,144340,False,0.0,116805816.0,0.0,0.0,0.0,0.0
+Fwd IAT Std,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,148956,False,0.0,51204787.54176715,0.0,0.0,0.0,0.0
+Fwd IAT Max,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,128028,False,0.0,116805816.0,0.0,0.0,0.0,0.0
+Fwd IAT Min,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,80942,False,0.0,116805816.0,0.0,0.0,0.0,0.0
+Bwd IAT Total,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,4541,False,0.0,119997954.0,0.0,0.0,0.0,0.0
+Bwd IAT Mean,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,4549,False,0.0,24138796.333333336,0.0,0.0,0.0,0.0
+Bwd IAT Std,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,4507,False,0.0,41807770.98720017,0.0,0.0,0.0,0.0
+Bwd IAT Max,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,3718,False,0.0,108942679.0,0.0,0.0,0.0,0.0
+Bwd IAT Min,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,1558,False,0.0,6013407.0,0.0,0.0,0.0,0.0
+Fwd PSH Flags,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,2,False,0.0,1.0,0.0,0.0,0.0,0.0
+Bwd PSH Flags,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,1,True,0.0,0.0,0.0,0.0,0.0,0.0
+Fwd URG Flags,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,2,False,0.0,1.0,0.0,0.0,0.0,0.0
+Bwd URG Flags,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,1,True,0.0,0.0,0.0,0.0,0.0,0.0
+Fwd Header Length,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,415,False,0.0,603200.0,0.0,0.0,0.0,0.0
+Bwd Header Length,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,437,False,0.0,741220.0,0.0,0.0,0.0,0.0
+Fwd Packets/s,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,149741,False,0.017122435067788,166666.66666666666,0.0,0.0,0.0,0.0
+Bwd Packets/s,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,43805,False,0.0,166666.66666666666,0.0,0.0,0.0,0.0
+Packet Length Min,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,7,False,0.0,300.0,0.0,0.0,0.0,0.0
+Packet Length Max,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,170,False,0.0,1444.0,0.0,0.0,0.0,0.0
+Packet Length Mean,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,1675,False,0.0,962.6666666666669,0.0,0.0,0.0,0.0
+Packet Length Std,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,1836,False,0.0,833.6937887098195,0.0,0.0,0.0,0.0
+Packet Length Variance,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,1845,False,0.0,695045.3333333333,0.0,0.0,0.0,0.0
+FIN Flag Count,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,3,False,0.0,2.0,0.0,0.0,0.0,0.0
+SYN Flag Count,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,3,False,0.0,2.0,0.0,0.0,0.0,0.0
+RST Flag Count,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,3,False,0.0,2.0,0.0,0.0,0.0,0.0
+PSH Flag Count,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,322,False,0.0,61126.0,0.0,0.0,0.0,0.0
+ACK Flag Count,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,377,False,0.0,61126.0,0.0,0.0,0.0,0.0
+URG Flag Count,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,2,False,0.0,1.0,0.0,0.0,0.0,0.0
+CWR Flag Count,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,2,False,0.0,1.0,0.0,0.0,0.0,0.0
+ECE Flag Count,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,2,False,0.0,1.0,0.0,0.0,0.0,0.0
+Down/Up Ratio,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,4,False,0.0,3.0,0.0,0.0,0.0,0.0
+Average Packet Size,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,1710,False,0.0,1444.0,0.0,0.0,0.0,0.0
+Fwd Segment Size Avg,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,473,False,0.0,1444.0,0.0,0.0,0.0,0.0
+Bwd Segment Size Avg,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,1248,False,0.0,210.5,0.0,0.0,0.0,0.0
+Fwd Bytes/Bulk Avg,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,1,True,0.0,0.0,0.0,0.0,0.0,0.0
+Fwd Packet/Bulk Avg,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,1,True,0.0,0.0,0.0,0.0,0.0,0.0
+Fwd Bulk Rate Avg,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,1,True,0.0,0.0,0.0,0.0,0.0,0.0
+Bwd Bytes/Bulk Avg,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,782,False,0.0,1576219.0,0.0,0.0,0.0,0.0
+Bwd Packet/Bulk Avg,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,394,False,0.0,61126.0,0.0,0.0,0.0,0.0
+Bwd Bulk Rate Avg,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,3066,False,0.0,168717.0,0.0,0.0,0.0,0.0
+Subflow Fwd Packets,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,93,False,0.0,3315.0,0.0,0.0,0.0,0.0
+Subflow Fwd Bytes,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,45,False,0.0,9888.0,0.0,0.0,0.0,0.0
+Subflow Bwd Packets,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,71,False,0.0,797.0,0.0,0.0,0.0,0.0
+Subflow Bwd Bytes,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,368,False,0.0,15784.0,0.0,0.0,0.0,0.0
+FWD Init Win Bytes,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,27,False,0.0,65535.0,0.0,0.0,0.0,0.0
+Bwd Init Win Bytes,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,18,False,0.0,65535.0,0.0,0.0,0.0,0.0
+Fwd Act Data Pkts,predictor,integer_count,Traffic count retained numerically; discrete components for later MI analysis.,Int64,0,0,283,False,0.0,30159.0,0.0,0.0,0.0,0.0
+Fwd Seg Size Min,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,7,False,0.0,40.0,0.0,0.0,0.0,0.0
+Active Mean,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,65,False,0.0,18027679.0,0.0,0.0,0.0,0.0
+Active Std,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,28,False,0.0,26955236.949854095,0.0,0.0,0.0,0.0
+Active Max,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,65,False,0.0,71318490.0,0.0,0.0,0.0,0.0
+Active Min,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,62,False,0.0,17906133.0,0.0,0.0,0.0,0.0
+Idle Mean,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,77,False,0.0,116805816.0,0.0,0.0,0.0,0.0
+Idle Std,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,33,False,0.0,42986629.18915064,0.0,0.0,0.0,0.0
+Idle Max,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,77,False,0.0,116805816.0,0.0,0.0,0.0,0.0
+Idle Min,predictor,numeric_measurement,Traffic measurement retained numerically; continuous components for later MI analysis.,Float64,0,0,77,False,0.0,116805816.0,0.0,0.0,0.0,0.0
+Label,target,label,Provided annotation supplies the target and is never a predictor.,string,0,0,8,False,,,,,,

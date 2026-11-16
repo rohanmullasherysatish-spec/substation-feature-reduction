@@ -1,0 +1,9 @@
+source_file,raw_label,class_label,rows_read,rows_retained,duplicate_copies_removed
+attack-data/capture104-dosattack.csv,dosattack,dos,304627,304627,0
+attack-data/capture104-floodattack.csv,floodattack,flood,108,105,3
+attack-data/capture104-fuzzyattack.csv,fuzzyattack,fuzzy,939,939,0
+attack-data/capture104-iec104starvationattack.csv,iec104starvationattack,iec104_starvation,2028,2028,0
+attack-data/capture104-mitmattack.csv,mitmattack,mitm,26,26,0
+attack-data/capture104-ntpddosattack.csv,ntpddosattack,ntp_ddos,2278,2278,0
+attack-data/capture104-portscanattack.csv,portscanattack,port_scan,9710,9710,0
+attack-free-data/capture104-attackfree.csv,attackfree,normal,255,255,0

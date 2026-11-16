@@ -1,0 +1,28 @@
+flowchart TD
+  prepare["Prepare protocol-specific data"] --> allocate["Group and allocate observations"]
+  allocate -->|"80% target"| development["Development observations"]
+  allocate -->|"20% target"| reservedTest["Reserved test observations"]
+  subgraph validationPhase["Grouped development validation"]
+    foldFit["Fit training preprocessing and full-model candidates"]
+    settings["Score three validation folds and select full-model settings"]
+    foldReduce["Rank training fields: SHAP, MI and matched MI; refit at 25% and 50%"]
+    validationResults["Evaluate held-fold predictions; compare fold ranks"]
+    foldFit --> settings --> foldReduce --> validationResults
+  end
+  subgraph finalPhase["All-development fitting"]
+    preprocess["Fit all-development preprocessing"]
+    finalFull["Fit selected full models and dummy reference"]
+    finalReduce["Rank development fields: SHAP, MI and matched MI; refit at 25% and 50%"]
+    pipelines["Save 26 primary pipelines and ten matched-MI pipelines"]
+    preprocess --> finalFull --> finalReduce --> pipelines
+  end
+  development --> foldFit
+  development --> preprocess
+  settings --> finalFull
+  pipelines --> finalTest["Compare fixed test predictions: performance, classes and costs"]
+  reservedTest --> finalTest
+  finalTest --> diagnostic["Exploratory diagnostics: errors, encoded matches, ten-round timing and cost offsets"]
+  validationResults --> diagnostic
+  style validationPhase fill:#EAF1F6,stroke:#455A64
+  style finalPhase fill:#F4F6F8,stroke:#455A64
+  style reservedTest fill:#FFF5E4,stroke:#8A6B39

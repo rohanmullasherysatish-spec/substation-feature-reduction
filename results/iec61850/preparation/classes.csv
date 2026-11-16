@@ -1,0 +1,6 @@
+class_label,records,source_blocks,measurement_groups,dependency_groups
+flood,49984,3124,49979,3123
+fuzzy,49984,3124,49351,2487
+normal,74976,4686,74535,4246
+ptp_attack,159,10,158,9
+replay,24992,1562,24850,1420
